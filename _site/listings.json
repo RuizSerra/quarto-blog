@@ -1,18 +1,24 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/about.html",
-      "/blog.html",
-      "/posts/C3-2023-symposium/index.html",
-      "/posts/IRL-ToM-algorithms/index.html"
-    ]
-  },
-  {
     "listing": "/blog.html",
     "items": [
       "/posts/C3-2023-symposium/index.html",
-      "/posts/IRL-ToM-algorithms/index.html"
+      "/posts/IRL-ToM-algorithms/index.html",
+      "/posts/vanishing-point-images/index.html",
+      "/posts/end-exporting-entropy-obscuring-accountability/index.html",
+      "/posts/towards-ecological-ethics/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/about.html",
+      "/posts/end-exporting-entropy-obscuring-accountability/index.html",
+      "/blog.html",
+      "/posts/C3-2023-symposium/index.html",
+      "/posts/vanishing-point-images/index.html",
+      "/posts/IRL-ToM-algorithms/index.html",
+      "/posts/towards-ecological-ethics/index.html"
     ]
   }
 ]

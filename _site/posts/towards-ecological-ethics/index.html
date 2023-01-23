@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jaime Ruiz Serra">
-<meta name="dcterms.date" content="2023-01-19">
+<meta name="dcterms.date" content="2020-05-04">
 
-<title>Jaime Ruiz Serra - Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</title>
+<title>Jaime Ruiz Serra - Towards an Ecological Ethics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -105,9 +124,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</h1>
+      <h1 class="title">Towards an Ecological Ethics</h1>
+            <p class="subtitle lead">On the relationship between entropy, free-will, and ethics</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">publications</div>
+                <div class="quarto-category">ethics</div>
+                <div class="quarto-category">governance</div>
               </div>
                   </div>
   </div>
@@ -125,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 19, 2023</p>
+        <p class="date">May 4, 2020</p>
       </div>
     </div>
     
@@ -143,29 +164,55 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<blockquote class="blockquote">
-<p>Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.</p>
-</blockquote>
-<p>Published in MDPI Algorithms, Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</a>.</p>
-<p>Citation:</p>
-<pre><code>@article{Ruiz-Serra2023InverseReinforcement,
-  title = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}: {{Current Methods}} and {{Open Problems}}},
-  shorttitle = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}},
-  author = {{Ruiz-Serra}, Jaime and Harr{\'e}, Michael S.},
-  year = {2023},
-  month = feb,
-  journal = {Algorithms},
-  volume = {16},
-  number = {2},
-  pages = {68},
-  publisher = {{Multidisciplinary Digital Publishing Institute}},
-  issn = {1999-4893},
-  doi = {10.3390/a16020068}
-}</code></pre>
+<p>As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order to ensure I can continue to pay my university fees, rent, bills and the like. “Perhaps I might even be able to do some travel if I am conservative enough with my spending”, is my teleological rationale. On the other hand, I am aware that cheaper consumer products often come at a cost of being less healthy, produced by big industrial corporations, and more damaging to the environment (for instance, using unsustainable ingredients like palm oil, overseas manufacturing and its carbon footprint, and/or cheaper non-recyclable packaging).</p>
+<p>The industrial complex, as a system, requires input (capital, raw materials) to produce its output and continue to thrive. Consumers provide the capital and nature provides the raw materials. In the process, they become instruments for the production of prestige goods and weapons in the interest of domination by the ruling class <span class="citation" data-cites="Gare2010">Gare (<a href="#ref-Gare2010" role="doc-biblioref">2010</a>)</span>. One of the astonishing phenomena by which this dynamic is perpetuated are heavily processed foods. These are a manifestation of our technological prowess, in the sense that they exploit the <em>principle of least action</em>, whereby systems (in this case, humans) have a tendency to increase their potential energy while trying to minimise any action (e.g.&nbsp;movement) <span class="citation" data-cites="Feynman1964">Feynman (<a href="#ref-Feynman1964" role="doc-biblioref">1964</a>)</span>, <span class="citation" data-cites="Das2013">Das (<a href="#ref-Das2013" role="doc-biblioref">2013</a>)</span>. The consumption of such products is made easy by their cheap and time-saving qualities (both in the preparation and procuring thereof) <span class="citation" data-cites="Pollan2013">Pollan (<a href="#ref-Pollan2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Closely related to the principle of least action is <em>entropy</em>, or amount of chaos. The second law of thermodynamics states that “the entropy in an isolated system can increase but not decrease” <span class="citation" data-cites="Wehrl1978">Wehrl (<a href="#ref-Wehrl1978" role="doc-biblioref">1978</a>)</span>. Open thermodynamic systems such as living organisms, however, are able to reduce their local entropy through increasing that of their environment, with a resultant net increase in entropy overall<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Thus once again humanity as a whole—by means of industrial streamlining of production—continues to exploit this phenomenon to our immediate benefit and long term detriment of our habitat (and, unwittingly, of ourselves).</p>
+<p>So we find ourselves at a critical time at the <em>edge of chaos</em> <span class="citation" data-cites="McLaren2009">McLaren (<a href="#ref-McLaren2009" role="doc-biblioref">2009</a>)</span>. Within the limited conditions in which life and order are possible, equilibrium is delicate<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We need to change our ways to ensure the long term prosperity of our environment (and through it, of ourselves). I believe that a powerful way in which we can assert our free will is by acting against the principle of least action.</p>
+<p>We are privileged to have a wealth of knowledge and connectedness at our disposal (largely as a result of industrial civilisation), which we can deploy as local, small scale, sustainable production of sustenance and goods, working in communities within communities, as suggested by the likes of Chomsky <span class="citation" data-cites="Chomsky1971">Chomsky and Foucault (<a href="#ref-Chomsky1971" role="doc-biblioref">1971</a>)</span>, and Bookchin <span class="citation" data-cites="Bookchin1987">Bookchin (<a href="#ref-Bookchin1987" role="doc-biblioref">1987</a>)</span>.</p>
+<p>In order to make an impact in the correction of our course as a species, a critical mass of people willing to inspire change is required. It is our role as thinkers to convince our fellow humans that everyone has a stake, that democracy manifests in subtle ways, and that every action counts. A way to inspire people to act might be to romanticise <em>production</em> as we have <em>consumption</em>—for which we would have to overcome the principle of least action—making it desirable, commendable. This is achievable through an Aristotelian virtue ethics.</p>
 
 
 
-</main> <!-- /main -->
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Bookchin1987" class="csl-entry" role="doc-biblioentry">
+Bookchin, Murray. 1987. <span>“<span class="nocase">Social Ecology versus "Deep Ecology": A Challenge for the Ecology Movement</span>.”</span> <em>Green Perspectives: Newsletter of the Green Progra Project</em>, no. 4, 5: 1–22. <a href="http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html">http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html</a>.
+</div>
+<div id="ref-Chomsky1971" class="csl-entry" role="doc-biblioentry">
+Chomsky, Noam, and Michel Foucault. 1971. <span>“<span class="nocase">Human Nature: Justice versus Power, Noam Chomsky debates with Michel Foucault</span>.”</span> <a href="https://chomsky.info/1971xxxx/">https://chomsky.info/1971xxxx/</a>.
+</div>
+<div id="ref-Das2013" class="csl-entry" role="doc-biblioentry">
+Das, K K. 2013. <em><span class="nocase">The Quantum Guide to Life: How the Laws of Physics Explain Our Lives from Laziness to Love</span></em>. Skyhorse Publishing. <a href="https://books.google.com.au/books?id=LgMnAgAAQBAJ">https://books.google.com.au/books?id=LgMnAgAAQBAJ</a>.
+</div>
+<div id="ref-Feynman1964" class="csl-entry" role="doc-biblioentry">
+Feynman, Richard. 1964. <span>“<span class="nocase">The Principle of Least Action</span>.”</span> <a href="https://www.feynmanlectures.caltech.edu/II{\_}19.html">https://www.feynmanlectures.caltech.edu/II{\_}19.html</a>.
+</div>
+<div id="ref-Gare2010" class="csl-entry" role="doc-biblioentry">
+Gare, Arran. 2010. <span>“<span class="nocase">Toward an Ecological Civilization: The Science, Ethics, and Politics of Eco-Poiesis</span>.”</span> <em>Process Studies</em> 39 (1): 5–38. <a href="https://doi.org/10.5840/process20103912">https://doi.org/10.5840/process20103912</a>.
+</div>
+<div id="ref-Hawking2009" class="csl-entry" role="doc-biblioentry">
+Hawking, Stephen. 2009. <em><span class="nocase">A brief history of time: from big bang to black holes</span></em>. Random House.
+</div>
+<div id="ref-McLaren2009" class="csl-entry" role="doc-biblioentry">
+McLaren, G. 2009. <span>“<span class="nocase">Climate Change and Some Other Implications of Vibratory Existence</span>.”</span> <em>Cosmos and History: The Journal of Natural and Social Philosophy</em> 5 (2): 134. <a href="http://cosmosandhistory.org/index.php/journal/article/view/146/253">http://cosmosandhistory.org/index.php/journal/article/view/146/253</a>.
+</div>
+<div id="ref-Pollan2013" class="csl-entry" role="doc-biblioentry">
+Pollan, Michael. 2013. <em><span class="nocase">Cooked: A Natural History of Transformation</span></em>. Allen Lane.
+</div>
+<div id="ref-Rosso2007" class="csl-entry" role="doc-biblioentry">
+Rosso, O. A., H. A. Larrondo, M. T. Martin, A. Plastino, and M. A. Fuentes. 2007. <span>“<span class="nocase">Distinguishing noise from chaos</span>.”</span> <em>Physical Review Letters</em> 99 (15): 1–4. <a href="https://doi.org/10.1103/PhysRevLett.99.154102">https://doi.org/10.1103/PhysRevLett.99.154102</a>.
+</div>
+<div id="ref-Wehrl1978" class="csl-entry" role="doc-biblioentry">
+Wehrl, Alfred. 1978. <span>“<span class="nocase">General properties of entropy</span>.”</span> <em>Reviews of Modern Physics</em> 50 (2): 221–60. <a href="https://doi.org/10.1103/RevModPhys.50.221">https://doi.org/10.1103/RevModPhys.50.221</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>It is important to note here that there is no escaping the arrow of time <span class="citation" data-cites="Hawking2009">Hawking (<a href="#ref-Hawking2009" role="doc-biblioref">2009</a>)</span>. It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I invite the reader to consider the relationship between complexity and entropy, as outlined in <span class="citation" data-cites="Rosso2007">Rosso et al. (<a href="#ref-Rosso2007" role="doc-biblioref">2007</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
