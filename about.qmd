@@ -13,7 +13,6 @@ about:
     - icon: github
       text: Github
       href: https://github.com/RuizSerra
-
 ---
 
 I am a PhD candidate with the *Modelling and Simulation Research Group* at the [Center for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html), The University of Sydney.
