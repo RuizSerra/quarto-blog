@@ -1,0 +1,56 @@
+---
+title: "About"
+image: img/little-jaime-square.png
+about:
+  template: trestles
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/JRuizSerra
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/RuizSerra
+    - icon: github
+      text: Github
+      href: https://github.com/RuizSerra
+
+---
+
+I am a PhD candidate with the *Modelling and Simulation Research Group* at the [Center for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html), The University of Sydney.
+
+
+
+## Selected Publications
+
+Ruiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023, *16*, 68. [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
+
+Ruiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In *Proceedings of the 2022 Australasian Conference on Robotics and Automation* (ACRA 2022). Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
+
+## Education
+
+**The University of Sydney** (Sydney, AU)  
+PhD, *Computational Economics*  
+Oct 2022, *Present*
+
+**MITx on edX** (Online)  
+MicroMasters, *Statistics and Data Science*  
+Mar 2021, Nov 2022
+
+**Swinburne University of Technology** (Melbourne, AU)  
+BEng (Hons), *Robotics and Mechatronics*  
+Feb 2016, Dec 2020  
+
+## Experience
+
+**Swinburne University of Technology** (Remote/Melbourne, AU)  
+Research Assistant, *Deep Reinforcement Learning, Computer Vision*  
+Sep 2020, *Present*
+
+**National Australia Bank** (Remote/Melbourne, AU)  
+Analyst, Engineer, *Cloud Infrastructure (AWS)*  
+Jan 2018, Sep 2020
+
+**Youth Without Borders** (Melbourne, AU)  
+Victoria Staffing Manager, *Spark Engineering Camp*  
+Nov 2016, Sep 2017
+

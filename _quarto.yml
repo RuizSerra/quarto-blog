@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  favicon: img/favicon.png
+  title: "Jaime Ruiz Serra"
+  navbar:
+    right:
+      - about.qmd
+      - blog.qmd
+  page-footer:
+    center: 
+      - icon: twitter
+        href: https://twitter.com/JRuizSerra
+      - icon: linkedin
+        href: https://linkedin.com/in/RuizSerra
+      - icon: github
+        href: https://github.com/RuizSerra
+
+format:
+  html:
+    theme: 
+      light: sandstone
+      dark: darkly
+    css: styles.css

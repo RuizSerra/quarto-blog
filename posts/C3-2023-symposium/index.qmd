@@ -1,0 +1,12 @@
+---
+title: "Complexity, Criticality, Computation Symposium (C3) 2023"
+author: "Jaime Ruiz Serra"
+date: "2023-01-23"
+categories: [conferences]
+---
+
+
+![](c3-group.jpg)
+
+The [C3-2023 Symposium](https://www.sydney.edu.au/science/our-research/research-centres/centre-for-complex-systems/c3-symposia.html) took place in Heron Island, QLD, Australia, in January 2023.
+Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation.

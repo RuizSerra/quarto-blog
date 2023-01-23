@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "posts/IRL-ToM-algorithms/index.html",
+    "href": "posts/IRL-ToM-algorithms/index.html",
+    "title": "Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind",
+    "section": "",
+    "text": "Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.\n\nPublished in MDPI Algorithms, Open Access, DOI:10.3390/a16020068.\nCitation:\n@article{Ruiz-Serra2023InverseReinforcement,\n  title = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}: {{Current Methods}} and {{Open Problems}}},\n  shorttitle = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}},\n  author = {{Ruiz-Serra}, Jaime and Harr{\\'e}, Michael S.},\n  year = {2023},\n  month = feb,\n  journal = {Algorithms},\n  volume = {16},\n  number = {2},\n  pages = {68},\n  publisher = {{Multidisciplinary Digital Publishing Institute}},\n  issn = {1999-4893},\n  doi = {10.3390/a16020068}\n}"
+  },
+  {
+    "objectID": "posts/C3-2023-symposium/index.html",
+    "href": "posts/C3-2023-symposium/index.html",
+    "title": "Complexity, Criticality, Computation Symposium (C3) 2023",
+    "section": "",
+    "text": "The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jaime Ruiz Serra",
+    "section": "",
+    "text": "About\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nComplexity, Criticality, Computation Symposium (C3) 2023\n\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a PhD candidate with the Modelling and Simulation Research Group at the Center for Complex Systems, The University of Sydney."
+  },
+  {
+    "objectID": "about.html#selected-publications",
+    "href": "about.html#selected-publications",
+    "title": "About",
+    "section": "Selected Publications",
+    "text": "Selected Publications\nRuiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In Proceedings of the 2022 Australasian Conference on Robotics and Automation (ACRA 2022). Brisbane, Australia, December 2022. arXiv:2209.07043"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nThe University of Sydney (Sydney, AU)\nPhD, Computational Economics\nOct 2022, Present\nMITx on edX (Online)\nMicroMasters, Statistics and Data Science\nMar 2021, Nov 2022\nSwinburne University of Technology (Melbourne, AU)\nBEng (Hons), Robotics and Mechatronics\nFeb 2016, Dec 2020"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020, Present\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018, Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016, Sep 2017"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Complexity, Criticality, Computation Symposium (C3) 2023\n\n\n\n\n\n\n\nconferences\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n\n\n\n\n\npublications\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\nNo matching items"
+  }
+]

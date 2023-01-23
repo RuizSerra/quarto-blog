@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/about.html",
+      "/blog.html",
+      "/posts/C3-2023-symposium/index.html",
+      "/posts/IRL-ToM-algorithms/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/C3-2023-symposium/index.html",
+      "/posts/IRL-ToM-algorithms/index.html"
+    ]
+  }
+]

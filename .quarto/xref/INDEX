@@ -1,0 +1,26 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "7f18fdc7"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "a0f9b15c"
+  },
+  "index.qmd": {
+    "index.html": "3a8667cd"
+  },
+  "about.qmd": {
+    "about.html": "c641f3ac"
+  },
+  "posts/c3-2023-symposium/index.qmd": {
+    "index.html": "7c1fc629"
+  },
+  "posts/C3-2023-symposium/index.qmd": {
+    "index.html": "15d5447b"
+  },
+  "blog.qmd": {
+    "blog.html": "725fd320"
+  },
+  "posts/IRL-ToM-algorithms/index.qmd": {
+    "index.html": "757a1134"
+  }
+}
