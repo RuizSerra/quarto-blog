@@ -5,18 +5,21 @@ about:
   template: trestles
   links:
     - icon: twitter
-      text: Twitter
+      # text: Twitter
       href: https://twitter.com/JRuizSerra
     - icon: linkedin
-      text: LinkedIn
+      # text: LinkedIn
       href: https://linkedin.com/in/RuizSerra
     - icon: github
-      text: Github
+      # text: Github
       href: https://github.com/RuizSerra
+    - icon: envelope-fill
+      # text: E-mail
+      href: mailto:jaime.ruizserra@sydney.edu.au
+
 ---
 
 I am a PhD candidate with the *Modelling and Simulation Research Group* at the [Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html), The University of Sydney.
-
 
 
 ## Selected Publications
