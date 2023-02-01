@@ -6,7 +6,7 @@ website:
   title: "Jaime Ruiz Serra"
   navbar:
     right:
-      - about.qmd
+      # - about.qmd
       - blog.qmd
   page-footer:
     center: 
