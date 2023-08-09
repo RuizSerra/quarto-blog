@@ -4,14 +4,16 @@ image: img/little-jaime-square.png
 about:
   template: trestles
   links:
-    - icon: twitter
-      # text: Twitter
+    - text: "{{< iconify academicons google-scholar >}}"
+      href: https://scholar.google.com/citations?user=qkmyBJYAAAAJ
+    # - icon: twitter
+    - text: "{{< iconify fa6-brands twitter >}}"
       href: https://twitter.com/JRuizSerra
-    - icon: linkedin
-      # text: LinkedIn
+    # - icon: linkedin
+    - text: "{{< iconify fa6-brands linkedin >}}"
       href: https://linkedin.com/in/RuizSerra
-    - icon: github
-      # text: Github
+    # - icon: github
+    - text: "{{< iconify fa6-brands github >}}"
       href: https://github.com/RuizSerra
     - icon: envelope-fill
       # text: E-mail
