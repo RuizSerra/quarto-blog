@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -45,11 +44,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -73,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -98,44 +97,16 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Jaime Ruiz Serra</span>
-    </a>
-  </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page">
- <span class="menu-text">Blog</span></a>
-  </li>  
-</ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="computer-vision">computer-vision <span class="quarto-category-count">(1)</span></div><div class="category" data-category="conferences">conferences <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="governance">governance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="publications">publications <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -172,13 +143,6 @@ Complexity, Criticality, Computation Symposium (C3) 2023
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('conferences'); return false;">
-conferences
-</div>
-</div>
-<a href="./posts/C3-2023-symposium/index.html">
 <div class="listing-description">
 The C3-2023 Symposium took place in Heron Island, QLD, Australia, in…
 </div>
@@ -207,13 +171,6 @@ Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theo
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('publications'); return false;">
-publications
-</div>
-</div>
-<a href="./posts/IRL-ToM-algorithms/index.html">
 <div class="listing-description">
 Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social…
 </div>
@@ -242,19 +199,6 @@ Finding the vanishing point in images
 <div class="listing-subtitle">
 Simple method to find vanishing points in images with Canny, Hough
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('computer-vision'); return false;">
-computer-vision
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('programming'); return false;">
-programming
-</div>
-</div>
-<a href="./posts/vanishing-point-images/index.html">
 <div class="listing-description">
 First download a sample image.
 </div>
@@ -287,16 +231,6 @@ An End to Exporting Entropy and Obscuring Accountability
 <div class="listing-subtitle">
 Value system and outlook alternatives to capitalism
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ethics'); return false;">
-ethics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('governance'); return false;">
-governance
-</div>
-</div>
-<a href="./posts/end-exporting-entropy-obscuring-accountability/index.html">
 <div class="listing-description">
 Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to…
 </div>
@@ -329,16 +263,6 @@ Towards an Ecological Ethics
 <div class="listing-subtitle">
 On the relationship between entropy, free-will, and ethics
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ethics'); return false;">
-ethics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('governance'); return false;">
-governance
-</div>
-</div>
-<a href="./posts/towards-ecological-ethics/index.html">
 <div class="listing-description">
 As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order…
 </div>
@@ -609,32 +533,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-      <div class="nav-footer-center">
-        <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/JRuizSerra">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/RuizSerra">
-      <i class="bi bi-linkedin" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/RuizSerra">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-      </div>
-  </div>
-</footer>
 
 
 

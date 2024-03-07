@@ -37,36 +37,36 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About",
+    "title": "Jaime Ruiz Serra",
     "section": "",
-    "text": "I am a PhD candidate with the Modelling and Simulation Research Group at the Centre for Complex Systems, The University of Sydney."
-  },
-  {
-    "objectID": "index.html#selected-publications",
-    "href": "index.html#selected-publications",
-    "title": "About",
-    "section": "Selected Publications",
-    "text": "Selected Publications\nRuiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In Proceedings of the 2022 Australasian Conference on Robotics and Automation (ACRA 2022). Brisbane, Australia, December 2022. arXiv:2209.07043"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\nThe University of Sydney (Sydney, AU)\nPhD, Computational Economics\nOct 2022, Present\nMITx on edX (Online)\nMicroMasters, Statistics and Data Science\nMar 2021, Nov 2022\nSwinburne University of Technology (Melbourne, AU)\nBEng (Hons), Robotics and Mechatronics\nFeb 2016, Dec 2020"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020, Present\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018, Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016, Sep 2017"
+    "text": "PhD candidate\nModelling and Simulation Research Group\nCentre for Complex Systems\nThe University of Sydney\nMy research leverages Agent-Based Computational Economics to explore how democratic and cooperative decision-making and ownership structures in organisations impact the economy at large. By integrating concepts from social psychology into the decision-making of individual agents in economic models, we can improve the real-world fidelity of the models and see how more participatory organizational forms influence factors such as market dynamics and wealth distribution."
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Complexity, Criticality, Computation Symposium (C3) 2023\n\n\n\n\n\n\n\nconferences\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n\n\n\n\n\npublications\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nFinding the vanishing point in images\n\n\nSimple method to find vanishing points in images with Canny, Hough\n\n\n\n\npython\n\n\ncomputer-vision\n\n\nprogramming\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2021\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\nValue system and outlook alternatives to capitalism\n\n\n\n\nethics\n\n\ngovernance\n\n\n\n\n\n\n\n\n\n\n\nMay 31, 2020\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\nOn the relationship between entropy, free-will, and ethics\n\n\n\n\nethics\n\n\ngovernance\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2020\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\nNo matching items"
+    "text": "Complexity, Criticality, Computation Symposium (C3) 2023\n\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n  \n\n\n\n\nFinding the vanishing point in images\n\n\nSimple method to find vanishing points in images with Canny, Hough\n\n\n\n\n\n\n\n\n\nOct 5, 2021\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\nValue system and outlook alternatives to capitalism\n\n\n\n\n\n\n\n\n\nMay 31, 2020\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\nOn the relationship between entropy, free-will, and ethics\n\n\n\n\n\n\n\n\n\nMay 4, 2020\n\n\nJaime Ruiz Serra\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#selected-publications",
+    "href": "index.html#selected-publications",
+    "title": "Jaime Ruiz Serra",
+    "section": "Selected Publications",
+    "text": "Selected Publications\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. ACM Trans. Multimedia Comput. Commun. Appl., 2024. DOI:10.1145/3650111\nRuiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In Proceedings of the 2022 Australasian Conference on Robotics and Automation (ACRA 2022). Brisbane, Australia, December 2022. arXiv:2209.07043"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Jaime Ruiz Serra",
+    "section": "Education",
+    "text": "Education\nThe University of Sydney (Sydney, AU)\nPhD, Computational Economics\nOct 2022 – Present\nMITx on edX (Online)\nMicroMasters, Statistics and Data Science\nMar 2021 – Nov 2022\nSwinburne University of Technology (Melbourne, AU)\nBEng (Hons), Robotics and Mechatronics\nFeb 2016 – Dec 2020\nCATC Design School (Melborune, AU)\nDipDes, Graphic Design\nJun 2013 – May 2014"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Jaime Ruiz Serra",
+    "section": "Experience",
+    "text": "Experience\nThe University of Sydney (Sydney, AU)\nTeaching Assistant, Computer Science, Complex Systems\nFeb 2023 – Present\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020 – Present\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018 – Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016 – Sep 2017"
   }
 ]

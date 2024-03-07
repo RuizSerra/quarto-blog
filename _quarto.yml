@@ -1,13 +1,15 @@
 project:
   type: website
+  resources:
+    - "index.html"
 
 website:
   favicon: img/favicon.png
   title: "Jaime Ruiz Serra"
-  navbar:
-    right:
-      # - about.qmd
-      - blog.qmd
+  # navbar:
+    # right:
+    #   # - about.qmd
+    #   - blog.qmd
   page-footer:
     center: 
       - icon: twitter
@@ -20,6 +22,6 @@ website:
 format:
   html:
     theme: 
-      light: sandstone
+      light: [sandstone, styles.scss]
       dark: darkly
     css: styles.css

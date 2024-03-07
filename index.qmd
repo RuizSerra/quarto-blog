@@ -1,13 +1,14 @@
 ---
-title: "About"
-image: img/little-jaime-square.png
+title: "Jaime Ruiz Serra"
+image: public/jaime-blurry-small1.png
 about:
-  template: trestles
+  template: jolla
+  image-shape: rectangle
   links:
     - text: "{{< iconify academicons google-scholar >}}"
       href: https://scholar.google.com/citations?user=qkmyBJYAAAAJ
     # - icon: twitter
-    - text: "{{< iconify fa6-brands twitter >}}"
+    - text: "{{< iconify fa6-brands x-twitter >}}"
       href: https://twitter.com/JRuizSerra
     # - icon: linkedin
     - text: "{{< iconify fa6-brands linkedin >}}"
@@ -18,13 +19,29 @@ about:
     - icon: envelope-fill
       # text: E-mail
       href: mailto:jaime.ruizserra@sydney.edu.au
+    - text: blog
+      href: /blog.html
 
 ---
 
-I am a PhD candidate with the *Modelling and Simulation Research Group* at the [Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html), The University of Sydney.
+
+*PhD candidate*   
+Modelling and Simulation Research Group  
+[Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html)  
+The University of Sydney
+
+My research leverages **Agent-Based Computational Economics** to explore how democratic 
+and cooperative decision-making and ownership structures in organisations impact 
+the economy at large. By integrating concepts from social psychology into the 
+decision-making of individual agents in economic models, we can improve the 
+real-world fidelity of the models and see how more **participatory organizational forms** 
+influence factors such as market dynamics and wealth distribution.
+
 
 
 ## Selected Publications
+
+Ruiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
 
 Ruiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023, *16*, 68. [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
 
@@ -34,27 +51,39 @@ Ruiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention 
 
 **The University of Sydney** (Sydney, AU)  
 PhD, *Computational Economics*  
-Oct 2022, *Present*
+Oct 2022 -- *Present*
 
 **MITx on edX** (Online)  
 MicroMasters, *Statistics and Data Science*  
-Mar 2021, Nov 2022
+Mar 2021 -- Nov 2022
 
 **Swinburne University of Technology** (Melbourne, AU)  
 BEng (Hons), *Robotics and Mechatronics*  
-Feb 2016, Dec 2020  
+Feb 2016 -- Dec 2020 
+
+**CATC Design School** (Melborune, AU)  
+DipDes, *Graphic Design*  
+Jun 2013 -- May 2014
+
+
+
+
 
 ## Experience
 
+**The University of Sydney** (Sydney, AU)  
+Teaching Assistant, *Computer Science, Complex Systems*  
+Feb 2023 -- *Present*
+
 **Swinburne University of Technology** (Remote/Melbourne, AU)  
 Research Assistant, *Deep Reinforcement Learning, Computer Vision*  
-Sep 2020, *Present*
+Sep 2020 -- *Present*
 
 **National Australia Bank** (Remote/Melbourne, AU)  
 Analyst, Engineer, *Cloud Infrastructure (AWS)*  
-Jan 2018, Sep 2020
+Jan 2018 -- Sep 2020
 
 **Youth Without Borders** (Melbourne, AU)  
 Victoria Staffing Manager, *Spark Engineering Camp*  
-Nov 2016, Sep 2017
+Nov 2016 -- Sep 2017
 
