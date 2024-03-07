@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jaime Ruiz Serra">
-<meta name="dcterms.date" content="2020-05-04">
+<meta name="dcterms.date" content="2024-03-03">
 
-<title>Jaime Ruiz Serra - Towards an Ecological Ethics</title>
+<title>Jaime Ruiz Serra - Learning scene representations for human-assistive displays using self-attention networks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -92,12 +72,18 @@ div.csl-indent {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Jaime Ruiz Serra - Towards an Ecological Ethics">
-<meta property="og:description" content="On the relationship between entropy, free-will, and ethics">
+<meta property="og:title" content="Jaime Ruiz Serra - Learning scene representations for human-assistive displays using self-attention networks">
+<meta property="og:description" content="Jaime Ruiz Serra’s personal website">
+<meta property="og:image" content="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png">
 <meta property="og:site_name" content="Jaime Ruiz Serra">
-<meta name="twitter:title" content="Jaime Ruiz Serra - Towards an Ecological Ethics">
-<meta name="twitter:description" content="On the relationship between entropy, free-will, and ethics">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="1182">
+<meta property="og:image:width" content="1252">
+<meta name="twitter:title" content="Jaime Ruiz Serra - Learning scene representations for human-assistive displays using self-attention networks">
+<meta name="twitter:description" content="Jaime Ruiz Serra’s personal website">
+<meta name="twitter:image" content="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png">
+<meta name="twitter:image-height" content="1182">
+<meta name="twitter:image-width" content="1252">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -131,11 +117,10 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Towards an Ecological Ethics</h1>
-            <p class="subtitle lead">On the relationship between entropy, free-will, and ethics</p>
+      <h1 class="title">Learning scene representations for human-assistive displays using self-attention networks</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">ethics</div>
-                <div class="quarto-category">governance</div>
+                <div class="quarto-category">publications</div>
+                <div class="quarto-category">computer-vision</div>
               </div>
                   </div>
   </div>
@@ -153,7 +138,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 4, 2020</p>
+        <p class="date">March 3, 2024</p>
       </div>
     </div>
     
@@ -174,55 +159,29 @@ div.csl-indent {
 
 
 
-<p>As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order to ensure I can continue to pay my university fees, rent, bills and the like. “Perhaps I might even be able to do some travel if I am conservative enough with my spending”, is my teleological rationale. On the other hand, I am aware that cheaper consumer products often come at a cost of being less healthy, produced by big industrial corporations, and more damaging to the environment (for instance, using unsustainable ingredients like palm oil, overseas manufacturing and its carbon footprint, and/or cheaper non-recyclable packaging).</p>
-<p>The industrial complex, as a system, requires input (capital, raw materials) to produce its output and continue to thrive. Consumers provide the capital and nature provides the raw materials. In the process, they become instruments for the production of prestige goods and weapons in the interest of domination by the ruling class <span class="citation" data-cites="Gare2010">Gare (<a href="#ref-Gare2010" role="doc-biblioref">2010</a>)</span>. One of the astonishing phenomena by which this dynamic is perpetuated are heavily processed foods. These are a manifestation of our technological prowess, in the sense that they exploit the <em>principle of least action</em>, whereby systems (in this case, humans) have a tendency to increase their potential energy while trying to minimise any action (e.g.&nbsp;movement) <span class="citation" data-cites="Feynman1964">Feynman (<a href="#ref-Feynman1964" role="doc-biblioref">1964</a>)</span>, <span class="citation" data-cites="Das2013">Das (<a href="#ref-Das2013" role="doc-biblioref">2013</a>)</span>. The consumption of such products is made easy by their cheap and time-saving qualities (both in the preparation and procuring thereof) <span class="citation" data-cites="Pollan2013">Pollan (<a href="#ref-Pollan2013" role="doc-biblioref">2013</a>)</span>.</p>
-<p>Closely related to the principle of least action is <em>entropy</em>, or amount of chaos. The second law of thermodynamics states that “the entropy in an isolated system can increase but not decrease” <span class="citation" data-cites="Wehrl1978">Wehrl (<a href="#ref-Wehrl1978" role="doc-biblioref">1978</a>)</span>. Open thermodynamic systems such as living organisms, however, are able to reduce their local entropy through increasing that of their environment, with a resultant net increase in entropy overall<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Thus once again humanity as a whole—by means of industrial streamlining of production—continues to exploit this phenomenon to our immediate benefit and long term detriment of our habitat (and, unwittingly, of ourselves).</p>
-<p>So we find ourselves at a critical time at the <em>edge of chaos</em> <span class="citation" data-cites="McLaren2009">McLaren (<a href="#ref-McLaren2009" role="doc-biblioref">2009</a>)</span>. Within the limited conditions in which life and order are possible, equilibrium is delicate<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We need to change our ways to ensure the long term prosperity of our environment (and through it, of ourselves). I believe that a powerful way in which we can assert our free will is by acting against the principle of least action.</p>
-<p>We are privileged to have a wealth of knowledge and connectedness at our disposal (largely as a result of industrial civilisation), which we can deploy as local, small scale, sustainable production of sustenance and goods, working in communities within communities, as suggested by the likes of Chomsky <span class="citation" data-cites="Chomsky1971">Chomsky and Foucault (<a href="#ref-Chomsky1971" role="doc-biblioref">1971</a>)</span>, and Bookchin <span class="citation" data-cites="Bookchin1987">Bookchin (<a href="#ref-Bookchin1987" role="doc-biblioref">1987</a>)</span>.</p>
-<p>In order to make an impact in the correction of our course as a species, a critical mass of people willing to inspire change is required. It is our role as thinkers to convince our fellow humans that everyone has a stake, that democracy manifests in subtle ways, and that every action counts. A way to inspire people to act might be to romanticise <em>production</em> as we have <em>consumption</em>—for which we would have to overcome the principle of least action—making it desirable, commendable. This is achievable through an Aristotelian virtue ethics.</p>
+<blockquote class="blockquote">
+<p>Video-see-through (VST) augmented reality (AR) is widely used to present novel augmentative visual experiences by processing video frames for viewers. Among VST AR systems, assistive vision displays aim to compensate for low vision or blindness, presenting enhanced visual information to support activities of daily living for the vision impaired/deprived. Despite progress, current assistive displays suffer from a visual information bottleneck, limiting their functional outcomes compared to healthy vision. This motivates the exploration of methods to selectively enhance and augment salient visual information. Traditionally, vision processing pipelines for assistive displays rely on hand-crafted, single-modality filters, lacking adaptability to time-varying and environment-dependent needs. This paper proposes the use of Deep Reinforcement Learning (DRL) and Self-attention (SA) networks as a means to learn vision processing pipelines for assistive displays. SA networks selectively attend to task-relevant features, offering a more parameter- and compute-efficient approach to RL-based task learning. We assess the feasibility of using SA networks in a simulation-trained model to generate relevant representations of real-world states for navigation with prosthetic vision displays. We explore two prosthetic vision applications, vision-to-auditory encoding, and retinal prostheses, using simulated phosphene visualisations. This paper introduces SA-px, a general-purpose vision processing pipeline using self-attention networks, and SA-phos, a display-specific formulation targeting low-resolution assistive displays. We present novel scene visualisations derived from SA image patches importance rankings to support mobility with prosthetic vision devices. To the best of our knowledge, this is the first application of self-attention networks to the task of learning vision processing pipelines for prosthetic vision or assistive displays.</p>
+</blockquote>
+<p>Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em>, Free access, <a href="https://doi.org/10.1145/3650111">DOI:10.1145/3650111</a>.</p>
+<p>Citation:</p>
+<pre><code>@article{10.1145/3650111,
+author = {Ruiz-Serra, Jaime and White, Jack and Petrie, Stephen and Kameneva, Tatiana and McCarthy, Chris},
+title = {Learning scene representations for human-assistive displays using self-attention networks},
+year = {2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1551-6857},
+url = {https://doi.org/10.1145/3650111},
+doi = {10.1145/3650111},
+note = {Just Accepted},
+journal = {ACM Trans. Multimedia Comput. Commun. Appl.},
+month = {mar},
+keywords = {vision processing, deep reinforcement learning, prosthetic vision, display algorithms}
+}</code></pre>
 
 
 
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Bookchin1987" class="csl-entry" role="listitem">
-Bookchin, Murray. 1987. <span>“<span class="nocase">Social Ecology versus "Deep Ecology": A Challenge for the Ecology Movement</span>.”</span> <em>Green Perspectives: Newsletter of the Green Progra Project</em>, no. 4, 5: 1–22. <a href="http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html">http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html</a>.
-</div>
-<div id="ref-Chomsky1971" class="csl-entry" role="listitem">
-Chomsky, Noam, and Michel Foucault. 1971. <span>“<span class="nocase">Human Nature: Justice versus Power, Noam Chomsky debates with Michel Foucault</span>.”</span> <a href="https://chomsky.info/1971xxxx/">https://chomsky.info/1971xxxx/</a>.
-</div>
-<div id="ref-Das2013" class="csl-entry" role="listitem">
-Das, K K. 2013. <em><span class="nocase">The Quantum Guide to Life: How the Laws of Physics Explain Our Lives from Laziness to Love</span></em>. Skyhorse Publishing. <a href="https://books.google.com.au/books?id=LgMnAgAAQBAJ">https://books.google.com.au/books?id=LgMnAgAAQBAJ</a>.
-</div>
-<div id="ref-Feynman1964" class="csl-entry" role="listitem">
-Feynman, Richard. 1964. <span>“<span class="nocase">The Principle of Least Action</span>.”</span> <a href="https://www.feynmanlectures.caltech.edu/II{\_}19.html">https://www.feynmanlectures.caltech.edu/II{\_}19.html</a>.
-</div>
-<div id="ref-Gare2010" class="csl-entry" role="listitem">
-Gare, Arran. 2010. <span>“<span class="nocase">Toward an Ecological Civilization: The Science, Ethics, and Politics of Eco-Poiesis</span>.”</span> <em>Process Studies</em> 39 (1): 5–38. <a href="https://doi.org/10.5840/process20103912">https://doi.org/10.5840/process20103912</a>.
-</div>
-<div id="ref-Hawking2009" class="csl-entry" role="listitem">
-Hawking, Stephen. 2009. <em><span class="nocase">A brief history of time: from big bang to black holes</span></em>. Random House.
-</div>
-<div id="ref-McLaren2009" class="csl-entry" role="listitem">
-McLaren, G. 2009. <span>“<span class="nocase">Climate Change and Some Other Implications of Vibratory Existence</span>.”</span> <em>Cosmos and History: The Journal of Natural and Social Philosophy</em> 5 (2): 134. <a href="http://cosmosandhistory.org/index.php/journal/article/view/146/253">http://cosmosandhistory.org/index.php/journal/article/view/146/253</a>.
-</div>
-<div id="ref-Pollan2013" class="csl-entry" role="listitem">
-Pollan, Michael. 2013. <em><span class="nocase">Cooked: A Natural History of Transformation</span></em>. Allen Lane.
-</div>
-<div id="ref-Rosso2007" class="csl-entry" role="listitem">
-Rosso, O. A., H. A. Larrondo, M. T. Martin, A. Plastino, and M. A. Fuentes. 2007. <span>“<span class="nocase">Distinguishing noise from chaos</span>.”</span> <em>Physical Review Letters</em> 99 (15): 1–4. <a href="https://doi.org/10.1103/PhysRevLett.99.154102">https://doi.org/10.1103/PhysRevLett.99.154102</a>.
-</div>
-<div id="ref-Wehrl1978" class="csl-entry" role="listitem">
-Wehrl, Alfred. 1978. <span>“<span class="nocase">General properties of entropy</span>.”</span> <em>Reviews of Modern Physics</em> 50 (2): 221–60. <a href="https://doi.org/10.1103/RevModPhys.50.221">https://doi.org/10.1103/RevModPhys.50.221</a>.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>It is important to note here that there is no escaping the arrow of time <span class="citation" data-cites="Hawking2009">Hawking (<a href="#ref-Hawking2009" role="doc-biblioref">2009</a>)</span>. It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>I invite the reader to consider the relationship between complexity and entropy, as outlined in <span class="citation" data-cites="Rosso2007">Rosso et al. (<a href="#ref-Rosso2007" role="doc-biblioref">2007</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

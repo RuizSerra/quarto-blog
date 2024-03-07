@@ -34,5 +34,8 @@
   },
   "posts/index.qmd": {
     "index.html": "b9fdeba8"
+  },
+  "posts/ACM-TOMM-selfattention/index.qmd": {
+    "index.html": "9ad578f0"
   }
 }

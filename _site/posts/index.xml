@@ -10,7 +10,46 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sun, 22 Jan 2023 13:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 02 Mar 2024 13:00:00 GMT</lastBuildDate>
+<item>
+  <title>Learning scene representations for human-assistive displays using self-attention networks</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/ACM-TOMM-selfattention/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<blockquote class="blockquote">
+<p>Video-see-through (VST) augmented reality (AR) is widely used to present novel augmentative visual experiences by processing video frames for viewers. Among VST AR systems, assistive vision displays aim to compensate for low vision or blindness, presenting enhanced visual information to support activities of daily living for the vision impaired/deprived. Despite progress, current assistive displays suffer from a visual information bottleneck, limiting their functional outcomes compared to healthy vision. This motivates the exploration of methods to selectively enhance and augment salient visual information. Traditionally, vision processing pipelines for assistive displays rely on hand-crafted, single-modality filters, lacking adaptability to time-varying and environment-dependent needs. This paper proposes the use of Deep Reinforcement Learning (DRL) and Self-attention (SA) networks as a means to learn vision processing pipelines for assistive displays. SA networks selectively attend to task-relevant features, offering a more parameter- and compute-efficient approach to RL-based task learning. We assess the feasibility of using SA networks in a simulation-trained model to generate relevant representations of real-world states for navigation with prosthetic vision displays. We explore two prosthetic vision applications, vision-to-auditory encoding, and retinal prostheses, using simulated phosphene visualisations. This paper introduces SA-px, a general-purpose vision processing pipeline using self-attention networks, and SA-phos, a display-specific formulation targeting low-resolution assistive displays. We present novel scene visualisations derived from SA image patches importance rankings to support mobility with prosthetic vision devices. To the best of our knowledge, this is the first application of self-attention networks to the task of learning vision processing pipelines for prosthetic vision or assistive displays.</p>
+</blockquote>
+<p>Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em>, Free access, <a href="https://doi.org/10.1145/3650111">DOI:10.1145/3650111</a>.</p>
+<p>Citation:</p>
+<pre><code>@article{10.1145/3650111,
+author = {Ruiz-Serra, Jaime and White, Jack and Petrie, Stephen and Kameneva, Tatiana and McCarthy, Chris},
+title = {Learning scene representations for human-assistive displays using self-attention networks},
+year = {2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1551-6857},
+url = {https://doi.org/10.1145/3650111},
+doi = {10.1145/3650111},
+note = {Just Accepted},
+journal = {ACM Trans. Multimedia Comput. Commun. Appl.},
+month = {mar},
+keywords = {vision processing, deep reinforcement learning, prosthetic vision, display algorithms}
+}</code></pre>
+
+
+
+ ]]></description>
+  <category>publications</category>
+  <category>computer-vision</category>
+  <guid>https://jaime.rs/posts/ACM-TOMM-selfattention/</guid>
+  <pubDate>Sat, 02 Mar 2024 13:00:00 GMT</pubDate>
+  <media:content url="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png" medium="image" type="image/png" height="136" width="144"/>
+</item>
 <item>
   <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>
@@ -36,6 +75,7 @@
   <dc:creator>Jaime Ruiz Serra</dc:creator>
   <link>https://jaime.rs/posts/IRL-ToM-algorithms/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -684,6 +724,7 @@ font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)<
 
 
 
+
 <p>Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to basic services, and a hazardous living environment. It is widely accepted that globalisation is a major contributing factor to the causes of poverty. If we are to mitigate its effects, a change in the personal values and outlook of all involved in capitalism is required. Through this essay I argue that a change in our attitudes, based on a syncretisation of Epicurean virtue ethics and secular Buddhist practices, can provide the necessary course correction for a more equitable and sustainable system within the context of capitalism.</p>
 <p>Projections by the World Bank estimate that, by the year 2030, the number of people in extreme poverty in Asia will be vastly reduced. On the other hand, their projections also estimate the number of people in extreme poverty to grow in Africa and the Middle East, and to remain the same in Latin America <span class="citation" data-cites="WorldBankGroup2018">World Bank Group (2018)</span>. In an age where some of us can summon just about any kind (and amount) of food to our doorstep with a few finger swipes and taps, and subsequently make the resulting detritus vanish (without bothering to separate it for recycling or thinking about where it goes), these numbers are appalling.</p>
 <p>And yet, since all that is required for those born into privilege to opt into this lifestyle is little more than going through the motions of the Hobbesian social contract, they see no incentive to change their ways nor the system they are part of. Thus new generations go on to become gears in the neoliberal machine, which has its foundations in imperialist colonialism, emerging in the 16th century alongside the mechanistic view that saw nature as something to be subjugated, exacerbated by misconstruing John Locke’s property rights<sup>1</sup>, and which continues to this date to instigate poverty and depletion of natural resources. The exporting of entropy and obscuring of accountability are key features of the sleight of hand—the invisible hand—with which neoliberalism perpetrates systematic, large scale manslaughter<sup>2</sup> <span class="citation" data-cites="Leech2012">Leech (2012)</span>.</p>
@@ -712,7 +753,7 @@ font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)<
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
 <div id="ref-Gare2009" class="csl-entry">
 Gare, A. 2009. <span>“<span class="nocase">Philosophical Anthropology, Ethics and Political Philosophy in an Age of Impending Catastrophe.</span>”</span> <em>Cosmos <span>&amp;</span> History</em> 5 (2): 1–17.
 </div>

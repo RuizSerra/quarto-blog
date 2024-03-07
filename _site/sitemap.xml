@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jaime.rs/index.html</loc>
-    <lastmod>2024-03-07T23:35:07.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jaime.rs/blog.html</loc>
-    <lastmod>2024-03-07T23:09:38.207Z</lastmod>
+    <lastmod>2024-03-07T23:39:25.199Z</lastmod>
   </url>
   <url>
     <loc>https://jaime.rs/posts/C3-2023-symposium/index.html</loc>
     <lastmod>2023-01-23T03:12:53.842Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/index.html</loc>
-    <lastmod>2024-03-07T23:09:10.156Z</lastmod>
+    <loc>https://jaime.rs/posts/ACM-TOMM-selfattention/index.html</loc>
+    <lastmod>2024-03-07T23:37:45.993Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/IRL-ToM-algorithms/index.html</loc>
-    <lastmod>2024-03-07T23:02:11.011Z</lastmod>
+    <loc>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/index.html</loc>
+    <lastmod>2023-01-23T06:34:34.396Z</lastmod>
   </url>
   <url>
     <loc>https://jaime.rs/posts/vanishing-point-images/index.html</loc>
     <lastmod>2023-01-23T06:33:54.024Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/towards-ecological-ethics/index.html</loc>
-    <lastmod>2023-01-23T06:33:57.739Z</lastmod>
+    <loc>https://jaime.rs/posts/IRL-ToM-algorithms/index.html</loc>
+    <lastmod>2023-01-23T03:26:25.240Z</lastmod>
   </url>
   <url>
     <loc>https://jaime.rs/posts/index.html</loc>
-    <lastmod>2024-03-07T23:37:20.719Z</lastmod>
+    <lastmod>2024-03-07T23:40:26.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaime.rs/posts/towards-ecological-ethics/index.html</loc>
+    <lastmod>2023-01-23T06:33:57.739Z</lastmod>
   </url>
 </urlset>
