@@ -6,7 +6,7 @@ listing:
   type: grid #default
   # type: default
   fields: [date, title, reading-time, description]
-  categories: false
+  categories: true
   sort-ui: false
   filter-ui: false
   feed: true

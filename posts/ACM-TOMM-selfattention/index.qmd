@@ -1,0 +1,31 @@
+---
+title: "Learning scene representations for human-assistive displays using self-attention networks"
+author: "Jaime Ruiz Serra"
+date: "2024-03-03"
+categories: 
+    - publications
+    - computer-vision
+image: ACM-TOMM-diagram.png
+---
+
+> Video-see-through (VST) augmented reality (AR) is widely used to present novel augmentative visual experiences by processing video frames for viewers. Among VST AR systems, assistive vision displays aim to compensate for low vision or blindness, presenting enhanced visual information to support activities of daily living for the vision impaired/deprived. Despite progress, current assistive displays suffer from a visual information bottleneck, limiting their functional outcomes compared to healthy vision. This motivates the exploration of methods to selectively enhance and augment salient visual information. Traditionally, vision processing pipelines for assistive displays rely on hand-crafted, single-modality filters, lacking adaptability to time-varying and environment-dependent needs. This paper proposes the use of Deep Reinforcement Learning (DRL) and Self-attention (SA) networks as a means to learn vision processing pipelines for assistive displays. SA networks selectively attend to task-relevant features, offering a more parameter- and compute-efficient approach to RL-based task learning. We assess the feasibility of using SA networks in a simulation-trained model to generate relevant representations of real-world states for navigation with prosthetic vision displays. We explore two prosthetic vision applications, vision-to-auditory encoding, and retinal prostheses, using simulated phosphene visualisations. This paper introduces SA-px, a general-purpose vision processing pipeline using self-attention networks, and SA-phos, a display-specific formulation targeting low-resolution assistive displays. We present novel scene visualisations derived from SA image patches importance rankings to support mobility with prosthetic vision devices. To the best of our knowledge, this is the first application of self-attention networks to the task of learning vision processing pipelines for prosthetic vision or assistive displays.
+
+Published in *ACM Transactions on Multimedia Computing, Communications, and Applications*, Free access, [DOI:10.1145/3650111](https://doi.org/10.1145/3650111).
+
+Citation:
+```
+@article{10.1145/3650111,
+author = {Ruiz-Serra, Jaime and White, Jack and Petrie, Stephen and Kameneva, Tatiana and McCarthy, Chris},
+title = {Learning scene representations for human-assistive displays using self-attention networks},
+year = {2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1551-6857},
+url = {https://doi.org/10.1145/3650111},
+doi = {10.1145/3650111},
+note = {Just Accepted},
+journal = {ACM Trans. Multimedia Comput. Commun. Appl.},
+month = {mar},
+keywords = {vision processing, deep reinforcement learning, prosthetic vision, display algorithms}
+}
+```

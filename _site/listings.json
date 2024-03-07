@@ -12,6 +12,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/ACM-TOMM-selfattention/index.html",
       "/posts/C3-2023-symposium/index.html",
       "/posts/IRL-ToM-algorithms/index.html",
       "/posts/vanishing-point-images/index.html",
