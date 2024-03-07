@@ -21,10 +21,11 @@
 
 
 
+<p>Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em><br>
+Free access, <a href="https://doi.org/10.1145/3650111">DOI:10.1145/3650111</a></p>
 <blockquote class="blockquote">
 <p>Video-see-through (VST) augmented reality (AR) is widely used to present novel augmentative visual experiences by processing video frames for viewers. Among VST AR systems, assistive vision displays aim to compensate for low vision or blindness, presenting enhanced visual information to support activities of daily living for the vision impaired/deprived. Despite progress, current assistive displays suffer from a visual information bottleneck, limiting their functional outcomes compared to healthy vision. This motivates the exploration of methods to selectively enhance and augment salient visual information. Traditionally, vision processing pipelines for assistive displays rely on hand-crafted, single-modality filters, lacking adaptability to time-varying and environment-dependent needs. This paper proposes the use of Deep Reinforcement Learning (DRL) and Self-attention (SA) networks as a means to learn vision processing pipelines for assistive displays. SA networks selectively attend to task-relevant features, offering a more parameter- and compute-efficient approach to RL-based task learning. We assess the feasibility of using SA networks in a simulation-trained model to generate relevant representations of real-world states for navigation with prosthetic vision displays. We explore two prosthetic vision applications, vision-to-auditory encoding, and retinal prostheses, using simulated phosphene visualisations. This paper introduces SA-px, a general-purpose vision processing pipeline using self-attention networks, and SA-phos, a display-specific formulation targeting low-resolution assistive displays. We present novel scene visualisations derived from SA image patches importance rankings to support mobility with prosthetic vision devices. To the best of our knowledge, this is the first application of self-attention networks to the task of learning vision processing pipelines for prosthetic vision or assistive displays.</p>
 </blockquote>
-<p>Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em>, Free access, <a href="https://doi.org/10.1145/3650111">DOI:10.1145/3650111</a>.</p>
 <p>Citation:</p>
 <pre><code>@article{10.1145/3650111,
 author = {Ruiz-Serra, Jaime and White, Jack and Petrie, Stephen and Kameneva, Tatiana and McCarthy, Chris},
@@ -80,10 +81,11 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
 
 
 
+<p>Published in <em>MDPI Algorithms</em><br>
+Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</a></p>
 <blockquote class="blockquote">
 <p>Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.</p>
 </blockquote>
-<p>Published in MDPI Algorithms, Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</a>.</p>
 <p>Citation:</p>
 <pre><code>@article{Ruiz-Serra2023InverseReinforcement,
   title = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}: {{Current Methods}} and {{Open Problems}}},
@@ -104,6 +106,9 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
 
  ]]></description>
   <category>publications</category>
+  <category>reinforcement-learning</category>
+  <category>theory-of-mind</category>
+  <category>multi-agent</category>
   <guid>https://jaime.rs/posts/IRL-ToM-algorithms/</guid>
   <pubDate>Wed, 18 Jan 2023 13:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/IRL-ToM-algorithms/paper-thumbnail.jpeg" medium="image" type="image/jpeg"/>

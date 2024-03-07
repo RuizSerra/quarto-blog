@@ -2,13 +2,19 @@
 title: "Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind"
 author: "Jaime Ruiz Serra"
 date: "2023-01-19"
-categories: [publications]
+categories: 
+  - publications
+  - reinforcement-learning
+  - theory-of-mind
+  - multi-agent
 image: paper-thumbnail.jpeg
 ---
 
+Published in *MDPI Algorithms*  
+Open Access, [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
+
 > Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.
 
-Published in MDPI Algorithms, Open Access, [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068).
 
 Citation:
 ```
