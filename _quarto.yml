@@ -4,7 +4,7 @@ project:
     - "index.html"
 
 website:
-  favicon: img/favicon.png
+  favicon: public/jaime-blurry-small-300h.png
   title: "Jaime Ruiz Serra"
   # navbar:
     # right:
