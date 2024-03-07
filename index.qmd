@@ -47,21 +47,23 @@ Ruiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis
 
 Ruiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In *Proceedings of the 2022 Australasian Conference on Robotics and Automation* (ACRA 2022). Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
 
+*More on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ)*
+
 ## Education
 
-**The University of Sydney** (Sydney, AU)  
+The University of Sydney (Sydney, AU)  
 PhD, *Computational Economics*  
 Oct 2022 -- *Present*
 
-**MITx on edX** (Online)  
+MITx on edX (Online)  
 MicroMasters, *Statistics and Data Science*  
 Mar 2021 -- Nov 2022
 
-**Swinburne University of Technology** (Melbourne, AU)  
+Swinburne University of Technology (Melbourne, AU)  
 BEng (Hons), *Robotics and Mechatronics*  
 Feb 2016 -- Dec 2020 
 
-**CATC Design School** (Melborune, AU)  
+CATC Design School (Melborune, AU)  
 DipDes, *Graphic Design*  
 Jun 2013 -- May 2014
 
@@ -71,19 +73,20 @@ Jun 2013 -- May 2014
 
 ## Experience
 
-**The University of Sydney** (Sydney, AU)  
+The University of Sydney (Sydney, AU)  
 Teaching Assistant, *Computer Science, Complex Systems*  
 Feb 2023 -- *Present*
 
-**Swinburne University of Technology** (Remote/Melbourne, AU)  
+Swinburne University of Technology (Remote/Melbourne, AU)  
 Research Assistant, *Deep Reinforcement Learning, Computer Vision*  
 Sep 2020 -- *Present*
 
-**National Australia Bank** (Remote/Melbourne, AU)  
+National Australia Bank (Remote/Melbourne, AU)  
 Analyst, Engineer, *Cloud Infrastructure (AWS)*  
 Jan 2018 -- Sep 2020
 
-**Youth Without Borders** (Melbourne, AU)  
+Youth Without Borders (Melbourne, AU)  
 Victoria Staffing Manager, *Spark Engineering Camp*  
 Nov 2016 -- Sep 2017
 
+*Visit my [LinkedIn](https://linkedin.com/in/ruizserra)*

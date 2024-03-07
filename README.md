@@ -1,3 +1,5 @@
 # quarto-blog
 
-Hosted on Netlify
+Hosted on Netlify. Deployed automatically from GitHub.
+
+Simply commit and push to the main branch.

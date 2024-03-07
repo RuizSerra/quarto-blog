@@ -6,10 +6,8 @@ project:
 website:
   favicon: public/jaime-blurry-small-300h.png
   title: "Jaime Ruiz Serra"
-  # navbar:
-    # right:
-    #   # - about.qmd
-    #   - blog.qmd
+  site-url: https://jaime.rs
+  description: "Jaime Ruiz Serra's personal website"
   page-footer:
     center: 
       - icon: twitter
@@ -18,10 +16,21 @@ website:
         href: https://linkedin.com/in/RuizSerra
       - icon: github
         href: https://github.com/RuizSerra
+  twitter-card: true
+  open-graph: true
 
 format:
   html:
     theme: 
-      light: [sandstone, styles.scss]
-      dark: darkly
-    css: styles.css
+      - default
+      - styles.scss
+      # light: [default, styles.scss]
+      # dark: darkly
+    # css: styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    toc-float: true
+    toc_smooth_scroll: true
+    toc_highlight: true
+    email-obfuscation: javascript
