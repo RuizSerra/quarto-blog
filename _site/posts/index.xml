@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Jaime Ruiz Serra</title>
+<link>https://jaime.rs/posts/</link>
+<atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
+<description>Jaime Ruiz Serra&#39;s personal website</description>
+<generator>quarto-1.4.551</generator>
+<lastBuildDate>Sun, 22 Jan 2023 13:00:00 GMT</lastBuildDate>
+<item>
+  <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/C3-2023-symposium/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://jaime.rs/posts/C3-2023-symposium/c3-group.jpg" class="img-fluid"></p>
+<p>The <a href="https://www.sydney.edu.au/science/our-research/research-centres/centre-for-complex-systems/c3-symposia.html">C3-2023 Symposium</a> took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation.</p>
+
+
+
+ ]]></description>
+  <category>conferences</category>
+  <guid>https://jaime.rs/posts/C3-2023-symposium/</guid>
+  <pubDate>Sun, 22 Jan 2023 13:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/IRL-ToM-algorithms/</link>
+  <description><![CDATA[ 
+
+
+
+
+<blockquote class="blockquote">
+<p>Theory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.</p>
+</blockquote>
+<p>Published in MDPI Algorithms, Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</a>.</p>
+<p>Citation:</p>
+<pre><code>@article{Ruiz-Serra2023InverseReinforcement,
+  title = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}: {{Current Methods}} and {{Open Problems}}},
+  shorttitle = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}},
+  author = {{Ruiz-Serra}, Jaime and Harr{\'e}, Michael S.},
+  year = {2023},
+  month = feb,
+  journal = {Algorithms},
+  volume = {16},
+  number = {2},
+  pages = {68},
+  publisher = {{Multidisciplinary Digital Publishing Institute}},
+  issn = {1999-4893},
+  doi = {10.3390/a16020068}
+}</code></pre>
+
+
+
+ ]]></description>
+  <category>publications</category>
+  <guid>https://jaime.rs/posts/IRL-ToM-algorithms/</guid>
+  <pubDate>Wed, 18 Jan 2023 13:00:00 GMT</pubDate>
+  <media:content url="https://jaime.rs/posts/IRL-ToM-algorithms/paper-thumbnail.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Finding the vanishing point in images</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/vanishing-point-images/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="find-vanishing-point-in-image-1-point-perspective" class="level1">
+<h1>Find vanishing point in image (1 point perspective)</h1>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span>matplotlib inline</span></code></pre></div>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> cv2</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb2-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> urllib</span>
+<span id="cb2-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div>
+<section id="get-sample-image" class="level2">
+<h2 class="anchored" data-anchor-id="get-sample-image">Get sample image</h2>
+<p>First download a sample image.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">def</span> get_image_from_url(url):</span>
+<span id="cb3-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""https://stackoverflow.com/a/3969809"""</span></span>
+<span id="cb3-3"></span>
+<span id="cb3-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">with</span> urllib.request.urlopen(url) <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> u:</span>
+<span id="cb3-5">        s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> u.read()</span>
+<span id="cb3-6">    arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.asarray(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">bytearray</span>(s), dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>np.uint8)</span>
+<span id="cb3-7">    img <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.imdecode(arr, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 'Load it as it is'</span></span>
+<span id="cb3-8">    img <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.cvtColor(img, cv2.COLOR_RGB2BGR)</span>
+<span id="cb3-9"></span>
+<span id="cb3-10">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> img</span>
+<span id="cb3-11"></span>
+<span id="cb3-12">img <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> get_image_from_url(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'https://static.toiimg.com/photo/69928969/cobble.jpg'</span>)</span>
+<span id="cb3-13">plt.imshow(img)</span></code></pre></div>
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7fb5ef127670&gt;</code></pre>
+<p><img src="https://jaime.rs/posts/vanishing-point-images/output_3_1.png" class="img-fluid"></p>
+</section>
+<section id="edge-detection" class="level2">
+<h2 class="anchored" data-anchor-id="edge-detection">Edge detection</h2>
+<p>We are interested in using the most prominent edges in the image to compute the Hough lines. To find the edges, we use Canny edge detection.</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">gray <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)</span>
+<span id="cb5-2">edges <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.Canny(gray, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">200</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">700</span>)</span>
+<span id="cb5-3"></span>
+<span id="cb5-4">plt.imshow(edges, cmap<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gray'</span>)</span></code></pre></div>
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7fb5ef468e80&gt;</code></pre>
+<p><img src="https://jaime.rs/posts/vanishing-point-images/output_5_1.png" class="img-fluid"></p>
+</section>
+<section id="hough-lines-from-edges" class="level2">
+<h2 class="anchored" data-anchor-id="hough-lines-from-edges">Hough lines from edges</h2>
+<p>We can use the edges obtained above to compute Hough lines.</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">lines <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.HoughLines(edges, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">180</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb7-2">img_lines <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> img.copy()</span>
+<span id="cb7-3"></span>
+<span id="cb7-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># adapted from https://stackoverflow.com/a/60515853</span></span>
+<span id="cb7-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> line <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lines:</span>
+<span id="cb7-6">    rho,theta <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> line[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb7-7">    a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.cos(theta)</span>
+<span id="cb7-8">    b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.sin(theta)</span>
+<span id="cb7-9">    x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>rho</span>
+<span id="cb7-10">    y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>rho</span>
+<span id="cb7-11">    x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>b))</span>
+<span id="cb7-12">    y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(a))</span>
+<span id="cb7-13">    x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>b))</span>
+<span id="cb7-14">    y2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(a))</span>
+<span id="cb7-15">    cv2.line(img_lines, (x1,y1),(x2,y2),(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb7-16">    </span>
+<span id="cb7-17">plt.imshow(img_lines)</span></code></pre></div>
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7fb5da4183a0&gt;</code></pre>
+<p><img src="https://jaime.rs/posts/vanishing-point-images/output_7_1.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">lines <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> cv2.HoughLines(edges, </span>
+<span id="cb9-2">                       <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.85</span>, </span>
+<span id="cb9-3">                       np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">180</span>, </span>
+<span id="cb9-4">                       <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, </span>
+<span id="cb9-5">                       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># min_theta=np.pi/36, </span></span>
+<span id="cb9-6">                       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># max_theta=np.pi-np.pi/36</span></span>
+<span id="cb9-7">                      )</span>
+<span id="cb9-8"></span>
+<span id="cb9-9">img_lines <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> img.copy()</span>
+<span id="cb9-10"></span>
+<span id="cb9-11">segments <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb9-12"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> line <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lines:</span>
+<span id="cb9-13">    rho, theta <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> line[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb9-14">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># skip near-vertical lines</span></span>
+<span id="cb9-15">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">abs</span>(theta<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>:</span>
+<span id="cb9-16">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">continue</span></span>
+<span id="cb9-17">    </span>
+<span id="cb9-18">    a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.cos(theta)</span>
+<span id="cb9-19">    b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.sin(theta)</span>
+<span id="cb9-20">    x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>rho</span>
+<span id="cb9-21">    y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>rho</span>
+<span id="cb9-22">    </span>
+<span id="cb9-23">    x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>b))</span>
+<span id="cb9-24">    y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(a))</span>
+<span id="cb9-25">    </span>
+<span id="cb9-26">    x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>b))</span>
+<span id="cb9-27">    y2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(a))</span>
+<span id="cb9-28">    </span>
+<span id="cb9-29">    segments.append((np.array((x1, y1)), </span>
+<span id="cb9-30">                     np.array((x2, y2))))</span>
+<span id="cb9-31">    </span>
+<span id="cb9-32">    cv2.line(img_lines, (x1,y1),(x2,y2),(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb9-33">    </span>
+<span id="cb9-34">plt.imshow(img_lines)</span></code></pre></div>
+<pre><code>&lt;matplotlib.image.AxesImage at 0x7fb5786558b0&gt;</code></pre>
+<p><img src="https://jaime.rs/posts/vanishing-point-images/output_8_1.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">def</span> seg_intersect(s1, s2):</span>
+<span id="cb11-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""https://stackoverflow.com/a/3252222"""</span></span>
+<span id="cb11-3">    da <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> s1[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> s1[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb11-4">    db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> s2[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> s2[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb11-5">    dp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> s1[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> s2[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb11-6">    dap <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> perp(da)</span>
+<span id="cb11-7">    denom <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.dot( dap, db)</span>
+<span id="cb11-8">    num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.dot( dap, dp )</span>
+<span id="cb11-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> (num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> denom.astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">float</span>))<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> s2[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb11-10"></span>
+<span id="cb11-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">def</span> perp(a):</span>
+<span id="cb11-12">    b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.empty_like(a)</span>
+<span id="cb11-13">    b[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>a[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb11-14">    b[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb11-15">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> b</span>
+<span id="cb11-16"></span>
+<span id="cb11-17">intersections <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.empty((<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(segments), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(segments), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>))</span>
+<span id="cb11-18">intersections[:] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.nan</span>
+<span id="cb11-19"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i, s1 <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(segments):</span>
+<span id="cb11-20">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> j, s2 <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(segments[i:], start<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>i):</span>
+<span id="cb11-21">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> j:</span>
+<span id="cb11-22">            intersections[i,j] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> seg_intersect(s1, s2)</span>
+<span id="cb11-23"></span>
+<span id="cb11-24">intersections <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> intersections[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>np.isnan(intersections)]</span>
+<span id="cb11-25">intersections <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> intersections.reshape((<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(intersections)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)).astype(np.int16)</span>
+<span id="cb11-26">intersections</span></code></pre></div>
+<pre><code>array([[484, 332],
+       [522, 314],
+       [858, 157],
+       [550, 301],
+       [513, 318],
+       [523, 314],
+       [525, 313],
+       [477, 335],
+       [525, 307],
+       [776, 156],
+       [170, 520],
+       [509, 317],
+       [517, 312],
+       [524, 308],
+       [477, 336],
+       [587, 153],
+       [520, 318],
+       [519, 321],
+       [522, 314],
+       [524, 309],
+       [479, 422],
+       [800, 156],
+       [ 58, 144],
+       [103, 144],
+       [493, 151],
+       [474, 151],
+       [517, 320],
+       [526, 315],
+       [525, 315],
+       [477, 343],
+       [926, 477],
+       [527, 323],
+       [476, 304],
+       [525, 315],
+       [476, 295],
+       [472,  40]], dtype=int16)</code></pre>
+<div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">img_points <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> img.copy()</span>
+<span id="cb13-2"></span>
+<span id="cb13-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># show all intersection points</span></span>
+<span id="cb13-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> p <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> intersections:</span>
+<span id="cb13-5">    cv2.circle(img_points, (p[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], p[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb13-6">    </span>
+<span id="cb13-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># show mean intersection point</span></span>
+<span id="cb13-8">vp_hat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.mean(intersections, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>).astype(np.int16)</span>
+<span id="cb13-9">cv2.circle(img_points, (vp_hat[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], vp_hat[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb13-10"></span>
+<span id="cb13-11">plt.imshow(img_points)</span>
+<span id="cb13-12"></span>
+<span id="cb13-13"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)</span></code></pre></div>
+<pre><code>Estimated vanishing point coordinates: [513 285]</code></pre>
+<p><img src="https://jaime.rs/posts/vanishing-point-images/output_10_1.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>python</category>
+  <category>computer-vision</category>
+  <category>programming</category>
+  <guid>https://jaime.rs/posts/vanishing-point-images/</guid>
+  <pubDate>Mon, 04 Oct 2021 13:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>An End to Exporting Entropy and Obscuring Accountability</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to basic services, and a hazardous living environment. It is widely accepted that globalisation is a major contributing factor to the causes of poverty. If we are to mitigate its effects, a change in the personal values and outlook of all involved in capitalism is required. Through this essay I argue that a change in our attitudes, based on a syncretisation of Epicurean virtue ethics and secular Buddhist practices, can provide the necessary course correction for a more equitable and sustainable system within the context of capitalism.</p>
+<p>Projections by the World Bank estimate that, by the year 2030, the number of people in extreme poverty in Asia will be vastly reduced. On the other hand, their projections also estimate the number of people in extreme poverty to grow in Africa and the Middle East, and to remain the same in Latin America <span class="citation" data-cites="WorldBankGroup2018">World Bank Group (2018)</span>. In an age where some of us can summon just about any kind (and amount) of food to our doorstep with a few finger swipes and taps, and subsequently make the resulting detritus vanish (without bothering to separate it for recycling or thinking about where it goes), these numbers are appalling.</p>
+<p>And yet, since all that is required for those born into privilege to opt into this lifestyle is little more than going through the motions of the Hobbesian social contract, they see no incentive to change their ways nor the system they are part of. Thus new generations go on to become gears in the neoliberal machine, which has its foundations in imperialist colonialism, emerging in the 16th century alongside the mechanistic view that saw nature as something to be subjugated, exacerbated by misconstruing John Locke’s property rights<sup>1</sup>, and which continues to this date to instigate poverty and depletion of natural resources. The exporting of entropy and obscuring of accountability are key features of the sleight of hand—the invisible hand—with which neoliberalism perpetrates systematic, large scale manslaughter<sup>2</sup> <span class="citation" data-cites="Leech2012">Leech (2012)</span>.</p>
+<p>The locus of a metaphysics we use needs to be at the human level. Although the selfish gene proposed by Richard Dawkins, based on Darwinism, is a compelling explanation of the behaviours in nature, I believe humans have reached an evolutionary point where we have the ability to overcome the tyranny of the gene, thereby asserting our freedom of will<sup>3</sup>.</p>
+<p>Arguably neoliberalism claims its legitimacy in utilitarian terms. The issue is not so much with utilitarianism itself, but in the fact that neoliberalism seems to have (once again) misconstrued the maxim “the greatest good for the greatest number”, somehow disregarding the “greatest number” while obsessing over a delusional idea of what the “greatest good” is<sup>4</sup>. Instead, if it is to work on a utilitarian basis, our system ought to <em>satisfice</em> the quantifiable good while <em>maximising</em> the greatest number (all humanity in principle, without falling into the moronic notion that in order to truly maximise the number we should encourage growth in population). Additionally, the prevailing use of utilitarianism is in Bentham’s purely hedonistic terms. Mill, for instance, provided a more subtle way of evaluating our actions, with an emphasis on higher pleasures such as intellectual pursuits. Consequentialism has its strengths and can be useful given that we are more capable than ever to model and predict the consequences of our actions<sup>5</sup>, but we need to look beyond pleasure and tangible utility, as well as take other viewpoints into account, embracing complexity and uncertainty.</p>
+<p>The functioning of this system is based on the Cartesian solipsistic proposition <em>“je pense, donc je suis”</em>, which reinforces Hobbes’ notion of society as a mere collection of individuals. Although Hobbes presupposed psychological egoism when coming up with this notion, arguably this point of departure if anything <em>makes</em> the individual egotistic, thus the initial conditions for the master–slave dialectic arise. Here, Hegel’s view of the dialectic of recognition offers a more sophisticated understanding of our place in society in relation to the “other”. We cannot isolate ourselves from other conscious subjects, as the very foundations of our thinking are in language, which would not exist were it not for the rest of humans, past and present. Neither would education, conventions, culture; nor capitalism as we know it, for the state of luxury in the global North would not have been possible without colonialism, slavery and control of foreign countries through insidious methods. We must see ourselves reflected in other people, and as long as there are people struggling to feed themselves and we fail to recognise their lack of freedom, we cannot ourselves be free. And it is not only the global South that fits the role of the slave in this dialectic. Privileged people in the global North are made to feel like they are not enough by the system by design.</p>
+<p>Unrealistic expectations and the exploiting of the path of least resistance—characteristic of neoliberalism—have severed our connection with our community and damaged our sense of identity, bringing about impostor syndrome, depression, loneliness, envy and a self-perpetuating craving for acceptance and belonging, which we seek (and continue to fail) to fulfill through consumption. Immanuel Kant placed man as an end in itself, never to be a means. In the current system, people seem to be a means to the end of accumulation of capital. His student Herder asserted that the end of life is not satisfying appetites, but teleological self-realisation. For him, humans are “essentially social and cultural, involved in a struggle to identify their own and their communities’ unique centers of gravity and to realise their unique potentials” <span class="citation" data-cites="Gare2009">Gare (2009)</span>. It is evident that these two notable figures of Ethics would find neoliberalism morally objectionable not only on grounds of its consequences, but of its intentions foremost.</p>
+<p>Herder said the end of life is self-realisation <span class="citation" data-cites="Gare2009">Gare (2009)</span>. Our systems need to enable everyone to pursue self-realisation, so we need to eliminate the barrier of poverty. Need to elevate everyone along Maslow’s hierarchy of needs. Herder also said humans are social, cultural beings. Our bonds with our community and culture need to be strengthened, not weakened or fragmented as it has been done by so called “social media”, which robs us of our quality time with the people we care about and of taking our part in our local community.</p>
+<p>In Luther’s time, freedom from God’s punishment being sold as a commodity. His reaction was to attempt to “cut the middle man” using the latest technology at the time (printing) to make relevant knowledge (the Bible) accessible to more people. Capitalism sells (fleeting) freedom to a void that is continually created in us by it, so perhaps we could employ technology to empower smaller communities in order to cut the capitalist middle man. An important consideration however is that these communities must be self-sufficient and mutually respectful to avoid conflicts and wars as happened as a result of Luther’s reformations.</p>
+<p>If population growth is curbed and we do not succumb to the artificial increase of our “needs” by means of advertising, the capitalist complex will need to turn to the developing countries for new customers <span class="citation" data-cites="Leech2012">Leech (2012)</span>, and come up with more sustainable practices to ensure its continuity. Thus the effect of strengthening our sense of community and friendship and pursuing a more modest lifestyle is two-fold in combating alienation: it creates a direct connection with those around us, removing our need to participate in consumerism to delude ourselves that we are engaged; and in the long run could mean the reincorporation of those who, due to a shortcoming of purchasing power, are most alienated by the system <span class="citation" data-cites="Monbiot2016">Monbiot (2016)</span>.</p>
+<p>Organisation in smaller communities means that everyone in them matters, removing some of the envy and competition that are so pervasive in the current system (and which breed fanaticism and extremism and engender terrorism and violence). The “reachable” scope of a smaller community also creates optimism because its members feel more accountable and empowered. This is crucial to combat the apathy and disenfranchisement the stems from a feeling of helplessness. Small-scale economical activity entails heterogeneous complexity, sign of a healthy state of “life at the edge of chaos”. The benefits of more localised and self-sufficient economies have been defended by the likes of Bookchin, Chomsky, and most recently Norberg-Hodge <span class="citation" data-cites="norberg2019local">Norberg-Hodge (2019)</span>:</p>
+<blockquote class="blockquote">
+<p>Globalization has no future. Political stability is a thing of the past; climate chaos is intensifying; anxiety disorders are of epidemic proportions; extremism and fundamentalism are becoming the norm. And yet we cling to the wreckage. Politicians of every hue continue to be in thrall to the global market. To challenge “free trade”, which is the very essence of globalization, is all but unthinkable. But challenge it we must. And replace it. The future will be local. And the good news is that it is already happening. Under the radar of the mainstream media, a worldwide localization movement is emerging. On every continent, people are coming together to claw back control over their own economies, and in doing so are rebuilding connections to one another, while repairing fractured communities and damaged environments.</p>
+</blockquote>
+<p>That is not to say we should abolish all global-scale activity. Rather, we need to question the legitimacy of transnational corporations and their “value-adding”, quantified beyond economic terms; while encouraging universal opening of intellectual property and knowledge sharing in general, to be applied at a local scale for the benefit of all communities.</p>
+<p>Humanity as a whole has reached a point—through collaboration and many sacrifices—where our knowledge and technological and scientific ability should be sufficient to provide the material necessities required for everyone to live a good life, should they be employed effectively. Our fear of <em>uncertainty</em> <span class="citation" data-cites="saul2002equilibrium">Saul (2002)</span> manifests in the feeling that we can protect ourselves against it by means of accumulating capital as a “buffer”. The right mechanisms in place at a systemic level to make people feel safe—welfare, a strong sense of community—should encourage individuals to let go of this need for a buffer. But this is not enough. A way to justify opulence and luxury is in saying that “the aspiration to luxury is experienced as a manifestation of freedom” <span class="citation" data-cites="mendoncca2020understanding">Mendonça (2020)</span>, but when this aspiration turns into bondage of ourselves and others through debt and competition, it is hard to find value in it.</p>
+<p>Just as the radical enlightenment strove to revive Greek philosophy with egalitarian distribution of wealth based on harmony between man and nature <span class="citation" data-cites="McLaren2020">McLaren (2020)</span>, so can we build upon the virtue ethics of the ancient Greeks. A particularly fitting way of life is that suggested by Epicurus, whereby the greatest good is in seeking modest pleasures in order to attain a state of tranquillity, freedom from fear, and absence of pain. The Epicurean life placed major emphasis on friendship (in which we find security), community and rituals, self-sufficiency and being content with little, and pedagogy <span class="citation" data-cites="Konstan2018">Konstan (2018)</span>. Furthermore, the Epicureans advocated for work that focused on improving the world and helping others, in small groups with a strong team spirit. For them, making a difference was far more important and meaningful than status. This way of life would debilitate the mechanisms that perpetuate poverty and free up resources that could be directed at eradicating it, whilst mitigating some of the adverse effects of the system on the individual.</p>
+<p>In Buddhism, craving and ignorance are the main causes of suffering. Buddhist teachings lay down the necessary steps to transcend suffering through a change in our outlook, not our circumstances, and achieve equanimity. By realising that suffering is present in everyone’s lives, compassion for others is cultivated. It acknowledges that everything is changing constantly (not unlike Whitehead’s process philosophy), and focuses on providing precepts to act in ways beneficial to ourselves and others. These are not rules to be taken as dogma, but rather guides to be interpreted and explored freely and sensibly. The complexity of the world is acknowledged, and therefore there is no right or wrong, but rather “skillful” and “unskillful” ways to deal with situations.</p>
+<p>The avoidance of luxury is encouraged, but not to the extreme of asceticism, striving for what is called the Middle Way (not unlike Aristotle’s Golden Mean), and setting aside the pleasing illusions that we adopt to make life comfortable. Secular Buddhism places its emphasis on introspection, satisfaction through acceptance, and the interconnectedness of all things in the cosmos (not unlike Hegel’s dialectic of recognition). There is a remarkable overlap between Epicureanism and Buddhism, and they complement each other providing a compelling ethics for a transition out of the destructive effects of neoliberalism, from the bottom up.</p>
+<blockquote class="blockquote">
+<p>Living in this way—seeing the good and pursuing it wisely, but neither driven nor compelled by it; preferring things to be better but not desperately needing them to be so; being able to see that things as they are, even when they fail to coincide with our preferences, have their own integral place in the cosmos—this is the path of both traditional and eudaimonic enlightenment. It involves not an end to desire, but the pursuit of what we might call “right desire”—desiring the “right” things—the things that genuinely enhance individual and collective eudaimonia—and desiring them in the “right” kind of way <span class="citation" data-cites="Segall2020">Segall (2020)</span>.</p>
+</blockquote>
+<p>Recent studies in psychology <span class="citation" data-cites="Rand2012">Rand, Greene, and Nowak (2012)</span> support Russeau in thinking that people are inherently good <span class="citation" data-cites="Rousseau1984">Rousseau (1984)</span>. By tackling poverty, alienation, hopelessness, abuse, and oppression; with a focus on virtue, small-scale local action, education, role models, a change in our desires, and technology in the service of people; we can reduce people’s “reasons” to act immorally and redirect our course as a species toward a good life for everyone.</p>
+
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Gare2009" class="csl-entry">
+Gare, A. 2009. <span>“<span class="nocase">Philosophical Anthropology, Ethics and Political Philosophy in an Age of Impending Catastrophe.</span>”</span> <em>Cosmos <span>&amp;</span> History</em> 5 (2): 1–17.
+</div>
+<div id="ref-Konstan2018" class="csl-entry">
+Konstan, David. 2018. <span>“<span>Epicurus</span>.”</span>
+</div>
+<div id="ref-Leech2012" class="csl-entry">
+Leech, Garry. 2012. <em><span>Capitalism: A Structural Genocide</span></em>. London: Zed Books.
+</div>
+<div id="ref-McLaren2020" class="csl-entry">
+McLaren, Glenn. 2020. <span>“<span class="nocase">PHI30008 – Ethics: Lecture slides</span>.”</span> Melbourne: Swinburne University of Technology.
+</div>
+<div id="ref-mendoncca2020understanding" class="csl-entry">
+Mendonça, Marta. 2020. <span>“Understanding Luxury: A Philosophical Perspective.”</span> In <em>Understanding Luxury Fashion</em>, 13–28. Springer.
+</div>
+<div id="ref-Monbiot2016" class="csl-entry">
+Monbiot, George. 2016. <span>“<span class="nocase">Neoliberalism – The Ideology at the Root of All Our Problems</span>.”</span> <a href="https://www.theguardian.com/books/2016/apr/15/neoliberalism-ideology-problem-george-monbiot">https://www.theguardian.com/books/2016/apr/15/neoliberalism-ideology-problem-george-monbiot</a>.
+</div>
+<div id="ref-norberg2019local" class="csl-entry">
+Norberg-Hodge, Helena. 2019. <em>Local Is Our Future: Steps to an Economics of Happiness</em>. Local futures.
+</div>
+<div id="ref-Rand2012" class="csl-entry">
+Rand, David G., Joshua D. Greene, and Martin A. Nowak. 2012. <span>“<span class="nocase">Spontaneous giving and calculated greed</span>.”</span> <em>Nature</em> 489 (7416): 427–30. <a href="https://doi.org/10.1038/nature11467">https://doi.org/10.1038/nature11467</a>.
+</div>
+<div id="ref-Rousseau1984" class="csl-entry">
+Rousseau, Jean-Jacques. 1984. <em>A Discourse on Inequality</em>. Penguin Books.
+</div>
+<div id="ref-saul2002equilibrium" class="csl-entry">
+Saul, J. R. 2002. <em>On Equilibrium</em>. Early English Books Online. Penguin Random House. <a href="https://books.google.com.au/books?id=dP2GAAAACAAJ">https://books.google.com.au/books?id=dP2GAAAACAAJ</a>.
+</div>
+<div id="ref-Segall2020" class="csl-entry">
+Segall, Seth Zuihō. 2020. <em><span class="nocase">Buddhism and Human Flourishing: A Modern Western Perspective</span></em>. White Plains, NY: Palgrave MacMillan. <a href="https://doi.org/10.1007/978-3-030-37027-5">https://doi.org/10.1007/978-3-030-37027-5</a>.
+</div>
+<div id="ref-WorldBankGroup2018" class="csl-entry">
+World Bank Group. 2018. <span>“<span class="nocase">Poverty and Shared Prosperity 2018: Piecing Together the Poverty Puzzle</span>.”</span> <em>Piecing Together the Poverty Puzzle</em>, 1–31. <a href="https://doi.org/10.1596/978-1-4648-1330-6">https://doi.org/10.1596/978-1-4648-1330-6</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>He did say that people should claim no property for which they have not laboured, and take <em>only their fair share</em>.↩︎</p></li>
+<li id="fn2"><p>The Encyclopaedia Britannica defines <em>crimes against humanity</em> as those “committed as part of a widespread or systematic attack directed against any civilian population”.↩︎</p></li>
+<li id="fn3"><p>As discussed in relation to the principle of least action, in an <a href="../towards-ecological-ethics/">earlier article</a>.↩︎</p></li>
+<li id="fn4"><p>Hint: it is not the use of capital in order to obtain more capital.↩︎</p></li>
+<li id="fn5"><p>See Bhutan’s Gross National Happiness Index, or the Genuine Progress Indicator.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>ethics</category>
+  <category>governance</category>
+  <guid>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/</guid>
+  <pubDate>Sat, 30 May 2020 14:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Towards an Ecological Ethics</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/towards-ecological-ethics/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order to ensure I can continue to pay my university fees, rent, bills and the like. “Perhaps I might even be able to do some travel if I am conservative enough with my spending”, is my teleological rationale. On the other hand, I am aware that cheaper consumer products often come at a cost of being less healthy, produced by big industrial corporations, and more damaging to the environment (for instance, using unsustainable ingredients like palm oil, overseas manufacturing and its carbon footprint, and/or cheaper non-recyclable packaging).</p>
+<p>The industrial complex, as a system, requires input (capital, raw materials) to produce its output and continue to thrive. Consumers provide the capital and nature provides the raw materials. In the process, they become instruments for the production of prestige goods and weapons in the interest of domination by the ruling class <span class="citation" data-cites="Gare2010">Gare (2010)</span>. One of the astonishing phenomena by which this dynamic is perpetuated are heavily processed foods. These are a manifestation of our technological prowess, in the sense that they exploit the <em>principle of least action</em>, whereby systems (in this case, humans) have a tendency to increase their potential energy while trying to minimise any action (e.g.&nbsp;movement) <span class="citation" data-cites="Feynman1964">Feynman (1964)</span>, <span class="citation" data-cites="Das2013">Das (2013)</span>. The consumption of such products is made easy by their cheap and time-saving qualities (both in the preparation and procuring thereof) <span class="citation" data-cites="Pollan2013">Pollan (2013)</span>.</p>
+<p>Closely related to the principle of least action is <em>entropy</em>, or amount of chaos. The second law of thermodynamics states that “the entropy in an isolated system can increase but not decrease” <span class="citation" data-cites="Wehrl1978">Wehrl (1978)</span>. Open thermodynamic systems such as living organisms, however, are able to reduce their local entropy through increasing that of their environment, with a resultant net increase in entropy overall<sup>1</sup>. Thus once again humanity as a whole—by means of industrial streamlining of production—continues to exploit this phenomenon to our immediate benefit and long term detriment of our habitat (and, unwittingly, of ourselves).</p>
+<p>So we find ourselves at a critical time at the <em>edge of chaos</em> <span class="citation" data-cites="McLaren2009">McLaren (2009)</span>. Within the limited conditions in which life and order are possible, equilibrium is delicate<sup>2</sup>. We need to change our ways to ensure the long term prosperity of our environment (and through it, of ourselves). I believe that a powerful way in which we can assert our free will is by acting against the principle of least action.</p>
+<p>We are privileged to have a wealth of knowledge and connectedness at our disposal (largely as a result of industrial civilisation), which we can deploy as local, small scale, sustainable production of sustenance and goods, working in communities within communities, as suggested by the likes of Chomsky <span class="citation" data-cites="Chomsky1971">Chomsky and Foucault (1971)</span>, and Bookchin <span class="citation" data-cites="Bookchin1987">Bookchin (1987)</span>.</p>
+<p>In order to make an impact in the correction of our course as a species, a critical mass of people willing to inspire change is required. It is our role as thinkers to convince our fellow humans that everyone has a stake, that democracy manifests in subtle ways, and that every action counts. A way to inspire people to act might be to romanticise <em>production</em> as we have <em>consumption</em>—for which we would have to overcome the principle of least action—making it desirable, commendable. This is achievable through an Aristotelian virtue ethics.</p>
+
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-Bookchin1987" class="csl-entry">
+Bookchin, Murray. 1987. <span>“<span class="nocase">Social Ecology versus "Deep Ecology": A Challenge for the Ecology Movement</span>.”</span> <em>Green Perspectives: Newsletter of the Green Progra Project</em>, no. 4, 5: 1–22. <a href="http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html">http://www.environment.gen.tr/deep-ecology/64-social-ecology-versus-deep-ecology.html</a>.
+</div>
+<div id="ref-Chomsky1971" class="csl-entry">
+Chomsky, Noam, and Michel Foucault. 1971. <span>“<span class="nocase">Human Nature: Justice versus Power, Noam Chomsky debates with Michel Foucault</span>.”</span> <a href="https://chomsky.info/1971xxxx/">https://chomsky.info/1971xxxx/</a>.
+</div>
+<div id="ref-Das2013" class="csl-entry">
+Das, K K. 2013. <em><span class="nocase">The Quantum Guide to Life: How the Laws of Physics Explain Our Lives from Laziness to Love</span></em>. Skyhorse Publishing. <a href="https://books.google.com.au/books?id=LgMnAgAAQBAJ">https://books.google.com.au/books?id=LgMnAgAAQBAJ</a>.
+</div>
+<div id="ref-Feynman1964" class="csl-entry">
+Feynman, Richard. 1964. <span>“<span class="nocase">The Principle of Least Action</span>.”</span> <a href="https://www.feynmanlectures.caltech.edu/II{\_}19.html">https://www.feynmanlectures.caltech.edu/II{\_}19.html</a>.
+</div>
+<div id="ref-Gare2010" class="csl-entry">
+Gare, Arran. 2010. <span>“<span class="nocase">Toward an Ecological Civilization: The Science, Ethics, and Politics of Eco-Poiesis</span>.”</span> <em>Process Studies</em> 39 (1): 5–38. <a href="https://doi.org/10.5840/process20103912">https://doi.org/10.5840/process20103912</a>.
+</div>
+<div id="ref-Hawking2009" class="csl-entry">
+Hawking, Stephen. 2009. <em><span class="nocase">A brief history of time: from big bang to black holes</span></em>. Random House.
+</div>
+<div id="ref-McLaren2009" class="csl-entry">
+McLaren, G. 2009. <span>“<span class="nocase">Climate Change and Some Other Implications of Vibratory Existence</span>.”</span> <em>Cosmos and History: The Journal of Natural and Social Philosophy</em> 5 (2): 134. <a href="http://cosmosandhistory.org/index.php/journal/article/view/146/253">http://cosmosandhistory.org/index.php/journal/article/view/146/253</a>.
+</div>
+<div id="ref-Pollan2013" class="csl-entry">
+Pollan, Michael. 2013. <em><span class="nocase">Cooked: A Natural History of Transformation</span></em>. Allen Lane.
+</div>
+<div id="ref-Rosso2007" class="csl-entry">
+Rosso, O. A., H. A. Larrondo, M. T. Martin, A. Plastino, and M. A. Fuentes. 2007. <span>“<span class="nocase">Distinguishing noise from chaos</span>.”</span> <em>Physical Review Letters</em> 99 (15): 1–4. <a href="https://doi.org/10.1103/PhysRevLett.99.154102">https://doi.org/10.1103/PhysRevLett.99.154102</a>.
+</div>
+<div id="ref-Wehrl1978" class="csl-entry">
+Wehrl, Alfred. 1978. <span>“<span class="nocase">General properties of entropy</span>.”</span> <em>Reviews of Modern Physics</em> 50 (2): 221–60. <a href="https://doi.org/10.1103/RevModPhys.50.221">https://doi.org/10.1103/RevModPhys.50.221</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>It is important to note here that there is no escaping the arrow of time <span class="citation" data-cites="Hawking2009">Hawking (2009)</span>. It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.↩︎</p></li>
+<li id="fn2"><p>I invite the reader to consider the relationship between complexity and entropy, as outlined in <span class="citation" data-cites="Rosso2007">Rosso et al. (2007)</span>.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>ethics</category>
+  <category>governance</category>
+  <guid>https://jaime.rs/posts/towards-ecological-ethics/</guid>
+  <pubDate>Sun, 03 May 2020 14:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

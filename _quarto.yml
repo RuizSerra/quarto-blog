@@ -8,14 +8,17 @@ website:
   title: "Jaime Ruiz Serra"
   site-url: https://jaime.rs
   description: "Jaime Ruiz Serra's personal website"
+  navbar:
+    title: false
+    left:
+      - text: Home
+        href: /
+      - text: Blog
+        href: /posts
   page-footer:
-    center: 
-      - icon: twitter
-        href: https://twitter.com/JRuizSerra
-      - icon: linkedin
-        href: https://linkedin.com/in/RuizSerra
-      - icon: github
-        href: https://github.com/RuizSerra
+    border: false
+    left: "Find me on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ), [LinkedIn](https://linkedin.com/in/RuizSerra), [GitHub](https://github.com/RuizSerra), [X](https://x.com/JRuizSerra)"
+    right: "© 2024 [Jaime Ruiz Serra](/)"
   twitter-card: true
   open-graph: true
 
@@ -31,6 +34,9 @@ format:
     toc-location: right
     toc-depth: 3
     toc-float: true
-    toc_smooth_scroll: true
-    toc_highlight: true
+    toc-smooth-scroll: true
+    toc-highlight: true
+    toc-title: Contents
     email-obfuscation: javascript
+    smooth-scroll: true
+    highlight-style: gruvbox

@@ -8,5 +8,15 @@
       "/posts/end-exporting-entropy-obscuring-accountability/index.html",
       "/posts/towards-ecological-ethics/index.html"
     ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/C3-2023-symposium/index.html",
+      "/posts/IRL-ToM-algorithms/index.html",
+      "/posts/vanishing-point-images/index.html",
+      "/posts/end-exporting-entropy-obscuring-accountability/index.html",
+      "/posts/towards-ecological-ethics/index.html"
+    ]
   }
 ]

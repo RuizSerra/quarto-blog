@@ -1,26 +1,27 @@
 ---
 title: "Jaime Ruiz Serra"
 image: public/jaime-blurry-small1.png
+toc: false
 about:
   template: jolla
   image-shape: rectangle
-  links:
-    - text: "{{< iconify academicons google-scholar >}}"
-      href: https://scholar.google.com/citations?user=qkmyBJYAAAAJ
-    # - icon: twitter
-    - text: "{{< iconify fa6-brands x-twitter >}}"
-      href: https://twitter.com/JRuizSerra
-    # - icon: linkedin
-    - text: "{{< iconify fa6-brands linkedin >}}"
-      href: https://linkedin.com/in/RuizSerra
-    # - icon: github
-    - text: "{{< iconify fa6-brands github >}}"
-      href: https://github.com/RuizSerra
-    - icon: envelope-fill
-      # text: E-mail
-      href: mailto:jaime.ruizserra@sydney.edu.au
-    - text: blog
-      href: /blog.html
+  # links:
+  #   - text: "{{< iconify academicons google-scholar >}}"
+  #     href: https://scholar.google.com/citations?user=qkmyBJYAAAAJ
+  #   # - icon: twitter
+  #   - text: "{{< iconify fa6-brands x-twitter >}}"
+  #     href: https://twitter.com/JRuizSerra
+  #   # - icon: linkedin
+  #   - text: "{{< iconify fa6-brands linkedin >}}"
+  #     href: https://linkedin.com/in/RuizSerra
+  #   # - icon: github
+  #   - text: "{{< iconify fa6-brands github >}}"
+  #     href: https://github.com/RuizSerra
+  #   - icon: envelope-fill
+  #     # text: E-mail
+  #     href: mailto:jaime.ruizserra@sydney.edu.au
+  #   - text: blog
+  #     href: /posts
 
 ---
 
@@ -48,6 +49,10 @@ Ruiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis
 Ruiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In *Proceedings of the 2022 Australasian Conference on Robotics and Automation* (ACRA 2022). Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
 
 *More on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ)*
+
+
+
+
 
 ## Education
 
@@ -89,4 +94,4 @@ Youth Without Borders (Melbourne, AU)
 Victoria Staffing Manager, *Spark Engineering Camp*  
 Nov 2016 -- Sep 2017
 
-*Visit my [LinkedIn](https://linkedin.com/in/ruizserra)*
+*More on [LinkedIn](https://linkedin.com/in/ruizserra)*

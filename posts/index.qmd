@@ -1,13 +1,15 @@
 ---
 title: "Blog"
 listing:
-  contents: posts
+  contents: .
   sort: "date desc"
-  type: default
+  type: grid #default
+  # type: default
+  fields: [date, title, reading-time, description]
   categories: false
   sort-ui: false
   filter-ui: false
   feed: true
 page-layout: full
-title-block-banner: false
+title-block-banner: true
 ---

@@ -10,14 +10,24 @@
 
 /*-- scss:defaults --*/
 // Base document colors
-$primary: rgb(56, 53, 51);
-$body-bg: #f8f1ed;
-$body-color: rgb(11, 11, 11);
-$link-color: rgb(11, 11, 11);
+$body-bg:                             #fcfcfc;
+$primary:                               $body-bg;
+$body-color:                          rgb(0, 0, 0);
+$link-color:                            $body-color;
+$headings-color:                        $body-color !default;
+$link-shade-percentage:                   30% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+
+// $title-block-color: black;
+// $title-block-contast-color: black;
+// $title-block-padding-top: 4em;
+
 
 // Code blocks
 // $code-block-bg-alpha: -.8;
+$code-block-bg:                         darken($body-bg, 3%) !default;
+$navbar-bg:                             $body-bg !default;
 
-
-
+$code-color:                              lighten($body-color, 10%) !default;
+$code-bg:                                 darken($body-bg, 10%) !default;
 
