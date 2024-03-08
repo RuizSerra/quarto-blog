@@ -21,6 +21,7 @@ website:
     right: "© 2024 [Jaime Ruiz Serra](/)"
   twitter-card: true
   open-graph: true
+  google-analytics: "G-90DEYJGBVT"
 
 format:
   html:
