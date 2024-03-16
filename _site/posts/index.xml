@@ -76,20 +76,20 @@ font-style: inherit;"># int (-1 because zero-index in Python)</span></span>
 background-color: null;
 font-style: inherit;">=</span> mat[<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'stock'</span>].squeeze() <span class="co" style="color: #5E5E5E;
+font-style: inherit;">'stock'</span>].squeeze()  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># (1, F) -&gt; (F,)</span></span>
 <span id="cb2-9">price <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> mat[<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'price'</span>].squeeze() <span class="co" style="color: #5E5E5E;
+font-style: inherit;">'price'</span>][t]         <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># (1, F) -&gt; (F,)</span></span>
+font-style: inherit;"># (T, F) -&gt; (F,)</span></span>
 <span id="cb2-10"></span>
 <span id="cb2-11">a, b <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> my_python_function(stock, price[t])</span>
+font-style: inherit;">=</span> my_python_function(stock, price)</span>
 <span id="cb2-12"></span>
 <span id="cb2-13"><span class="cf" style="color: #003B4F;
 background-color: null;

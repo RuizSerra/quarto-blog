@@ -33,10 +33,10 @@ mat = scipy.io.loadmat('test-data/1.mat')
 
 t = mat['t'].item() - 1 # int (-1 because zero-index in Python)
 
-stock = mat['stock'].squeeze() # (1, F) -> (F,)
-price = mat['price'].squeeze() # (1, F) -> (F,)
+stock = mat['stock'].squeeze()  # (1, F) -> (F,)
+price = mat['price'][t]         # (T, F) -> (F,)
 
-a, b = my_python_function(stock, price[t])
+a, b = my_python_function(stock, price)
 
 assert np.all(a == mat['a'].squeeze())
 assert np.all(b == mat['b'].squeeze())

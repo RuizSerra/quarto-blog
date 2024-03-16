@@ -217,10 +217,10 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> mat[<span class="st">'t'</span>].item() <span class="op">-</span> <span class="dv">1</span> <span class="co"># int (-1 because zero-index in Python)</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> mat[<span class="st">'stock'</span>].squeeze() <span class="co"># (1, F) -&gt; (F,)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> mat[<span class="st">'price'</span>].squeeze() <span class="co"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> mat[<span class="st">'stock'</span>].squeeze()  <span class="co"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> mat[<span class="st">'price'</span>][t]         <span class="co"># (T, F) -&gt; (F,)</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> my_python_function(stock, price[t])</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> my_python_function(stock, price)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.<span class="bu">all</span>(a <span class="op">==</span> mat[<span class="st">'a'</span>].squeeze())</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.<span class="bu">all</span>(b <span class="op">==</span> mat[<span class="st">'b'</span>].squeeze())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
