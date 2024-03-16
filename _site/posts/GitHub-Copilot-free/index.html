@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jaime Ruiz Serra">
+<meta name="dcterms.date" content="2024-02-23">
 
-<title>Jaime Ruiz Serra - Blog</title>
+<title>Jaime Ruiz Serra - GitHub Copilot AI for free (for students and academics)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K8NCEFDJY2"></script>
 
 <script type="text/javascript">
@@ -109,39 +80,12 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Jaime Ruiz Serra" href="index.xml" data-external="1"><meta property="og:title" content="Jaime Ruiz Serra - Blog">
+<meta property="og:title" content="Jaime Ruiz Serra - GitHub Copilot AI for free (for students and academics)">
+<meta property="og:description" content="You may be able to get free access to Copilot through your academic institution">
 <meta property="og:site_name" content="Jaime Ruiz Serra">
-<meta name="twitter:title" content="Jaime Ruiz Serra - Blog">
+<meta name="twitter:title" content="Jaime Ruiz Serra - GitHub Copilot AI for free (for students and academics)">
+<meta name="twitter:description" content="You may be able to get free access to Copilot through your academic institution">
 <meta name="twitter:creator" content="@JRuizSerra">
 <meta name="twitter:site" content="@JRuizSerra">
 <meta name="twitter:card" content="summary">
@@ -160,11 +104,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../"> 
+    <a class="nav-link" href="../../"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts"> 
+    <a class="nav-link" href="../../posts"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -177,222 +121,75 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">GitHub Copilot AI for free (for students and academics)</h1>
+            <p class="subtitle lead">You may be able to get free access to Copilot through your academic institution</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">programming</div>
+                <div class="quarto-category">ai</div>
+                <div class="quarto-category">productivity</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jaime Ruiz Serra </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 23, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ai">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="computer-vision">computer-vision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="conferences">conferences <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="experiments">experiments <span class="quarto-category-count">(1)</span></div><div class="category" data-category="governance">governance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="modelling">modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="multi-agent">multi-agent <span class="quarto-category-count">(1)</span></div><div class="category" data-category="productivity">productivity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(3)</span></div><div class="category" data-category="publications">publications <span class="quarto-category-count">(2)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="reinforcement-learning">reinforcement-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="theory-of-mind">theory-of-mind <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>I learned we can get free access to <a href="https://github.com/features/copilot"><strong>GitHub Copilot</strong></a> (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the instructions below are tailored to “students”, but academics may also get access as “teachers”.</p>
+<p>Requirements:</p>
+<ul>
+<li>A GitHub account</li>
+<li>A student email address (<code>abcd1234@uni.sydney.edu.au</code>)</li>
+</ul>
+<p>Steps (general gist):</p>
+<ol type="1">
+<li>Add your <em>student</em> email address (i.e.&nbsp;<code>unikey@uni.sydney.edu.au</code>; not staff email address) to your GitHub account at <a href="https://github.com/settings/emails">https://github.com/settings/emails</a></li>
+<li>Sign up for GitHub Global Campus <a href="https://education.github.com/students">https://education.github.com/students</a> and submit a “GitHub benefits” request (<a href="https://education.github.com/discount_requests/application">https://education.github.com/discount_requests/application</a>)</li>
+<li>Wait 3-4 days for the email to be verified, you will receive a welcome email from <code>edu-noreply@github.com</code>. At this point, your GitHub profile should show a <code>PRO</code> badge on the left column (see e.g.&nbsp;<a href="https://github.com/RuizSerra/">https://github.com/RuizSerra/</a>)</li>
+<li>Enable GitHub Copilot at <a href="https://github.com/settings/copilot">https://github.com/settings/copilot</a></li>
+<li>Install the Copilot extension in Visual Studio Code, then enable Copilot (ensure you are signed in to your GitHub account in VS Code)</li>
+<li>Enjoy the coding efficiency boost with your new AI pair-programmer</li>
+</ol>
+<p>See also:</p>
+<ul>
+<li><a href="https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/">[Announcement] GitHub Copilot now available for Teachers (2022/09/08)</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279">Step-by-Step: Setting Up GitHub Student and GitHub Copilot as an Authenticated Student Developer</a></li>
+</ul>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="programming,modelling,experiments" data-listing-date-sort="1710507600000" data-listing-file-modified-sort="1710556726499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="345">
-<a href="../posts/translating-code-different-language/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Translating an unwieldy codebase
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="publications,computer-vision" data-listing-date-sort="1709384400000" data-listing-file-modified-sort="1709854937311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="331">
-<a href="../posts/ACM-TOMM-selfattention/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Learning scene representations for human-assistive displays using self-attention networks
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em><br>
-Free access, DOI:10.1145/3650111
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 3, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="programming,ai,productivity" data-listing-date-sort="1708606800000" data-listing-file-modified-sort="1710558027431" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
-<a href="../posts/GitHub-Copilot-free/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GitHub Copilot AI for free (for students and academics)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-I learned we can get free access to <strong>GitHub Copilot</strong> (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Feb 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="conferences" data-listing-date-sort="1674392400000" data-listing-file-modified-sort="1674443573842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<a href="../posts/C3-2023-symposium/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Complexity, Criticality, Computation Symposium (C3) 2023
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="publications,reinforcement-learning,theory-of-mind,multi-agent" data-listing-date-sort="1674046800000" data-listing-file-modified-sort="1709855039948" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="283">
-<a href="../posts/IRL-ToM-algorithms/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>MDPI Algorithms</em><br>
-Open Access, DOI:10.3390/a16020068
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 19, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="python,computer-vision,programming" data-listing-date-sort="1633352400000" data-listing-file-modified-sort="1674455634024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1136">
-<a href="../posts/vanishing-point-images/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Finding the vanishing point in images
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-text listing-description">
-First download a sample image.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 5, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="ethics,governance" data-listing-date-sort="1590847200000" data-listing-file-modified-sort="1674455674396" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2332">
-<a href="../posts/end-exporting-entropy-obscuring-accountability/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-An End to Exporting Entropy and Obscuring Accountability
-</h5>
-<div class="listing-reading-time card-text text-muted">
-12 min
-</div>
-<div class="card-text listing-description">
-Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 31, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="ethics,governance" data-listing-date-sort="1588514400000" data-listing-file-modified-sort="1674455637739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="617">
-<a href="../posts/towards-ecological-ethics/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Towards an Ecological Ethics
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
-<div class="card-text listing-description">
-As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 4, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -812,7 +609,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>© 2024 <a href="..">Jaime Ruiz Serra</a></p>
+<p>© 2024 <a href="../..">Jaime Ruiz Serra</a></p>
 </div>
   </div>
 </footer>
@@ -820,5 +617,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

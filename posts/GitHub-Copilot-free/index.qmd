@@ -1,0 +1,29 @@
+---
+title: GitHub Copilot AI for free (for students and academics)
+subtitle: You may be able to get free access to Copilot through your academic institution
+date: 2024-02-23
+author: Jaime Ruiz Serra
+categories: [programming, ai, productivity]
+# bibliography: references.bib
+---
+
+I learned we can get free access to [**GitHub Copilot**](https://github.com/features/copilot) (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the instructions below are tailored to "students", but academics may also get access as "teachers".
+
+Requirements:
+
+* A GitHub account
+* A student email address (`abcd1234@uni.sydney.edu.au`)
+
+Steps (general gist):
+
+1. Add your *student* email address (i.e. `unikey@uni.sydney.edu.au`; not staff email address) to your GitHub account at [https://github.com/settings/emails](https://github.com/settings/emails)
+1. Sign up for GitHub Global Campus [https://education.github.com/students](https://education.github.com/students) and submit a "GitHub benefits" request ([https://education.github.com/discount_requests/application](https://education.github.com/discount_requests/application))
+1. Wait 3-4 days for the email to be verified, you will receive a welcome email from `edu-noreply@github.com`. At this point, your GitHub profile should show a `PRO` badge on the left column (see e.g. [https://github.com/RuizSerra/](https://github.com/RuizSerra/))
+1. Enable GitHub Copilot at [https://github.com/settings/copilot](https://github.com/settings/copilot)
+1. Install the Copilot extension in Visual Studio Code, then enable Copilot (ensure you are signed in to your GitHub account in VS Code)
+1. Enjoy the coding efficiency boost with your new AI pair-programmer
+
+See also:
+
+* [[Announcement] GitHub Copilot now available for Teachers (2022/09/08)](https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/)
+* [Step-by-Step: Setting Up GitHub Student and GitHub Copilot as an Authenticated Student Developer](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279)

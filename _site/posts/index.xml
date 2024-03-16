@@ -162,6 +162,46 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <media:content url="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png" medium="image" type="image/png" height="136" width="144"/>
 </item>
 <item>
+  <title>GitHub Copilot AI for free (for students and academics)</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/GitHub-Copilot-free/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I learned we can get free access to <a href="https://github.com/features/copilot"><strong>GitHub Copilot</strong></a> (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the instructions below are tailored to “students”, but academics may also get access as “teachers”.</p>
+<p>Requirements:</p>
+<ul>
+<li>A GitHub account</li>
+<li>A student email address (<code>abcd1234@uni.sydney.edu.au</code>)</li>
+</ul>
+<p>Steps (general gist):</p>
+<ol type="1">
+<li>Add your <em>student</em> email address (i.e.&nbsp;<code>unikey@uni.sydney.edu.au</code>; not staff email address) to your GitHub account at <a href="https://github.com/settings/emails">https://github.com/settings/emails</a></li>
+<li>Sign up for GitHub Global Campus <a href="https://education.github.com/students">https://education.github.com/students</a> and submit a “GitHub benefits” request (<a href="https://education.github.com/discount_requests/application">https://education.github.com/discount_requests/application</a>)</li>
+<li>Wait 3-4 days for the email to be verified, you will receive a welcome email from <code>edu-noreply@github.com</code>. At this point, your GitHub profile should show a <code>PRO</code> badge on the left column (see e.g.&nbsp;<a href="https://github.com/RuizSerra/">https://github.com/RuizSerra/</a>)</li>
+<li>Enable GitHub Copilot at <a href="https://github.com/settings/copilot">https://github.com/settings/copilot</a></li>
+<li>Install the Copilot extension in Visual Studio Code, then enable Copilot (ensure you are signed in to your GitHub account in VS Code)</li>
+<li>Enjoy the coding efficiency boost with your new AI pair-programmer</li>
+</ol>
+<p>See also:</p>
+<ul>
+<li><a href="https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/">[Announcement] GitHub Copilot now available for Teachers (2022/09/08)</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279">Step-by-Step: Setting Up GitHub Student and GitHub Copilot as an Authenticated Student Developer</a></li>
+</ul>
+
+
+
+ ]]></description>
+  <category>programming</category>
+  <category>ai</category>
+  <category>productivity</category>
+  <guid>https://jaime.rs/posts/GitHub-Copilot-free/</guid>
+  <pubDate>Thu, 22 Feb 2024 13:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>
   <link>https://jaime.rs/posts/C3-2023-symposium/</link>
