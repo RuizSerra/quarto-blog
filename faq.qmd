@@ -1,0 +1,23 @@
+---
+title: "Frequently Asked Questions"
+page-layout: full
+---
+
+<details>
+<summary>How do you pronounce your name?</summary>
+`[ˈxajme]` sounds like *[HIGHmay](https://www.name-coach.com/jaime-rs)*.
+</details>
+
+<details>
+<summary>What tools do you use for your research?</summary>
+I use a MacBook Pro:
+* [Zotero](https://www.zotero.org/): reference manager
+* [Obsidian.md](https://obsidian.md/): note editor
+* [VS Code](https://code.visualstudio.com/): code editor
+* [Overleaf](https://overleaf.com/): text processor for research manuscripts
+* [Quarto](https://quarto.org/): for Markdown presentation slides (and this website!)
+* [Brave](https://brave.com/): internet browser
+* [Toggl](https://toggl.com/): time tracker
+and an Android phone:
+* [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&hl=en&gl=US): epub and PDF reader
+</details>

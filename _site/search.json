@@ -1,38 +1,31 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Jaime Ruiz Serra",
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "PhD candidate\nModelling and Simulation Research Group\nCentre for Complex Systems\nThe University of Sydney\nMy research leverages Agent-Based Computational Economics to explore how democratic and cooperative decision-making and ownership structures in organisations impact the economy at large. By integrating concepts from social psychology into the decision-making of individual agents in economic models, we can improve the real-world fidelity of the models and see how more participatory organizational forms influence factors such as market dynamics and wealth distribution."
+    "text": "How do you pronounce your name?\n\n[ˈxajme] sounds like HIGHmay.\n\n\n\nWhat tools do you use for your research?\n\nI use a MacBook Pro: * Zotero: reference manager * Obsidian.md: note editor * VS Code: code editor * Overleaf: text processor for research manuscripts * Quarto: for Markdown presentation slides (and this website!) * Brave: internet browser * Toggl: time tracker and an Android phone: * Moon+ Reader Pro: epub and PDF reader"
   },
   {
-    "objectID": "index.html#selected-publications",
-    "href": "index.html#selected-publications",
-    "title": "Jaime Ruiz Serra",
-    "section": "Selected Publications",
-    "text": "Selected Publications\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. ACM Trans. Multimedia Comput. Commun. Appl., 2024. DOI:10.1145/3650111\nRuiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In Proceedings of the 2022 Australasian Conference on Robotics and Automation (ACRA 2022). Brisbane, Australia, December 2022. arXiv:2209.07043\nMore on Scholar"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Jaime Ruiz Serra",
-    "section": "Education",
-    "text": "Education\nThe University of Sydney (Sydney, AU)\nPhD, Computational Economics\nOct 2022 – Present\nMITx on edX (Online)\nMicroMasters, Statistics and Data Science\nMar 2021 – Nov 2022\nSwinburne University of Technology (Melbourne, AU)\nBEng (Hons), Robotics and Mechatronics\nFeb 2016 – Dec 2020\nCATC Design School (Melborune, AU)\nDipDes, Graphic Design\nJun 2013 – May 2014"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Jaime Ruiz Serra",
-    "section": "Experience",
-    "text": "Experience\nThe University of Sydney (Sydney, AU)\nTeaching Assistant, Computer Science, Complex Systems\nFeb 2023 – Present\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020 – Present\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018 – Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016 – Sep 2017\nMore on LinkedIn"
-  },
-  {
-    "objectID": "posts/C3-2023-symposium/index.html",
-    "href": "posts/C3-2023-symposium/index.html",
-    "title": "Complexity, Criticality, Computation Symposium (C3) 2023",
+    "objectID": "posts/towards-ecological-ethics/index.html",
+    "href": "posts/towards-ecological-ethics/index.html",
+    "title": "Towards an Ecological Ethics",
     "section": "",
-    "text": "The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation."
+    "text": "As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order to ensure I can continue to pay my university fees, rent, bills and the like. “Perhaps I might even be able to do some travel if I am conservative enough with my spending”, is my teleological rationale. On the other hand, I am aware that cheaper consumer products often come at a cost of being less healthy, produced by big industrial corporations, and more damaging to the environment (for instance, using unsustainable ingredients like palm oil, overseas manufacturing and its carbon footprint, and/or cheaper non-recyclable packaging).\nThe industrial complex, as a system, requires input (capital, raw materials) to produce its output and continue to thrive. Consumers provide the capital and nature provides the raw materials. In the process, they become instruments for the production of prestige goods and weapons in the interest of domination by the ruling class Gare (2010). One of the astonishing phenomena by which this dynamic is perpetuated are heavily processed foods. These are a manifestation of our technological prowess, in the sense that they exploit the principle of least action, whereby systems (in this case, humans) have a tendency to increase their potential energy while trying to minimise any action (e.g. movement) Feynman (1964), Das (2013). The consumption of such products is made easy by their cheap and time-saving qualities (both in the preparation and procuring thereof) Pollan (2013).\nClosely related to the principle of least action is entropy, or amount of chaos. The second law of thermodynamics states that “the entropy in an isolated system can increase but not decrease” Wehrl (1978). Open thermodynamic systems such as living organisms, however, are able to reduce their local entropy through increasing that of their environment, with a resultant net increase in entropy overall1. Thus once again humanity as a whole—by means of industrial streamlining of production—continues to exploit this phenomenon to our immediate benefit and long term detriment of our habitat (and, unwittingly, of ourselves).\nSo we find ourselves at a critical time at the edge of chaos McLaren (2009). Within the limited conditions in which life and order are possible, equilibrium is delicate2. We need to change our ways to ensure the long term prosperity of our environment (and through it, of ourselves). I believe that a powerful way in which we can assert our free will is by acting against the principle of least action.\nWe are privileged to have a wealth of knowledge and connectedness at our disposal (largely as a result of industrial civilisation), which we can deploy as local, small scale, sustainable production of sustenance and goods, working in communities within communities, as suggested by the likes of Chomsky Chomsky and Foucault (1971), and Bookchin Bookchin (1987).\nIn order to make an impact in the correction of our course as a species, a critical mass of people willing to inspire change is required. It is our role as thinkers to convince our fellow humans that everyone has a stake, that democracy manifests in subtle ways, and that every action counts. A way to inspire people to act might be to romanticise production as we have consumption—for which we would have to overcome the principle of least action—making it desirable, commendable. This is achievable through an Aristotelian virtue ethics."
+  },
+  {
+    "objectID": "posts/towards-ecological-ethics/index.html#footnotes",
+    "href": "posts/towards-ecological-ethics/index.html#footnotes",
+    "title": "Towards an Ecological Ethics",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIt is important to note here that there is no escaping the arrow of time Hawking (2009). It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.↩︎\nI invite the reader to consider the relationship between complexity and entropy, as outlined in Rosso et al. (2007).↩︎"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Translating an unwieldy codebase\n\n\n2 min\n\n\n\n\n\n\nMar 16, 2024\n\n\n\n\n\n\n\n\n\n\n\nLearning scene representations for human-assistive displays using self-attention networks\n\n\n2 min\n\n\n\n\n\n\nMar 3, 2024\n\n\n\n\n\n\n\n\n\n\n\nComplexity, Criticality, Computation Symposium (C3) 2023\n\n\n1 min\n\n\n\n\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n2 min\n\n\n\n\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\nFinding the vanishing point in images\n\n\n6 min\n\n\n\n\n\n\nOct 5, 2021\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\n12 min\n\n\n\n\n\n\nMay 31, 2020\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\n4 min\n\n\n\n\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/ACM-TOMM-selfattention/index.html",
@@ -91,24 +84,52 @@
     "text": "Published in MDPI Algorithms\nOpen Access, DOI:10.3390/a16020068\n\nTheory of mind (ToM) is the psychological construct by which we model another’s internal mental states. Through ToM, we adjust our own behaviour to best suit a social context, and therefore it is essential to our everyday interactions with others. In adopting an algorithmic (rather than a psychological or neurological) approach to ToM, we gain insights into cognition that will aid us in building more accurate models for the cognitive and behavioural sciences, as well as enable artificial agents to be more proficient in social interactions as they become more embedded in our everyday lives. Inverse reinforcement learning (IRL) is a class of machine learning methods by which to infer the preferences (rewards as a function of state) of a decision maker from its behaviour (trajectories in a Markov decision process). IRL can provide a computational approach for ToM, as recently outlined by Jara-Ettinger, but this will require a better understanding of the relationship between ToM concepts and existing IRL methods at the algorthmic level. Here, we provide a review of prominent IRL algorithms and their formal descriptions, and discuss the applicability of IRL concepts as the algorithmic basis of a ToM in AI.\n\nCitation:\n@article{Ruiz-Serra2023InverseReinforcement,\n  title = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}: {{Current Methods}} and {{Open Problems}}},\n  shorttitle = {Inverse {{Reinforcement Learning}} as the {{Algorithmic Basis}} for {{Theory}} of {{Mind}}},\n  author = {{Ruiz-Serra}, Jaime and Harr{\\'e}, Michael S.},\n  year = {2023},\n  month = feb,\n  journal = {Algorithms},\n  volume = {16},\n  number = {2},\n  pages = {68},\n  publisher = {{Multidisciplinary Digital Publishing Institute}},\n  issn = {1999-4893},\n  doi = {10.3390/a16020068}\n}"
   },
   {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Blog",
+    "objectID": "posts/translating-code-different-language/index.html",
+    "href": "posts/translating-code-different-language/index.html",
+    "title": "Translating an unwieldy codebase",
     "section": "",
-    "text": "Learning scene representations for human-assistive displays using self-attention networks\n\n\n2 min\n\n\n\n\n\n\nMar 3, 2024\n\n\n\n\n\n\n\n\n\n\n\nComplexity, Criticality, Computation Symposium (C3) 2023\n\n\n1 min\n\n\n\n\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n2 min\n\n\n\n\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\nFinding the vanishing point in images\n\n\n6 min\n\n\n\n\n\n\nOct 5, 2021\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\n12 min\n\n\n\n\n\n\nMay 31, 2020\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\n4 min\n\n\n\n\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line function with no modularity or use of classes/objects.\nMy first attempt at converting the code to Python was to use matlab2python, which did an OK job at translating the script, but had issues with 0-indexing (in Python) vs 1-indexing (in Matlab) and I believe it didn’t quite get some of the matrix operations right as numpy operations. As a result, after a bit of debugging, I got the Python code to run without throwing errors (hoorray!), but numerically something was off, since the simulation reached a stop condition five iterations in, when the Matlab version was able to run indefintely (irrespective of random seeds). Debugging this would have been a nightmare, so I needed an alternative approach.\nMy supervisor suggested breaking down the code into small functional components that I could analyse and understand, including data type use, array sizes, etc., and test each component individually.\nTo do so, I first refactored the single Matlab function into a handful of smaller functions under a main function, and then translated each to Python. To be able to test them, I ran the program saving the state of the model at various points, with\n% model code ...\nsave('test-data/1.mat')\n% more model code ...\nsave('test-data/2.mat')\n% ...\nand then loaded the model state into a Jupyter notebook to test the functions, using\nimport numpy as np\nimport scipy.io\n\nmat = scipy.io.loadmat('test-data/1.mat')\n\nt = mat['t'].item() - 1 # int (-1 because zero-index in Python)\n\nstock = mat['stock'].squeeze() # (1, F) -&gt; (F,)\nprice = mat['price'].squeeze() # (1, F) -&gt; (F,)\n\na, b = my_python_function(stock, price[t])\n\nassert np.all(a == mat['a'].squeeze())\nassert np.all(b == mat['b'].squeeze())\nThis allows me to work through the model, ensuring consistency at any arbitrary point in the flow of the function.\nFor larger functions that were harder to debug in one go, I applied the same technique within the function itself, checking the variables for consistency at various stages."
   },
   {
-    "objectID": "posts/towards-ecological-ethics/index.html",
-    "href": "posts/towards-ecological-ethics/index.html",
-    "title": "Towards an Ecological Ethics",
+    "objectID": "posts/C3-2023-symposium/index.html",
+    "href": "posts/C3-2023-symposium/index.html",
+    "title": "Complexity, Criticality, Computation Symposium (C3) 2023",
     "section": "",
-    "text": "As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order to ensure I can continue to pay my university fees, rent, bills and the like. “Perhaps I might even be able to do some travel if I am conservative enough with my spending”, is my teleological rationale. On the other hand, I am aware that cheaper consumer products often come at a cost of being less healthy, produced by big industrial corporations, and more damaging to the environment (for instance, using unsustainable ingredients like palm oil, overseas manufacturing and its carbon footprint, and/or cheaper non-recyclable packaging).\nThe industrial complex, as a system, requires input (capital, raw materials) to produce its output and continue to thrive. Consumers provide the capital and nature provides the raw materials. In the process, they become instruments for the production of prestige goods and weapons in the interest of domination by the ruling class Gare (2010). One of the astonishing phenomena by which this dynamic is perpetuated are heavily processed foods. These are a manifestation of our technological prowess, in the sense that they exploit the principle of least action, whereby systems (in this case, humans) have a tendency to increase their potential energy while trying to minimise any action (e.g. movement) Feynman (1964), Das (2013). The consumption of such products is made easy by their cheap and time-saving qualities (both in the preparation and procuring thereof) Pollan (2013).\nClosely related to the principle of least action is entropy, or amount of chaos. The second law of thermodynamics states that “the entropy in an isolated system can increase but not decrease” Wehrl (1978). Open thermodynamic systems such as living organisms, however, are able to reduce their local entropy through increasing that of their environment, with a resultant net increase in entropy overall1. Thus once again humanity as a whole—by means of industrial streamlining of production—continues to exploit this phenomenon to our immediate benefit and long term detriment of our habitat (and, unwittingly, of ourselves).\nSo we find ourselves at a critical time at the edge of chaos McLaren (2009). Within the limited conditions in which life and order are possible, equilibrium is delicate2. We need to change our ways to ensure the long term prosperity of our environment (and through it, of ourselves). I believe that a powerful way in which we can assert our free will is by acting against the principle of least action.\nWe are privileged to have a wealth of knowledge and connectedness at our disposal (largely as a result of industrial civilisation), which we can deploy as local, small scale, sustainable production of sustenance and goods, working in communities within communities, as suggested by the likes of Chomsky Chomsky and Foucault (1971), and Bookchin Bookchin (1987).\nIn order to make an impact in the correction of our course as a species, a critical mass of people willing to inspire change is required. It is our role as thinkers to convince our fellow humans that everyone has a stake, that democracy manifests in subtle ways, and that every action counts. A way to inspire people to act might be to romanticise production as we have consumption—for which we would have to overcome the principle of least action—making it desirable, commendable. This is achievable through an Aristotelian virtue ethics."
+    "text": "The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation."
   },
   {
-    "objectID": "posts/towards-ecological-ethics/index.html#footnotes",
-    "href": "posts/towards-ecological-ethics/index.html#footnotes",
-    "title": "Towards an Ecological Ethics",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jaime Ruiz Serra",
+    "section": "",
+    "text": "PhD candidate\nModelling and Simulation Research Group\nCentre for Complex Systems\nThe University of Sydney\nMy research leverages Agent-Based Computational Economics1 to explore how democratic and cooperative decision-making and ownership structures in organisations impact the economy at large. By integrating concepts from social psychology into the decision-making of individual agents in economic models, we can improve the real-world fidelity of the models and see how more participatory organizational forms influence factors such as market dynamics and wealth distribution."
+  },
+  {
+    "objectID": "index.html#selected-publications",
+    "href": "index.html#selected-publications",
+    "title": "Jaime Ruiz Serra",
+    "section": "Selected Publications",
+    "text": "Selected Publications\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. ACM Trans. Multimedia Comput. Commun. Appl., 2024. DOI:10.1145/3650111\nRuiz-Serra J, Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention based visual navigation in the real world. In Proceedings of the 2022 Australasian Conference on Robotics and Automation (ACRA 2022). Brisbane, Australia, December 2022. arXiv:2209.07043\nMore on Scholar"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Jaime Ruiz Serra",
+    "section": "Education",
+    "text": "Education\nThe University of Sydney (Sydney, AU)\nPhD, Computational Economics\nOct 2022 – Present\nMITx on edX (Online)\nMicroMasters, Statistics and Data Science\nMar 2021 – Nov 2022\nSwinburne University of Technology (Melbourne, AU)\nBEng (Hons), Robotics and Mechatronics\nFeb 2016 – Dec 2020\nCATC Design School (Melborune, AU)\nDipDes, Graphic Design\nJun 2013 – May 2014"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Jaime Ruiz Serra",
+    "section": "Experience",
+    "text": "Experience\nThe University of Sydney (Sydney, AU)\nTeaching Assistant, Computer Science, Complex Systems\nFeb 2023 – Present\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020 – Present\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018 – Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016 – Sep 2017\nMore on LinkedIn"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Jaime Ruiz Serra",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nIt is important to note here that there is no escaping the arrow of time Hawking (2009). It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.↩︎\nI invite the reader to consider the relationship between complexity and entropy, as outlined in Rosso et al. (2007).↩︎"
+    "text": "Footnotes\n\n\n“Agent-based computational economics is the computational study of economic processes modelled as dynamic systems of interacting agents” (Tesfatsion, 2006)↩︎"
   }
 ]

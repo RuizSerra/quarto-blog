@@ -37,5 +37,11 @@
   },
   "posts/ACM-TOMM-selfattention/index.qmd": {
     "index.html": "9ad578f0"
+  },
+  "faq.qmd": {
+    "faq.html": "58c733bd"
+  },
+  "posts/translating-code-different-language/index.qmd": {
+    "index.html": "ee26e1a2"
   }
 }

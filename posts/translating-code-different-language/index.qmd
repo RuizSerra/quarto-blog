@@ -1,0 +1,47 @@
+---
+title: Translating an unwieldy codebase
+subtitle: Converting a single 1000-line MATLAB function to Python and not going insane
+date: 2024-03-16
+author: Jaime Ruiz Serra
+categories: [programming, modelling, experiments]
+# bibliography: references.bib
+---
+
+I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line function with no modularity or use of classes/objects.
+
+My first attempt at converting the code to Python was to use [matlab2python](https://github.com/ebranlard/matlab2python), which did an OK job at translating the script, but had issues with 0-indexing (in Python) vs 1-indexing (in Matlab) and I believe it didn't quite get some of the matrix operations right as numpy operations. As a result, after a bit of debugging, I got the Python code to *run* without throwing errors (hoorray!), but numerically something was off, since the simulation reached a stop condition five iterations in, when the Matlab version was able to run indefintely (irrespective of random seeds). Debugging this would have been a nightmare, so I needed an alternative approach.
+
+My supervisor suggested breaking down the code into small functional components that I could analyse and understand, including data type use, array sizes, etc., and test each component individually.
+
+To do so, I first refactored the single Matlab function into a handful of smaller functions under a main function, and then translated each to Python. To be able to test them, I ran the program saving the state of the model at various points, with
+
+```octave
+% model code ...
+save('test-data/1.mat')
+% more model code ...
+save('test-data/2.mat')
+% ...
+```
+
+and then loaded the model state into a Jupyter notebook to test the functions, using
+
+```python
+import numpy as np
+import scipy.io
+
+mat = scipy.io.loadmat('test-data/1.mat')
+
+t = mat['t'].item() - 1 # int (-1 because zero-index in Python)
+
+stock = mat['stock'].squeeze() # (1, F) -> (F,)
+price = mat['price'].squeeze() # (1, F) -> (F,)
+
+a, b = my_python_function(stock, price[t])
+
+assert np.all(a == mat['a'].squeeze())
+assert np.all(b == mat['b'].squeeze())
+```
+
+This allows me to work through the model, ensuring consistency at any arbitrary point in the flow of the function.
+
+For larger functions that were harder to debug in one go, I applied the same technique within the function itself, checking the variables for consistency at various stages.

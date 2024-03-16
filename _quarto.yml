@@ -4,7 +4,7 @@ project:
     - "index.html"
 
 website:
-  favicon: public/jaime-blurry-small-300h.png
+  favicon: img/jaime-blurry-small-300h.png
   title: "Jaime Ruiz Serra"
   site-url: https://jaime.rs
   description: "Jaime Ruiz Serra's personal website"
@@ -19,9 +19,15 @@ website:
     border: false
     left: "Find me on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ), [LinkedIn](https://linkedin.com/in/RuizSerra), [GitHub](https://github.com/RuizSerra), [X](https://x.com/JRuizSerra)"
     right: "© 2024 [Jaime Ruiz Serra](/)"
-  twitter-card: true
+  twitter-card:
+    site: "@JRuizSerra"
+    creator: "@JRuizSerra"
   open-graph: true
   google-analytics: "G-K8NCEFDJY2"
+  # comments:
+  #   hypothesis: 
+  #     theme: clean
+  #     openSidebar: false
 
 format:
   html:

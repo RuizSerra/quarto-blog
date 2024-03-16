@@ -10,7 +10,117 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.4.551</generator>
-<lastBuildDate>Sat, 02 Mar 2024 13:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 15 Mar 2024 13:00:00 GMT</lastBuildDate>
+<item>
+  <title>Translating an unwieldy codebase</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/translating-code-different-language/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line function with no modularity or use of classes/objects.</p>
+<p>My first attempt at converting the code to Python was to use <a href="https://github.com/ebranlard/matlab2python">matlab2python</a>, which did an OK job at translating the script, but had issues with 0-indexing (in Python) vs 1-indexing (in Matlab) and I believe it didn’t quite get some of the matrix operations right as numpy operations. As a result, after a bit of debugging, I got the Python code to <em>run</em> without throwing errors (hoorray!), but numerically something was off, since the simulation reached a stop condition five iterations in, when the Matlab version was able to run indefintely (irrespective of random seeds). Debugging this would have been a nightmare, so I needed an alternative approach.</p>
+<p>My supervisor suggested breaking down the code into small functional components that I could analyse and understand, including data type use, array sizes, etc., and test each component individually.</p>
+<p>To do so, I first refactored the single Matlab function into a handful of smaller functions under a main function, and then translated each to Python. To be able to test them, I ran the program saving the state of the model at various points, with</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% model code ...</span></span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">save</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'test-data/1.mat'</span>)</span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% more model code ...</span></span>
+<span id="cb1-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">save</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'test-data/2.mat'</span>)</span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% ...</span></span></code></pre></div>
+<p>and then loaded the model state into a Jupyter notebook to test the functions, using</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> scipy.io</span>
+<span id="cb2-3"></span>
+<span id="cb2-4">mat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> scipy.io.loadmat(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'test-data/1.mat'</span>)</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> mat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'t'</span>].item() <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># int (-1 because zero-index in Python)</span></span>
+<span id="cb2-7"></span>
+<span id="cb2-8">stock <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> mat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'stock'</span>].squeeze() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-9">price <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> mat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'price'</span>].squeeze() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-10"></span>
+<span id="cb2-11">a, b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> my_python_function(stock, price[t])</span>
+<span id="cb2-12"></span>
+<span id="cb2-13"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">assert</span> np.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">all</span>(a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> mat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>].squeeze())</span>
+<span id="cb2-14"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">assert</span> np.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">all</span>(b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> mat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>].squeeze())</span></code></pre></div>
+<p>This allows me to work through the model, ensuring consistency at any arbitrary point in the flow of the function.</p>
+<p>For larger functions that were harder to debug in one go, I applied the same technique within the function itself, checking the variables for consistency at various stages.</p>
+
+
+
+ ]]></description>
+  <category>programming</category>
+  <category>modelling</category>
+  <category>experiments</category>
+  <guid>https://jaime.rs/posts/translating-code-different-language/</guid>
+  <pubDate>Fri, 15 Mar 2024 13:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Learning scene representations for human-assistive displays using self-attention networks</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>

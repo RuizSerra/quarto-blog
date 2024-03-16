@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jaime Ruiz Serra">
-<meta name="dcterms.date" content="2023-01-23">
+<meta name="dcterms.date" content="2024-03-16">
 
-<title>Jaime Ruiz Serra - Complexity, Criticality, Computation Symposium (C3) 2023</title>
+<title>Jaime Ruiz Serra - Translating an unwieldy codebase</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,11 +115,11 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Jaime Ruiz Serra - Complexity, Criticality, Computation Symposium (C3) 2023">
-<meta property="og:description" content="Jaime Ruiz Serra’s personal website">
+<meta property="og:title" content="Jaime Ruiz Serra - Translating an unwieldy codebase">
+<meta property="og:description" content="Converting a single 1000-line MATLAB function to Python and not going insane">
 <meta property="og:site_name" content="Jaime Ruiz Serra">
-<meta name="twitter:title" content="Jaime Ruiz Serra - Complexity, Criticality, Computation Symposium (C3) 2023">
-<meta name="twitter:description" content="Jaime Ruiz Serra’s personal website">
+<meta name="twitter:title" content="Jaime Ruiz Serra - Translating an unwieldy codebase">
+<meta name="twitter:description" content="Converting a single 1000-line MATLAB function to Python and not going insane">
 <meta name="twitter:creator" content="@JRuizSerra">
 <meta name="twitter:site" content="@JRuizSerra">
 <meta name="twitter:card" content="summary">
@@ -122,9 +156,12 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Complexity, Criticality, Computation Symposium (C3) 2023</h1>
+      <h1 class="title">Translating an unwieldy codebase</h1>
+            <p class="subtitle lead">Converting a single 1000-line MATLAB function to Python and not going insane</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">conferences</div>
+                <div class="quarto-category">programming</div>
+                <div class="quarto-category">modelling</div>
+                <div class="quarto-category">experiments</div>
               </div>
                   </div>
   </div>
@@ -142,7 +179,7 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 23, 2023</p>
+        <p class="date">March 16, 2024</p>
       </div>
     </div>
     
@@ -163,8 +200,32 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 
 
 
-<p><img src="c3-group.jpg" class="img-fluid"></p>
-<p>The <a href="https://www.sydney.edu.au/science/our-research/research-centres/centre-for-complex-systems/c3-symposia.html">C3-2023 Symposium</a> took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of presentations and conversations, snorkeling and relaxation.</p>
+<p>I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line function with no modularity or use of classes/objects.</p>
+<p>My first attempt at converting the code to Python was to use <a href="https://github.com/ebranlard/matlab2python">matlab2python</a>, which did an OK job at translating the script, but had issues with 0-indexing (in Python) vs 1-indexing (in Matlab) and I believe it didn’t quite get some of the matrix operations right as numpy operations. As a result, after a bit of debugging, I got the Python code to <em>run</em> without throwing errors (hoorray!), but numerically something was off, since the simulation reached a stop condition five iterations in, when the Matlab version was able to run indefintely (irrespective of random seeds). Debugging this would have been a nightmare, so I needed an alternative approach.</p>
+<p>My supervisor suggested breaking down the code into small functional components that I could analyse and understand, including data type use, array sizes, etc., and test each component individually.</p>
+<p>To do so, I first refactored the single Matlab function into a handful of smaller functions under a main function, and then translated each to Python. To be able to test them, I ran the program saving the state of the model at various points, with</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">% model code ...</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">save</span>(<span class="st">'test-data/1.mat'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">% more model code ...</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">save</span>(<span class="st">'test-data/2.mat'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">% ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and then loaded the model state into a Jupyter notebook to test the functions, using</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.io</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> scipy.io.loadmat(<span class="st">'test-data/1.mat'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> mat[<span class="st">'t'</span>].item() <span class="op">-</span> <span class="dv">1</span> <span class="co"># int (-1 because zero-index in Python)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> mat[<span class="st">'stock'</span>].squeeze() <span class="co"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> mat[<span class="st">'price'</span>].squeeze() <span class="co"># (1, F) -&gt; (F,)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> my_python_function(stock, price[t])</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.<span class="bu">all</span>(a <span class="op">==</span> mat[<span class="st">'a'</span>].squeeze())</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.<span class="bu">all</span>(b <span class="op">==</span> mat[<span class="st">'b'</span>].squeeze())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This allows me to work through the model, ensuring consistency at any arbitrary point in the flow of the function.</p>
+<p>For larger functions that were harder to debug in one go, I applied the same technique within the function itself, checking the variables for consistency at various stages.</p>
 
 
 

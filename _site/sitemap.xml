@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jaime.rs/index.html</loc>
-    <lastmod>2024-03-07T23:39:25.199Z</lastmod>
+    <loc>https://jaime.rs/faq.html</loc>
+    <lastmod>2024-03-13T01:18:18.279Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/C3-2023-symposium/index.html</loc>
-    <lastmod>2023-01-23T03:12:53.842Z</lastmod>
+    <loc>https://jaime.rs/posts/towards-ecological-ethics/index.html</loc>
+    <lastmod>2023-01-23T06:33:57.739Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaime.rs/posts/index.html</loc>
+    <lastmod>2024-03-07T23:40:26.018Z</lastmod>
   </url>
   <url>
     <loc>https://jaime.rs/posts/ACM-TOMM-selfattention/index.html</loc>
@@ -25,11 +29,15 @@
     <lastmod>2024-03-07T23:43:59.948Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/index.html</loc>
-    <lastmod>2024-03-07T23:40:26.018Z</lastmod>
+    <loc>https://jaime.rs/posts/translating-code-different-language/index.html</loc>
+    <lastmod>2024-03-16T02:35:57.629Z</lastmod>
   </url>
   <url>
-    <loc>https://jaime.rs/posts/towards-ecological-ethics/index.html</loc>
-    <lastmod>2023-01-23T06:33:57.739Z</lastmod>
+    <loc>https://jaime.rs/posts/C3-2023-symposium/index.html</loc>
+    <lastmod>2023-01-23T03:12:53.842Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaime.rs/index.html</loc>
+    <lastmod>2024-03-08T22:32:11.174Z</lastmod>
   </url>
 </urlset>
