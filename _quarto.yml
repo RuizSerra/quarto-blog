@@ -47,3 +47,6 @@ format:
     email-obfuscation: javascript
     smooth-scroll: true
     highlight-style: gruvbox
+    includes:
+      in-header: _custom-head.html
+
