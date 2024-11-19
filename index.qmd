@@ -39,6 +39,9 @@ influence factors such as market dynamics and wealth distribution.
 
 [^1]: "Agent-based computational economics is the computational study of economic processes modelled as dynamic systems of interacting agents" (Tesfatsion, 2006)
 
+
+
+
 ## Selected Publications
 
 Ruiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
@@ -56,7 +59,7 @@ Ruiz-Serra J, White J, Petrie S, Kameneva T, McCarthy C. Towards self-attention 
 ## Education
 
 The University of Sydney (Sydney, AU)  
-PhD, *Computational Economics*  
+PhD, *Complex Systems (Computer Science)*  
 Oct 2022 -- *Present*
 
 MITx on edX (Online)  
@@ -78,12 +81,12 @@ Jun 2013 -- May 2014
 ## Experience
 
 The University of Sydney (Sydney, AU)  
-Teaching Assistant, *Computer Science, Complex Systems*  
-Feb 2023 -- *Present*
+Teaching Assistant, *Machine Learning, Complex Systems*
+Feb 2023 -- Nov 2024
 
 Swinburne University of Technology (Remote/Melbourne, AU)  
 Research Assistant, *Deep Reinforcement Learning, Computer Vision*  
-Sep 2020 -- *Present*
+Sep 2020 -- Jan 2024
 
 National Australia Bank (Remote/Melbourne, AU)  
 Analyst, Engineer, *Cloud Infrastructure (AWS)*  
