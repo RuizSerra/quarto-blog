@@ -30,14 +30,20 @@ Modelling and Simulation Research Group
 [Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html)  
 The University of Sydney
 
-My research leverages **Agent-Based Computational Economics**[^1] to explore how democratic 
+I investigate the relationship between *agency* and *collectivity*, and the role 
+*incentives* have to play in this relationship.
+My research leverages the agent-based computational economics[^1] paradigm and 
+draws from game theory, evolutionary theory, information theory, and social psychology.
+<!-- explore how democratic 
 and cooperative decision-making and ownership structures in organisations impact 
-the economy at large. By integrating concepts from social psychology into the 
+the economy at large. 
+By integrating concepts from social psychology into the 
 decision-making of individual agents in economic models, we can improve the 
 real-world fidelity of the models and see how more **participatory organizational forms** 
-influence factors such as market dynamics and wealth distribution.
+influence factors such as market dynamics and wealth distribution.-->
 
-[^1]: "Agent-based computational economics is the computational study of economic processes modelled as dynamic systems of interacting agents" (Tesfatsion, 2006)
+[^1]: "Agent-based computational economics is the computational study of economic 
+processes modelled as dynamic systems of interacting agents" (Tesfatsion, 2006)
 
 
 
