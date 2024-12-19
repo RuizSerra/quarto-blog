@@ -49,7 +49,7 @@ influence factors such as market dynamics and wealth distribution.-->
 
 ## Selected Publications
 
-Ruiz-Serra J, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In *AAMAS '25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems*. Detroit, USA, May 2024.
+Ruiz-Serra J, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In *AAMAS '25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems*. Detroit, USA, May 2025.
 
 Ruiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
 
