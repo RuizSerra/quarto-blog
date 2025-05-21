@@ -17,11 +17,11 @@ website:
         href: /posts
   page-footer:
     border: false
-    left: "Find me on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ), [LinkedIn](https://linkedin.com/in/RuizSerra), [GitHub](https://github.com/RuizSerra), [Bluesky](https://bsky.app/profile/ruizserra.bsky.social)"
+    left: "Find me on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ), [LinkedIn](https://linkedin.com/in/RuizSerra), [GitHub](https://github.com/RuizSerra)"
     right: "© 2024 [Jaime Ruiz Serra](/)"
-  twitter-card:
-    site: "@JRuizSerra"
-    creator: "@JRuizSerra"
+  # twitter-card:
+  #   site: "@JRuizSerra"
+  #   creator: "@JRuizSerra"
   open-graph: true
   google-analytics: "G-K8NCEFDJY2"
   # comments:

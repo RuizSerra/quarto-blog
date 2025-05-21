@@ -39,7 +39,7 @@
     "href": "posts/AAMAS-2025/index.html",
     "title": "(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions",
     "section": "",
-    "text": "TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game transitions to induce non-stationarity in agent preferences and study the resultant adaptive behaviour at the individual and collective levels. Bridging cognitive process models (AIF) with economic/MAS models (game theory) shows potential for understanding collective intelligence and designing interventions.\nLinks: * Code on GitHub * Presentation slides * Poster"
+    "text": "TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game transitions to induce non-stationarity in agent preferences and study the resultant adaptive behaviour at the individual and collective levels. Bridging cognitive process models (AIF) with economic/MAS models (game theory) shows potential for understanding collective intelligence and designing interventions.\nLinks:\n\nCode on GitHub\nPresentation slides\nPoster"
   },
   {
     "objectID": "posts/towards-ecological-ethics/index.html",

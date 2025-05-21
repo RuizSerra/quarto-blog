@@ -1,27 +1,13 @@
-// /* css styles */
-
-// @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
-
-// * {
-//     font-size: 100%;
-//     font-family: 'Arimo', sans-serif;
-//    }
-
-
 /*-- scss:defaults --*/
 // Base document colors
 $body-bg:                             #fcfcfc;
 $primary:                               $body-bg;
 $body-color:                          rgb(0, 0, 0);
-$link-color:                            $body-color;
+$link-color:                            $body-color; // Links will initially have the same color as body text
 $headings-color:                        $body-color !default;
 $link-shade-percentage:                   30% !default;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
-
-// $title-block-color: black;
-// $title-block-contast-color: black;
-// $title-block-padding-top: 4em;
-
+// Define a distinct hover color, perhaps a bit darker or a different hue
+$link-hover-color:                        darken($body-color, 25%) !default; // Example: darken the body color
 
 // Code blocks
 // $code-block-bg-alpha: -.8;
@@ -31,3 +17,20 @@ $navbar-bg:                             $body-bg !default;
 $code-color:                              lighten($body-color, 10%) !default;
 $code-bg:                                 darken($body-bg, 10%) !default;
 
+/*-- scss:rules --*/ // It's good practice to put custom rules after defaults
+
+// Default link styling
+a {
+  color: $link-color;
+  text-decoration: underline; // Add underline to links
+  transition: color 0.2s ease-in-out; // Smooth transition for hover effect
+}
+
+// Link hover styling
+a:hover {
+  color: $link-hover-color;
+  text-decoration: underline; // Ensure underline stays on hover, or change if desired
+  // You could also add other hover effects here, like:
+  // text-decoration-thickness: 2px; // If you want a thicker underline on hover
+  // opacity: 0.8;
+}
