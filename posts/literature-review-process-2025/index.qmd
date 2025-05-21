@@ -1,0 +1,40 @@
+---
+title: How to Familiarise Yourself with the Literature Quick in 2025
+subtitle: Leverage your reference manager and LLMs to get familiar with the literature, quicksmart
+date: 2025-05-20
+author: Jaime Ruiz Serra
+categories: [research, ai, productivity]
+# bibliography: references.bib
+draft: true
+---
+
+`[STATUS: Rough draft]`
+
+In this post we explore a process to familiarise oneself with a slice of the literature, quickly. A rough guide.
+
+## Requirements
+
+* Zotero
+* Zotero Connector browser extension
+* [zotero_retrieve.py](https://gist.github.com/RuizSerra/6a657f6f0b2ce1e5d14a74a29fa68b8d)
+
+## Process
+
+For illustrative purposes, let's look into the connection between the Free Energy Principle ane Reinforcement Learning.
+
+### Collecting sources
+
+1. Create a new collection in Zotero for this literature review, e.g. `FEP-RL`.
+
+2. Find relevant papers in Google Scholar.
+
+![](google-scholar.png)
+
+3. Click on the Zotero Connector browser extension icon (folder icon). This allows you to save any of the Scholar entries to your Zotero collection. Alternatively, open interesting tabs and save each item to Zotero individually via the browser extension. Ensure you are saving to your new Zotero collection (`FEP-RL` in this example).
+
+### Processing sources
+
+1. Run `$ python zotero_retrieve.py --collection-name "FEP-RL" --zotero-base-path "/Users/you/Zotero" --destination-dir "/Users/you/Downloads/"`
+
+2. Upload all PDFs in `/Users/you/Downloads/FEP-RL` to [notebooklm.google.com](https://notebooklm.google.com)
+

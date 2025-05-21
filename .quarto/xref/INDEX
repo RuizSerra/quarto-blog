@@ -52,5 +52,11 @@
   },
   "food.qmd": {
     "food.html": "9e9f203a"
+  },
+  "posts/literature-review-process-2025/index.qmd": {
+    "index.html": "14fb921a"
+  },
+  "posts/AAMAS-2025/index.qmd": {
+    "index.html": "ca87d9a4"
   }
 }

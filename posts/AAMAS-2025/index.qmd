@@ -1,0 +1,15 @@
+---
+title: (AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions
+# subtitle: 
+date: 2025-05-20
+author: Jaime Ruiz Serra
+categories: [research, ai, active inference, conference]
+# bibliography: references.bib
+---
+
+TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game transitions to induce non-stationarity in agent preferences and study the resultant adaptive behaviour at the individual and collective levels. Bridging cognitive process models (AIF) with economic/MAS models (game theory) shows potential for understanding collective intelligence and designing interventions.
+
+Links:
+* [Code on GitHub](https://github.com/RuizSerra/factorised-MA-AIF/)
+* [Presentation slides](https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-presentation.pdf)
+* [Poster](https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-poster.pdf)

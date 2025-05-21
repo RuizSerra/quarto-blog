@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jaime Ruiz Serra">
+<meta name="dcterms.date" content="2025-05-20">
 
-<title>Blog – Jaime Ruiz Serra</title>
+<title>(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions – Jaime Ruiz Serra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4ec83cce86c840ba1caad423b150bed6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-38d63ae41957cb54f75e96b1a3667fe7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4ec83cce86c840ba1caad423b150bed6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-38d63ae41957cb54f75e96b1a3667fe7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K8NCEFDJY2"></script>
 
 <script type="text/javascript">
@@ -133,39 +104,12 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 </script>
     
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Jaime Ruiz Serra" href="index.xml" data-external="1"><meta property="og:title" content="Blog – Jaime Ruiz Serra">
+<meta property="og:title" content="(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions – Jaime Ruiz Serra">
+<meta property="og:description" content="Jaime Ruiz Serra’s personal website">
 <meta property="og:site_name" content="Jaime Ruiz Serra">
-<meta name="twitter:title" content="Blog – Jaime Ruiz Serra">
+<meta name="twitter:title" content="(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions – Jaime Ruiz Serra">
+<meta name="twitter:description" content="Jaime Ruiz Serra’s personal website">
 <meta name="twitter:creator" content="@JRuizSerra">
 <meta name="twitter:site" content="@JRuizSerra">
 <meta name="twitter:card" content="summary">
@@ -184,11 +128,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../"> 
+    <a class="nav-link" href="../../"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts"> 
+    <a class="nav-link" href="../../posts"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -201,244 +145,57 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">research</div>
+                <div class="quarto-category">ai</div>
+                <div class="quarto-category">active inference</div>
+                <div class="quarto-category">conference</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jaime Ruiz Serra </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 20, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YWN0aXZlIGluZmVyZW5jZQ==">active inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29tcHV0ZXItdmlzaW9u">computer-vision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29uZmVyZW5jZQ==">conference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29uZmVyZW5jZXM=">conferences <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZXRoaWNz">ethics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZXhwZXJpbWVudHM=">experiments <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z292ZXJuYW5jZQ==">governance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bW9kZWxsaW5n">modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGktYWdlbnQ=">multi-agent <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZHVjdGl2aXR5">productivity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZ3JhbW1pbmc=">programming <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cHVibGljYXRpb25z">publications <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw==">reinforcement-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2g=">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGhlb3J5LW9mLW1pbmQ=">theory-of-mind <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game transitions to induce non-stationarity in agent preferences and study the resultant adaptive behaviour at the individual and collective levels. Bridging cognitive process models (AIF) with economic/MAS models (game theory) shows potential for understanding collective intelligence and designing interventions.</p>
+<p>Links: * <a href="https://github.com/RuizSerra/factorised-MA-AIF/">Code on GitHub</a> * <a href="https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-presentation.pdf">Presentation slides</a> * <a href="https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-poster.pdf">Poster</a></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="cmVzZWFyY2gsYWksYWN0aXZlIGluZmVyZW5jZSxjb25mZXJlbmNl" data-listing-date-sort="1747713600000" data-listing-file-modified-sort="1747844419969" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
-<a href="../posts/AAMAS-2025/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 20, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="cHJvZ3JhbW1pbmcsbW9kZWxsaW5nLGV4cGVyaW1lbnRz" data-listing-date-sort="1710561600000" data-listing-file-modified-sort="1710556726490" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="345">
-<a href="../posts/translating-code-different-language/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Translating an unwieldy codebase
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="cHVibGljYXRpb25zLGNvbXB1dGVyLXZpc2lvbg==" data-listing-date-sort="1709442000000" data-listing-file-modified-sort="1709854937309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="331">
-<a href="../posts/ACM-TOMM-selfattention/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Learning scene representations for human-assistive displays using self-attention networks
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em><br>
-Free access, DOI:10.1145/3650111
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 3, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="cHJvZ3JhbW1pbmcsYWkscHJvZHVjdGl2aXR5" data-listing-date-sort="1708664400000" data-listing-file-modified-sort="1710558027429" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
-<a href="../posts/GitHub-Copilot-free/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GitHub Copilot AI for free (for students and academics)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-I learned we can get free access to <strong>GitHub Copilot</strong> (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Feb 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Y29uZmVyZW5jZXM=" data-listing-date-sort="1674450000000" data-listing-file-modified-sort="1674443573840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<a href="../posts/C3-2023-symposium/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Complexity, Criticality, Computation Symposium (C3) 2023
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="cHVibGljYXRpb25zLHJlaW5mb3JjZW1lbnQtbGVhcm5pbmcsdGhlb3J5LW9mLW1pbmQsbXVsdGktYWdlbnQ=" data-listing-date-sort="1674104400000" data-listing-file-modified-sort="1709855039940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="283">
-<a href="../posts/IRL-ToM-algorithms/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>MDPI Algorithms</em><br>
-Open Access, DOI:10.3390/a16020068
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 19, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="cHl0aG9uLGNvbXB1dGVyLXZpc2lvbixwcm9ncmFtbWluZw==" data-listing-date-sort="1633406400000" data-listing-file-modified-sort="1674455634019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1136">
-<a href="../posts/vanishing-point-images/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Finding the vanishing point in images
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-text listing-description">
-First download a sample image.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 5, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="ZXRoaWNzLGdvdmVybmFuY2U=" data-listing-date-sort="1590897600000" data-listing-file-modified-sort="1674455674389" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2332">
-<a href="../posts/end-exporting-entropy-obscuring-accountability/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-An End to Exporting Entropy and Obscuring Accountability
-</h5>
-<div class="listing-reading-time card-text text-muted">
-12 min
-</div>
-<div class="card-text listing-description">
-Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 31, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="ZXRoaWNzLGdvdmVybmFuY2U=" data-listing-date-sort="1588564800000" data-listing-file-modified-sort="1674455637730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="617">
-<a href="../posts/towards-ecological-ethics/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Towards an Ecological Ethics
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
-<div class="card-text listing-description">
-As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 4, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -869,7 +626,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>© 2024 <a href="..">Jaime Ruiz Serra</a></p>
+<p>© 2024 <a href="../..">Jaime Ruiz Serra</a></p>
 </div>
   </div>
 </footer>
@@ -877,5 +634,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -10,7 +10,30 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.6.33</generator>
-<lastBuildDate>Fri, 15 Mar 2024 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 20 May 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/AAMAS-2025/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game transitions to induce non-stationarity in agent preferences and study the resultant adaptive behaviour at the individual and collective levels. Bridging cognitive process models (AIF) with economic/MAS models (game theory) shows potential for understanding collective intelligence and designing interventions.</p>
+<p>Links: * <a href="https://github.com/RuizSerra/factorised-MA-AIF/">Code on GitHub</a> * <a href="https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-presentation.pdf">Presentation slides</a> * <a href="https://github.com/RuizSerra/factorised-MA-AIF/blob/main/docs/AAMAS-2025-poster.pdf">Poster</a></p>
+
+
+
+ ]]></description>
+  <category>research</category>
+  <category>ai</category>
+  <category>active inference</category>
+  <category>conference</category>
+  <guid>https://jaime.rs/posts/AAMAS-2025/</guid>
+  <pubDate>Tue, 20 May 2025 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Translating an unwieldy codebase</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>
@@ -121,7 +144,7 @@ font-style: inherit;">'b'</span>].squeeze())</span></code></pre></div>
   <category>modelling</category>
   <category>experiments</category>
   <guid>https://jaime.rs/posts/translating-code-different-language/</guid>
-  <pubDate>Fri, 15 Mar 2024 14:00:00 GMT</pubDate>
+  <pubDate>Sat, 16 Mar 2024 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Learning scene representations for human-assistive displays using self-attention networks</title>
@@ -160,7 +183,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>publications</category>
   <category>computer-vision</category>
   <guid>https://jaime.rs/posts/ACM-TOMM-selfattention/</guid>
-  <pubDate>Sat, 02 Mar 2024 14:00:00 GMT</pubDate>
+  <pubDate>Sun, 03 Mar 2024 05:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png" medium="image" type="image/png" height="136" width="144"/>
 </item>
 <item>
@@ -201,7 +224,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>ai</category>
   <category>productivity</category>
   <guid>https://jaime.rs/posts/GitHub-Copilot-free/</guid>
-  <pubDate>Thu, 22 Feb 2024 14:00:00 GMT</pubDate>
+  <pubDate>Fri, 23 Feb 2024 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
@@ -221,7 +244,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
  ]]></description>
   <category>conferences</category>
   <guid>https://jaime.rs/posts/C3-2023-symposium/</guid>
-  <pubDate>Sun, 22 Jan 2023 14:00:00 GMT</pubDate>
+  <pubDate>Mon, 23 Jan 2023 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</title>
@@ -262,7 +285,7 @@ Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</
   <category>theory-of-mind</category>
   <category>multi-agent</category>
   <guid>https://jaime.rs/posts/IRL-ToM-algorithms/</guid>
-  <pubDate>Wed, 18 Jan 2023 14:00:00 GMT</pubDate>
+  <pubDate>Thu, 19 Jan 2023 05:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/IRL-ToM-algorithms/paper-thumbnail.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -890,7 +913,7 @@ font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)<
   <category>computer-vision</category>
   <category>programming</category>
   <guid>https://jaime.rs/posts/vanishing-point-images/</guid>
-  <pubDate>Mon, 04 Oct 2021 14:00:00 GMT</pubDate>
+  <pubDate>Tue, 05 Oct 2021 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>An End to Exporting Entropy and Obscuring Accountability</title>
@@ -980,7 +1003,7 @@ World Bank Group. 2018. <span>“<span class="nocase">Poverty and Shared Prosper
   <category>ethics</category>
   <category>governance</category>
   <guid>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/</guid>
-  <pubDate>Sat, 30 May 2020 14:00:00 GMT</pubDate>
+  <pubDate>Sun, 31 May 2020 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Towards an Ecological Ethics</title>
@@ -1044,7 +1067,7 @@ Wehrl, Alfred. 1978. <span>“<span class="nocase">General properties of entropy
   <category>ethics</category>
   <category>governance</category>
   <guid>https://jaime.rs/posts/towards-ecological-ethics/</guid>
-  <pubDate>Sun, 03 May 2020 14:00:00 GMT</pubDate>
+  <pubDate>Mon, 04 May 2020 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
