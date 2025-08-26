@@ -80,7 +80,7 @@ font-style: inherit;"># 'pig'</span></span>
 <span id="cb6-4"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># ['oink', 'sniff']</span></span></code></pre></div>
-<p>This requires a wrapper class that implements the decorator, which I leave to the reader as an exercise:</p>
+<p>This requires a wrapper class that implements the decorator,</p>
 <div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">my_llm_client_wrapper <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> MyLLMClientWrapper(</span>
@@ -90,6 +90,164 @@ font-style: inherit;">=</span> MyLLMClientWrapper(</span>
 background-color: null;
 font-style: inherit;"># ...</span></span>
 <span id="cb7-5">)</span></code></pre></div>
+<p>which may be something like</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> jinja2 <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Template</span>
+<span id="cb8-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> textwrap</span>
+<span id="cb8-3"></span>
+<span id="cb8-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">class</span> MyLLMClientWrapper:</span>
+<span id="cb8-5">    </span>
+<span id="cb8-6">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ...</span></span>
+<span id="cb8-7">    </span>
+<span id="cb8-8">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> llm_function(</span>
+<span id="cb8-9">            <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>,</span>
+<span id="cb8-10">            model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gpt-oss-120b"</span>,</span>
+<span id="cb8-11">            output_schema<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>,</span>
+<span id="cb8-12">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ...</span></span>
+<span id="cb8-13">        ):</span>
+<span id="cb8-14">        <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> decorator(func):</span>
+<span id="cb8-15">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@functools.wraps</span>(func)</span>
+<span id="cb8-16">            <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> wrapper(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs):</span>
+<span id="cb8-17">                prompt_template <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> func.__doc__</span>
+<span id="cb8-18">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> prompt_template:</span>
+<span id="cb8-19">                    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The decorated function must have a docstring."</span>)</span>
+<span id="cb8-20">                </span>
+<span id="cb8-21">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Construct prompt from template and arguments</span></span>
+<span id="cb8-22">                dedented_template <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> textwrap.dedent(prompt_template).strip()</span>
+<span id="cb8-23">                template <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Template(dedented_template)</span>
+<span id="cb8-24">                prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> template.render(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs)</span>
+<span id="cb8-25"></span>
+<span id="cb8-26">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># LLM call</span></span>
+<span id="cb8-27">                llm_call_kwargs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(</span>
+<span id="cb8-28">                    messages<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: prompt}],</span>
+<span id="cb8-29">                    function_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>func.<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">__name__</span>,</span>
+<span id="cb8-30">                    text_format<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>output_schema</span>
+<span id="cb8-31">                    model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>model,</span>
+<span id="cb8-32">                    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#...</span></span>
+<span id="cb8-33">                )</span>
+<span id="cb8-34">                </span>
+<span id="cb8-35">                response <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">self</span>.invoke(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>llm_call_kwargs)</span>
+<span id="cb8-36"></span>
+<span id="cb8-37">                response_content <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> response.output_parsed <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> text_format <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">is</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> response.output_text</span>
+<span id="cb8-38"></span>
+<span id="cb8-39">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> response_content</span>
+<span id="cb8-40">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> wrapper</span>
+<span id="cb8-41">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> decorator</span></code></pre></div>
 
 
 

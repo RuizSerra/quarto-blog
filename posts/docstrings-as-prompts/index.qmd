@@ -49,13 +49,57 @@ response_obj.sounds
 # ['oink', 'sniff']
 ```
 
-This requires a wrapper class that implements the decorator, which I leave to the reader as an exercise:
+This requires a wrapper class that implements the decorator,
 ```python
 my_llm_client_wrapper = MyLLMClientWrapper(
     api_key,
     llm_endpoint,
     # ...
 )
+```
+which may be something like
+```python
+from jinja2 import Template
+import textwrap
+
+class MyLLMClientWrapper:
+    
+    # ...
+    
+    def llm_function(
+            self,
+            model="gpt-oss-120b",
+            output_schema=None,
+            # ...
+        ):
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(**kwargs):
+                prompt_template = func.__doc__
+                if not prompt_template:
+                    raise ValueError("The decorated function must have a docstring.")
+                
+                # Construct prompt from template and arguments
+                dedented_template = textwrap.dedent(prompt_template).strip()
+                template = Template(dedented_template)
+                prompt = template.render(**kwargs)
+
+                # LLM call
+                llm_call_kwargs = dict(
+                    messages=[{"role": "user", "content": prompt}],
+                    function_name=func.__name__,
+                    text_format=output_schema
+                    model=model,
+                    #...
+                )
+                
+                response = self.invoke(**llm_call_kwargs)
+
+                response_content = response.output_parsed if text_format is not None else response.output_text
+
+                return response_content
+            return wrapper
+        return decorator
 ```
 
 [^1]: This framing was inspired by the [BAML](https://docs.boundaryml.com/home) project, but is much more lightweight and runs on vanilla python
