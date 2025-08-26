@@ -1,0 +1,61 @@
+---
+title: LLM calls as pure functions
+# subtitle: 
+date: 2025-08-15
+author: Jaime Ruiz Serra
+categories: [python, ai, llm]
+# bibliography: references.bib
+---
+
+It is useful to frame LLM calls as pure (i.e., stateless) functions[^1].
+
+Consider the following prompt:
+```
+What sounds does a chicken make?
+```
+We would like the LLM to respond. But we could convert this into a callable 
+function with an input argument so we can use it for other animals, e.g.
+```
+What sounds does a {{ animal }} make?
+```
+We would also like to get our responses in a reliable format/following a 
+predefined schema. We can define this schema as a pytantic `BaseModel` instance:
+```python
+class AnimalSound(pydantic.BaseModel)
+    animal: str
+    sounds: list[str]
+```
+And we can define our callable LLM function as:
+```python
+@my_llm_client_wrapper.llm_function(output_schema=AnimalSound)
+def foo_bar(animal='cow'):
+    '''
+    What sounds does a {{ animal }} make?
+    '''
+```
+Note that there is no actual code in the function, only the signature, 
+a docstring containing the prompt with (jinja2-compliant) variable placeholders, 
+and a decorator declaration determining the desired output format.
+
+This function can be called:
+```python
+response_obj = foo_bar(animal='pig')
+```
+And the results obtained:
+```python
+response_obj.animal
+# 'pig'
+response_obj.sounds
+# ['oink', 'sniff']
+```
+
+This requires a wrapper class that implements the decorator, which I leave to the reader as an exercise:
+```python
+my_llm_client_wrapper = MyLLMClientWrapper(
+    api_key,
+    llm_endpoint,
+    # ...
+)
+```
+
+[^1]: This framing was inspired by the [BAML](https://docs.boundaryml.com/home) project, but is much more lightweight and runs on vanilla python

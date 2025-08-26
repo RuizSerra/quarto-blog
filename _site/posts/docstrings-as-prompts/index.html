@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jaime Ruiz Serra">
+<meta name="dcterms.date" content="2025-08-15">
 
-<title>Blog – Jaime Ruiz Serra</title>
+<title>LLM calls as pure functions – Jaime Ruiz Serra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4ec83cce86c840ba1caad423b150bed6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-828c3dbc54a72b4343d30d63302b7af1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/jaime-blurry-small-300h.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4ec83cce86c840ba1caad423b150bed6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-828c3dbc54a72b4343d30d63302b7af1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +103,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K8NCEFDJY2"></script>
 
 <script type="text/javascript">
@@ -132,37 +137,9 @@ gtag('config', 'G-K8NCEFDJY2', { 'anonymize_ip': true});
 </script>
     
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Jaime Ruiz Serra" href="index.xml" data-external="1"><meta property="og:title" content="Blog – Jaime Ruiz Serra">
+<meta property="og:title" content="LLM calls as pure functions – Jaime Ruiz Serra">
+<meta property="og:description" content="Jaime Ruiz Serra’s personal website">
 <meta property="og:site_name" content="Jaime Ruiz Serra">
 </head>
 
@@ -179,11 +156,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../"> 
+    <a class="nav-link" href="../../"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts"> 
+    <a class="nav-link" href="../../posts"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -196,266 +173,89 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">LLM calls as pure functions</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">ai</div>
+                <div class="quarto-category">llm</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jaime Ruiz Serra </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 15, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="YWN0aXZlIGluZmVyZW5jZQ==">active inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y29tcHV0ZXItdmlzaW9u">computer-vision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29uZmVyZW5jZQ==">conference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29uZmVyZW5jZXM=">conferences <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZXRoaWNz">ethics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZXhwZXJpbWVudHM=">experiments <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z292ZXJuYW5jZQ==">governance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bGxt">llm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9kZWxsaW5n">modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGktYWdlbnQ=">multi-agent <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZHVjdGl2aXR5">productivity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZ3JhbW1pbmc=">programming <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cHVibGljYXRpb25z">publications <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw==">reinforcement-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2g=">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGhlb3J5LW9mLW1pbmQ=">theory-of-mind <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>It is useful to frame LLM calls as pure (i.e., stateless) functions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Consider the following prompt:</p>
+<pre><code>What sounds does a chicken make?</code></pre>
+<p>We would like the LLM to respond. But we could convert this into a callable function with an input argument so we can use it for other animals, e.g.</p>
+<pre><code>What sounds does a {{ animal }} make?</code></pre>
+<p>We would also like to get our responses in a reliable format/following a predefined schema. We can define this schema as a pytantic <code>BaseModel</code> instance:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AnimalSound(pydantic.BaseModel)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    animal: <span class="bu">str</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    sounds: <span class="bu">list</span>[<span class="bu">str</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And we can define our callable LLM function as:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">@my_llm_client_wrapper.llm_function</span>(output_schema<span class="op">=</span>AnimalSound)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> foo_bar(animal<span class="op">=</span><span class="st">'cow'</span>):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    What sounds does a {{ animal }} make?</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that there is no actual code in the function, only the signature, a docstring containing the prompt with (jinja2-compliant) variable placeholders, and a decorator declaration determining the desired output format.</p>
+<p>This function can be called:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>response_obj <span class="op">=</span> foo_bar(animal<span class="op">=</span><span class="st">'pig'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And the results obtained:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>response_obj.animal</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 'pig'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>response_obj.sounds</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ['oink', 'sniff']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This requires a wrapper class that implements the decorator, which I leave to the reader as an exercise:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_llm_client_wrapper <span class="op">=</span> MyLLMClientWrapper(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    api_key,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    llm_endpoint,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="cHl0aG9uLGFpLGxsbQ==" data-listing-date-sort="1755180000000" data-listing-file-modified-sort="1756189327995" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="209">
-<a href="../posts/docstrings-as-prompts/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LLM calls as pure functions
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-It is useful to frame LLM calls as pure (i.e., stateless) functions<sup>1</sup>.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Aug 15, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="cmVzZWFyY2gsYWksYWN0aXZlIGluZmVyZW5jZSxjb25mZXJlbmNl" data-listing-date-sort="1747663200000" data-listing-file-modified-sort="1747865199169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
-<a href="../posts/AAMAS-2025/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-TL;DR: By factorising the generative model of AIF agents, they can maintain individual beliefs about others while planning strategically in a joint context. We employ game…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 20, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="cHJvZ3JhbW1pbmcsbW9kZWxsaW5nLGV4cGVyaW1lbnRz" data-listing-date-sort="1710507600000" data-listing-file-modified-sort="1710556726490" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="345">
-<a href="../posts/translating-code-different-language/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Translating an unwieldy codebase
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="cHVibGljYXRpb25zLGNvbXB1dGVyLXZpc2lvbg==" data-listing-date-sort="1709384400000" data-listing-file-modified-sort="1709854937309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="331">
-<a href="../posts/ACM-TOMM-selfattention/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Learning scene representations for human-assistive displays using self-attention networks
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>ACM Transactions on Multimedia Computing, Communications, and Applications</em><br>
-Free access, DOI:10.1145/3650111
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 3, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="cHJvZ3JhbW1pbmcsYWkscHJvZHVjdGl2aXR5" data-listing-date-sort="1708606800000" data-listing-file-modified-sort="1710558027429" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
-<a href="../posts/GitHub-Copilot-free/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GitHub Copilot AI for free (for students and academics)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-I learned we can get free access to <strong>GitHub Copilot</strong> (AI programming assistant, built into VS Code), and wanted to share the process in case you are interested. Note the…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Feb 23, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Y29uZmVyZW5jZXM=" data-listing-date-sort="1674392400000" data-listing-file-modified-sort="1674443573840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<a href="../posts/C3-2023-symposium/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Complexity, Criticality, Computation Symposium (C3) 2023
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-text listing-description">
-The C3-2023 Symposium took place in Heron Island, QLD, Australia, in January 2023. Complex Systems researchers from around the globe got together for an enriching week of…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="cHVibGljYXRpb25zLHJlaW5mb3JjZW1lbnQtbGVhcm5pbmcsdGhlb3J5LW9mLW1pbmQsbXVsdGktYWdlbnQ=" data-listing-date-sort="1674046800000" data-listing-file-modified-sort="1709855039940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="283">
-<a href="../posts/IRL-ToM-algorithms/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-text listing-description">
-Published in <em>MDPI Algorithms</em><br>
-Open Access, DOI:10.3390/a16020068
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 19, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="cHl0aG9uLGNvbXB1dGVyLXZpc2lvbixwcm9ncmFtbWluZw==" data-listing-date-sort="1633352400000" data-listing-file-modified-sort="1674455634019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1136">
-<a href="../posts/vanishing-point-images/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Finding the vanishing point in images
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-text listing-description">
-First download a sample image.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 5, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="ZXRoaWNzLGdvdmVybmFuY2U=" data-listing-date-sort="1590847200000" data-listing-file-modified-sort="1674455674389" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2332">
-<a href="../posts/end-exporting-entropy-obscuring-accountability/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-An End to Exporting Entropy and Obscuring Accountability
-</h5>
-<div class="listing-reading-time card-text text-muted">
-12 min
-</div>
-<div class="card-text listing-description">
-Poverty, as defined by the World Bank, includes a shortfall in income and consumption, poor health and nutritional outcomes, low educational attainment, lack of access to…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 31, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="ZXRoaWNzLGdvdmVybmFuY2U=" data-listing-date-sort="1588514400000" data-listing-file-modified-sort="1674455637730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="617">
-<a href="../posts/towards-ecological-ethics/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Towards an Ecological Ethics
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
-<div class="card-text listing-description">
-As I leave the comfort of my desk to go grocery shopping, I face, week after week, the following dilemma. On one hand, I would like to spend as little as possible in order…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-May 4, 2020
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This framing was inspired by the <a href="https://docs.boundaryml.com/home">BAML</a> project, but is much more lightweight and runs on vanilla python<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -886,7 +686,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>© 2024 <a href="..">Jaime Ruiz Serra</a></p>
+<p>© 2024 <a href="../..">Jaime Ruiz Serra</a></p>
 </div>
   </div>
 </footer>
@@ -894,5 +694,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

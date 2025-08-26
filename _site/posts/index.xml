@@ -10,7 +10,102 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.6.33</generator>
-<lastBuildDate>Tue, 20 May 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 14 Aug 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>LLM calls as pure functions</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/docstrings-as-prompts/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>It is useful to frame LLM calls as pure (i.e., stateless) functions<sup>1</sup>.</p>
+<p>Consider the following prompt:</p>
+<pre><code>What sounds does a chicken make?</code></pre>
+<p>We would like the LLM to respond. But we could convert this into a callable function with an input argument so we can use it for other animals, e.g.</p>
+<pre><code>What sounds does a {{ animal }} make?</code></pre>
+<p>We would also like to get our responses in a reliable format/following a predefined schema. We can define this schema as a pytantic <code>BaseModel</code> instance:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">class</span> AnimalSound(pydantic.BaseModel)</span>
+<span id="cb3-2">    animal: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span></span>
+<span id="cb3-3">    sounds: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>]</span></code></pre></div>
+<p>And we can define our callable LLM function as:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@my_llm_client_wrapper.llm_function</span>(output_schema<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>AnimalSound)</span>
+<span id="cb4-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> foo_bar(animal<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cow'</span>):</span>
+<span id="cb4-3">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">'''</span></span>
+<span id="cb4-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    What sounds does a {{ animal }} make?</span></span>
+<span id="cb4-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    '''</span></span></code></pre></div>
+<p>Note that there is no actual code in the function, only the signature, a docstring containing the prompt with (jinja2-compliant) variable placeholders, and a decorator declaration determining the desired output format.</p>
+<p>This function can be called:</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">response_obj <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> foo_bar(animal<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pig'</span>)</span></code></pre></div>
+<p>And the results obtained:</p>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">response_obj.animal</span>
+<span id="cb6-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 'pig'</span></span>
+<span id="cb6-3">response_obj.sounds</span>
+<span id="cb6-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ['oink', 'sniff']</span></span></code></pre></div>
+<p>This requires a wrapper class that implements the decorator, which I leave to the reader as an exercise:</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">my_llm_client_wrapper <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> MyLLMClientWrapper(</span>
+<span id="cb7-2">    api_key,</span>
+<span id="cb7-3">    llm_endpoint,</span>
+<span id="cb7-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ...</span></span>
+<span id="cb7-5">)</span></code></pre></div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This framing was inspired by the <a href="https://docs.boundaryml.com/home">BAML</a> project, but is much more lightweight and runs on vanilla python↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>python</category>
+  <category>ai</category>
+  <category>llm</category>
+  <guid>https://jaime.rs/posts/docstrings-as-prompts/</guid>
+  <pubDate>Thu, 14 Aug 2025 14:00:00 GMT</pubDate>
+</item>
 <item>
   <title>(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>
@@ -39,7 +134,7 @@
   <category>active inference</category>
   <category>conference</category>
   <guid>https://jaime.rs/posts/AAMAS-2025/</guid>
-  <pubDate>Tue, 20 May 2025 04:00:00 GMT</pubDate>
+  <pubDate>Mon, 19 May 2025 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Translating an unwieldy codebase</title>
@@ -151,7 +246,7 @@ font-style: inherit;">'b'</span>].squeeze())</span></code></pre></div>
   <category>modelling</category>
   <category>experiments</category>
   <guid>https://jaime.rs/posts/translating-code-different-language/</guid>
-  <pubDate>Sat, 16 Mar 2024 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 15 Mar 2024 13:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Learning scene representations for human-assistive displays using self-attention networks</title>
@@ -190,7 +285,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>publications</category>
   <category>computer-vision</category>
   <guid>https://jaime.rs/posts/ACM-TOMM-selfattention/</guid>
-  <pubDate>Sun, 03 Mar 2024 05:00:00 GMT</pubDate>
+  <pubDate>Sat, 02 Mar 2024 13:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png" medium="image" type="image/png" height="136" width="144"/>
 </item>
 <item>
@@ -231,7 +326,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>ai</category>
   <category>productivity</category>
   <guid>https://jaime.rs/posts/GitHub-Copilot-free/</guid>
-  <pubDate>Fri, 23 Feb 2024 05:00:00 GMT</pubDate>
+  <pubDate>Thu, 22 Feb 2024 13:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
@@ -251,7 +346,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
  ]]></description>
   <category>conferences</category>
   <guid>https://jaime.rs/posts/C3-2023-symposium/</guid>
-  <pubDate>Mon, 23 Jan 2023 05:00:00 GMT</pubDate>
+  <pubDate>Sun, 22 Jan 2023 13:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</title>
@@ -292,7 +387,7 @@ Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</
   <category>theory-of-mind</category>
   <category>multi-agent</category>
   <guid>https://jaime.rs/posts/IRL-ToM-algorithms/</guid>
-  <pubDate>Thu, 19 Jan 2023 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 18 Jan 2023 13:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/IRL-ToM-algorithms/paper-thumbnail.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -920,7 +1015,7 @@ font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)<
   <category>computer-vision</category>
   <category>programming</category>
   <guid>https://jaime.rs/posts/vanishing-point-images/</guid>
-  <pubDate>Tue, 05 Oct 2021 04:00:00 GMT</pubDate>
+  <pubDate>Mon, 04 Oct 2021 13:00:00 GMT</pubDate>
 </item>
 <item>
   <title>An End to Exporting Entropy and Obscuring Accountability</title>
@@ -1010,7 +1105,7 @@ World Bank Group. 2018. <span>“<span class="nocase">Poverty and Shared Prosper
   <category>ethics</category>
   <category>governance</category>
   <guid>https://jaime.rs/posts/end-exporting-entropy-obscuring-accountability/</guid>
-  <pubDate>Sun, 31 May 2020 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 30 May 2020 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Towards an Ecological Ethics</title>
@@ -1074,7 +1169,7 @@ Wehrl, Alfred. 1978. <span>“<span class="nocase">General properties of entropy
   <category>ethics</category>
   <category>governance</category>
   <guid>https://jaime.rs/posts/towards-ecological-ethics/</guid>
-  <pubDate>Mon, 04 May 2020 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 03 May 2020 14:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

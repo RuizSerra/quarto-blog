@@ -58,5 +58,8 @@
   },
   "posts/AAMAS-2025/index.qmd": {
     "index.html": "ca87d9a4"
+  },
+  "posts/docstrings-as-prompts/index.qmd": {
+    "index.html": "0bfe1083"
   }
 }
