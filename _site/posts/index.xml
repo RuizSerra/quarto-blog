@@ -209,18 +209,19 @@ font-style: inherit;">=</span>model,</span>
 background-color: null;
 font-style: inherit;">#...</span></span>
 <span id="cb8-33">                )</span>
-<span id="cb8-34">                </span>
-<span id="cb8-35">                response <span class="op" style="color: #5E5E5E;
+<span id="cb8-34">                response <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">self</span>.invoke(<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">**</span>llm_call_kwargs)</span>
-<span id="cb8-36"></span>
-<span id="cb8-37">                response_content <span class="op" style="color: #5E5E5E;
+<span id="cb8-35">                </span>
+<span id="cb8-36">                response_content <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> response.output_parsed <span class="cf" style="color: #003B4F;
+font-style: inherit;">=</span> (</span>
+<span id="cb8-37">                    response.output_parsed </span>
+<span id="cb8-38">                    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> text_format <span class="kw" style="color: #003B4F;
@@ -231,20 +232,21 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">not</span> <span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">None</span> <span class="cf" style="color: #003B4F;
+font-style: inherit;">None</span> </span>
+<span id="cb8-39">                    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">else</span> response.output_text</span>
-<span id="cb8-38"></span>
-<span id="cb8-39">                <span class="cf" style="color: #003B4F;
+<span id="cb8-40">                )</span>
+<span id="cb8-41">                <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> response_content</span>
-<span id="cb8-40">            <span class="cf" style="color: #003B4F;
+<span id="cb8-42">            <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> wrapper</span>
-<span id="cb8-41">        <span class="cf" style="color: #003B4F;
+<span id="cb8-43">        <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> decorator</span></code></pre></div>

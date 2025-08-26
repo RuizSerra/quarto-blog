@@ -92,11 +92,13 @@ class MyLLMClientWrapper:
                     model=model,
                     #...
                 )
-                
                 response = self.invoke(**llm_call_kwargs)
-
-                response_content = response.output_parsed if text_format is not None else response.output_text
-
+                
+                response_content = (
+                    response.output_parsed 
+                    if text_format is not None 
+                    else response.output_text
+                )
                 return response_content
             return wrapper
         return decorator
