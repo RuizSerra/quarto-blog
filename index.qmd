@@ -88,8 +88,8 @@ Jun 2013 -- May 2014
 ## Experience
 
 Vistra (Sydney, AU)  
-AI Engineer, *Artificial Intelligence, Automation*  
-Mar 2025 -- Present
+AI Engineer, *Artificial Intelligence, LLMs, RAG, Azure*  
+Mar 2025 -- Sep 2025
 
 The University of Sydney (Sydney, AU)  
 Teaching Assistant, *Machine Learning, Complex Systems*  
