@@ -9,9 +9,9 @@ categories: [ai, productivity]
 ---
 
 
-First generate an API key via `https://aistudio.google.com/api-keys`.
+First generate an API key via [https://aistudio.google.com/api-keys](https://aistudio.google.com/api-keys).
 
-Navigate to `brave://settings/leo-ai/` > `Add new model`. Set the following config:
+Navigate to [brave://settings/leo-ai/](brave://settings/leo-ai/) > `Add new model`. Set the following config:
 
 - **Label:** `Gemini 3 Pro`
 - **Model request name:** `gemini-3-pro-preview`
