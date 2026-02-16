@@ -1,0 +1,21 @@
+---
+title: Use Gemini through Brave Browser's Leo AI
+subtitle: How to configure the API endpoint
+date: 2026-02-16
+author: Jaime Ruiz Serra
+categories: [ai, productivity]
+# bibliography: references.bib
+# draft: true
+---
+
+
+First generate an API key via `https://aistudio.google.com/api-keys`.
+
+Navigate to `brave://settings/leo-ai/` > `Add new model`. Set the following config:
+
+- **Label:** `Gemini 3 Pro`
+- **Model request name:** `gemini-3-pro-preview`
+- **Server endpoint:** `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions`
+- **Context size:** `100000`
+- **API key:** `[your API key]`
+- **System Prompt:** (...)
