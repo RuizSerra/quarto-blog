@@ -10,7 +10,36 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.6.33</generator>
-<lastBuildDate>Thu, 14 Aug 2025 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Feb 2026 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>Use Gemini through Brave Browser’s Leo AI</title>
+  <dc:creator>Jaime Ruiz Serra</dc:creator>
+  <link>https://jaime.rs/posts/gemini-via-brave-leo-ai/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>First generate an API key via <code>https://aistudio.google.com/api-keys</code>.</p>
+<p>Navigate to <code>brave://settings/leo-ai/</code> &gt; <code>Add new model</code>. Set the following config:</p>
+<ul>
+<li><strong>Label:</strong> <code>Gemini 3 Pro</code></li>
+<li><strong>Model request name:</strong> <code>gemini-3-pro-preview</code></li>
+<li><strong>Server endpoint:</strong> <code>https://generativelanguage.googleapis.com/v1beta/openai/chat/completions</code></li>
+<li><strong>Context size:</strong> <code>100000</code></li>
+<li><strong>API key:</strong> <code>[your API key]</code></li>
+<li><strong>System Prompt:</strong> (…)</li>
+</ul>
+
+
+
+ ]]></description>
+  <category>ai</category>
+  <category>productivity</category>
+  <guid>https://jaime.rs/posts/gemini-via-brave-leo-ai/</guid>
+  <pubDate>Sun, 15 Feb 2026 14:00:00 GMT</pubDate>
+</item>
 <item>
   <title>LLM calls as pure functions</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>
@@ -406,7 +435,7 @@ font-style: inherit;">'b'</span>].squeeze())</span></code></pre></div>
   <category>modelling</category>
   <category>experiments</category>
   <guid>https://jaime.rs/posts/translating-code-different-language/</guid>
-  <pubDate>Fri, 15 Mar 2024 13:00:00 GMT</pubDate>
+  <pubDate>Fri, 15 Mar 2024 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Learning scene representations for human-assistive displays using self-attention networks</title>
@@ -445,7 +474,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>publications</category>
   <category>computer-vision</category>
   <guid>https://jaime.rs/posts/ACM-TOMM-selfattention/</guid>
-  <pubDate>Sat, 02 Mar 2024 13:00:00 GMT</pubDate>
+  <pubDate>Sat, 02 Mar 2024 14:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/ACM-TOMM-selfattention/ACM-TOMM-diagram.png" medium="image" type="image/png" height="136" width="144"/>
 </item>
 <item>
@@ -486,7 +515,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
   <category>ai</category>
   <category>productivity</category>
   <guid>https://jaime.rs/posts/GitHub-Copilot-free/</guid>
-  <pubDate>Thu, 22 Feb 2024 13:00:00 GMT</pubDate>
+  <pubDate>Thu, 22 Feb 2024 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Complexity, Criticality, Computation Symposium (C3) 2023</title>
@@ -506,7 +535,7 @@ keywords = {vision processing, deep reinforcement learning, prosthetic vision, d
  ]]></description>
   <category>conferences</category>
   <guid>https://jaime.rs/posts/C3-2023-symposium/</guid>
-  <pubDate>Sun, 22 Jan 2023 13:00:00 GMT</pubDate>
+  <pubDate>Sun, 22 Jan 2023 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Review article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind</title>
@@ -547,7 +576,7 @@ Open Access, <a href="https://doi.org/10.3390/a16020068">DOI:10.3390/a16020068</
   <category>theory-of-mind</category>
   <category>multi-agent</category>
   <guid>https://jaime.rs/posts/IRL-ToM-algorithms/</guid>
-  <pubDate>Wed, 18 Jan 2023 13:00:00 GMT</pubDate>
+  <pubDate>Wed, 18 Jan 2023 14:00:00 GMT</pubDate>
   <media:content url="https://jaime.rs/posts/IRL-ToM-algorithms/paper-thumbnail.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -1175,7 +1204,7 @@ font-style: inherit;">f"Estimated vanishing point coordinates:"</span>, vp_hat)<
   <category>computer-vision</category>
   <category>programming</category>
   <guid>https://jaime.rs/posts/vanishing-point-images/</guid>
-  <pubDate>Mon, 04 Oct 2021 13:00:00 GMT</pubDate>
+  <pubDate>Mon, 04 Oct 2021 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>An End to Exporting Entropy and Obscuring Accountability</title>
