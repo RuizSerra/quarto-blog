@@ -3,8 +3,8 @@
 $body-bg:                             #fcfcfc;
 $primary:                               $body-bg;
 $body-color:                          rgb(0, 0, 0);
-$headings-color:                        $body-color !default;
 $link-color:                            $body-color; // Links will initially have the same color as body text
+$headings-color:                        $body-color !default;
 $link-shade-percentage:                   30% !default;
 // Define a distinct hover color, perhaps a bit darker or a different hue
 $link-hover-color:                        darken($body-color, 25%) !default; // Example: darken the body color
@@ -23,7 +23,7 @@ $code-bg:                                 darken($body-bg, 10%) !default;
 a {
   color: $link-color;
   text-decoration: underline; // Add underline to links
-  // transition: color 0.2s ease-in-out; // Smooth transition for hover effect
+  transition: color 0.2s ease-in-out; // Smooth transition for hover effect
 }
 
 // Link hover styling
