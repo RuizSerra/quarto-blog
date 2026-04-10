@@ -30,7 +30,7 @@ Modelling and Simulation Research Group
 [Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html)  
 The University of Sydney
 
-As a PhD researcher, I explore the interplay between individual agency and collective dynamics, focusing on how incentives shape this relationship. My work leverages agent-based modelling in computational economics and draws from game theory, evolutionary theory, information theory, and social psychology.
+I am fascinated by the capacity of collectives to achieve outcomes beyond the reach of isolated individuals. My research investigates the interplay between individual agency and collective dynamics, focusing on how incentives shape this relationship. I draw upon models from cognitive science and computational economics, analysing them through a complex systems framework that incorporates information theory, dynamical systems theory, game theory, and Bayesian inference.
 
 Passionate about empowering individuals equitably and sustainably, I believe that democratizing information and technology, along with fostering local communities, will have the greatest impact toward this goal.
 
