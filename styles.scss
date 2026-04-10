@@ -23,7 +23,7 @@ $code-bg:                                 darken($body-bg, 10%) !default;
 a {
   color: $link-color;
   text-decoration: underline; // Add underline to links
-  transition: color 0.2s ease-in-out; // Smooth transition for hover effect
+  // transition: color 0.2s ease-in-out; // Smooth transition for hover effect
 }
 
 // Link hover styling
