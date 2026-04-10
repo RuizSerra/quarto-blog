@@ -34,7 +34,7 @@ I am fascinated by the capacity of collectives to achieve outcomes beyond the re
 
 Passionate about empowering individuals equitably and sustainably, I believe that democratizing information and technology, along with fostering local communities, will have the greatest impact toward this goal.
 
-With studies in robotics and mechatronics engineering, I have experience in machine learning and computer vision research. I'm a certified AWS Solutions Architect Associate with three years of professional experience in cloud infrastructure for the financial sector and over eight years of Python expertise in automation, data engineering, and machine learning.
+With studies in robotics and mechatronics engineering, I have experience in deep reinforcement learning and computer vision research. I'm a certified AWS Solutions Architect Associate with three years of professional experience in cloud infrastructure for the financial sector and 10 years of Python expertise in automation, data engineering, and machine learning.
 
 <!-- explore how democratic 
 and cooperative decision-making and ownership structures in organisations impact 
