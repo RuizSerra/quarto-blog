@@ -59,22 +59,36 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
 
 
 
+
+
+## News
+
+* [Jul 13--16, 2026] I will be attending the [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/) in Prague, CZ
+* [Jun--Sep, 2026] I will be based in London, UK for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)
+* [Jan, 2026] I attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants
+* [May, 2025] I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf) in Detroid, US
+
+
+
+
+
+
 ## Education
 
 The University of Sydney (Sydney, AU)  
-PhD, *Complex Systems and Artificial Intelligence*  
+**PhD**, *Complex Systems and Artificial Intelligence*  
 Oct 2022 -- *Present*
 
 MITx on edX (Online)  
-MicroMasters, *Statistics and Data Science*  
+**MicroMasters**, *Statistics and Data Science*  
 Mar 2021 -- Nov 2022
 
 Swinburne University of Technology (Melbourne, AU)  
-BEng (Hons), *Robotics and Mechatronics*  
+**BEng (Hons)**, *Robotics and Mechatronics*  
 Feb 2016 -- Dec 2020 
 
 CATC Design School (Melborune, AU)  
-DipDes, *Graphic Design*  
+**DipDes**, *Graphic Design*  
 Jun 2013 -- May 2014
 
 
@@ -83,28 +97,28 @@ Jun 2013 -- May 2014
 
 ## Experience
 
-[PIBBSS Fellowship](https://princint.ai/programs/fellowship/) ([PrincInt](https://princint.ai)) (London, UK)  
-Fellow ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), *AI Safety, Complex Systems*  
+[Principles of Intelligence](https://princint.ai), [PIBBSS Fellowship](https://princint.ai/programs/fellowship/) (London, UK)  
+**Research Fellow** ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), *AI Safety, Complex Systems*  
 Jun 2026 -- Sep 2026
 
 Vistra (Sydney, AU)  
-AI Engineer, *Artificial Intelligence, LLMs, RAG, Azure*  
+**AI Engineer**, *Artificial Intelligence, LLMs, RAG, Azure*  
 Mar 2025 -- Sep 2025
 
 The University of Sydney (Sydney, AU)  
-Teaching Assistant, *Machine Learning, Complex Systems*  
+**Teaching Assistant**, *Machine Learning, Complex Systems*  
 Feb 2023 -- Nov 2024
 
 Swinburne University of Technology (Remote/Melbourne, AU)  
-Research Assistant, *Deep Reinforcement Learning, Computer Vision*  
+**Research Assistant**, *Deep Reinforcement Learning, Computer Vision*  
 Sep 2020 -- Jan 2024
 
 National Australia Bank (Remote/Melbourne, AU)  
-Analyst, Engineer, *Cloud Infrastructure (AWS)*  
+**Analyst, Engineer**, *Cloud Infrastructure (AWS)*  
 Jan 2018 -- Sep 2020
 
 Youth Without Borders (Melbourne, AU)  
-Victoria Staffing Manager, *Spark Engineering Camp*  
+**State Staffing Manager**, *Spark Engineering Camp*  
 Nov 2016 -- Sep 2017
 
 *More on [LinkedIn](https://linkedin.com/in/ruizserra)*
