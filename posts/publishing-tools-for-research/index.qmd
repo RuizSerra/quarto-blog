@@ -1,0 +1,17 @@
+---
+title: Tools for publishing research
+# subtitle: 
+date: 2026-06-11
+author: Jaime Ruiz Serra
+categories: [research, tools, writing]
+# bibliography: references.bib
+---
+
+
+1. Math diagrams: 
+    - [Asymptote](https://asymptote.ualberta.ca/) (online)
+    - TikZ
+
+2. Presentations:
+    - Beamer
+    - BeamerQT

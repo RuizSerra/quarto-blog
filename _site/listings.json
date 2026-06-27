@@ -2,6 +2,8 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/publishing-tools-for-research/index.html",
+      "/posts/ai-tools-for-research/index.html",
       "/posts/gemini-via-brave-leo-ai/index.html",
       "/posts/docstrings-as-prompts/index.html",
       "/posts/AAMAS-2025/index.html",

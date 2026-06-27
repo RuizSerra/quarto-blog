@@ -36,26 +36,22 @@ Passionate about empowering individuals equitably and sustainably, I believe tha
 
 With studies in robotics and mechatronics engineering, I have experience in deep reinforcement learning and computer vision research. I'm a certified AWS Solutions Architect Associate with three years of professional experience in cloud infrastructure for the financial sector and 10 years of Python expertise in automation, data engineering, and machine learning.
 
-<!-- explore how democratic 
-and cooperative decision-making and ownership structures in organisations impact 
-the economy at large. 
-By integrating concepts from social psychology into the 
-decision-making of individual agents in economic models, we can improve the 
-real-world fidelity of the models and see how more **participatory organizational forms** 
-influence factors such as market dynamics and wealth distribution.-->
+
 
 
 
 
 ## Selected Publications
 
-Ruiz-Serra J, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In *AAMAS '25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems*. Detroit, USA, May 2025. [DOI:10.5555/3709347.3743815](https://dl.acm.org/doi/10.5555/3709347.3743815)
+Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Formal Equivalences Under Active Inference. *Entropy*, 2025, *28(1)*, 1. [DOI:10.3390/e28010001](https://doi.org/10.3390/e28010001)
 
-Ruiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
+**Ruiz-Serra J**, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In *AAMAS '25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems*. Detroit, USA, May 2025. [DOI:10.5555/3709347.3743815](https://dl.acm.org/doi/10.5555/3709347.3743815)
 
-Ruiz-Serra J and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023, *16*, 68. [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
+**Ruiz-Serra J**, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
 
-Ruiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. In *ACRA '22: Proceedings of the 2022 Australasian Conference on Robotics and Automation*. Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
+**Ruiz-Serra J** and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023, *16*, 68. [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
+
+**Ruiz-Serra J**, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. In *ACRA '22: Proceedings of the 2022 Australasian Conference on Robotics and Automation*. Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
 
 *More on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ)*
 
@@ -86,6 +82,10 @@ Jun 2013 -- May 2014
 
 
 ## Experience
+
+[PIBBSS Fellowship](https://princint.ai/programs/fellowship/) ([PrincInt](https://princint.ai)) (London, UK)
+Fellow ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), *AI Safety, Complex Systems*
+Jun 2026 -- Sep 2026
 
 Vistra (Sydney, AU)  
 AI Engineer, *Artificial Intelligence, LLMs, RAG, Azure*  

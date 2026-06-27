@@ -18,7 +18,7 @@
     "href": "index.html#selected-publications",
     "title": "Jaime Ruiz Serra",
     "section": "Selected Publications",
-    "text": "Selected Publications\nRuiz-Serra J, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In AAMAS ’25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems. Detroit, USA, May 2025. DOI:10.5555/3709347.3743815\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. ACM Trans. Multimedia Comput. Commun. Appl., 2024. DOI:10.1145/3650111\nRuiz-Serra J and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. In ACRA ’22: Proceedings of the 2022 Australasian Conference on Robotics and Automation. Brisbane, Australia, December 2022. arXiv:2209.07043\nMore on Scholar"
+    "text": "Selected Publications\nSweeney P, Ruiz-Serra J, Harré MS. Decision, Inference, and Information: Formal Equivalences Under Active Inference. Entropy, 2025, 28(1), 1. DOI:10.3390/e28010001\nRuiz-Serra J, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In AAMAS ’25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems. Detroit, USA, May 2025. DOI:10.5555/3709347.3743815\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. ACM Trans. Multimedia Comput. Commun. Appl., 2024. DOI:10.1145/3650111\nRuiz-Serra J and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. Algorithms, 2023, 16, 68. DOI:10.3390/a16020068\nRuiz-Serra J, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. In ACRA ’22: Proceedings of the 2022 Australasian Conference on Robotics and Automation. Brisbane, Australia, December 2022. arXiv:2209.07043\nMore on Scholar"
   },
   {
     "objectID": "index.html#education",
@@ -32,7 +32,7 @@
     "href": "index.html#experience",
     "title": "Jaime Ruiz Serra",
     "section": "Experience",
-    "text": "Experience\nVistra (Sydney, AU)\nAI Engineer, Artificial Intelligence, LLMs, RAG, Azure\nMar 2025 – Sep 2025\nThe University of Sydney (Sydney, AU)\nTeaching Assistant, Machine Learning, Complex Systems\nFeb 2023 – Nov 2024\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020 – Jan 2024\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018 – Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016 – Sep 2017\nMore on LinkedIn"
+    "text": "Experience\nPIBBSS Fellowship (PrincInt) (London, UK) Fellow (Cooperative AI Foundation track), AI Safety, Complex Systems Jun 2026 – Sep 2026\nVistra (Sydney, AU)\nAI Engineer, Artificial Intelligence, LLMs, RAG, Azure\nMar 2025 – Sep 2025\nThe University of Sydney (Sydney, AU)\nTeaching Assistant, Machine Learning, Complex Systems\nFeb 2023 – Nov 2024\nSwinburne University of Technology (Remote/Melbourne, AU)\nResearch Assistant, Deep Reinforcement Learning, Computer Vision\nSep 2020 – Jan 2024\nNational Australia Bank (Remote/Melbourne, AU)\nAnalyst, Engineer, Cloud Infrastructure (AWS)\nJan 2018 – Sep 2020\nYouth Without Borders (Melbourne, AU)\nVictoria Staffing Manager, Spark Engineering Camp\nNov 2016 – Sep 2017\nMore on LinkedIn"
   },
   {
     "objectID": "posts/AAMAS-2025/index.html",
@@ -56,11 +56,18 @@
     "text": "Footnotes\n\n\nIt is important to note here that there is no escaping the arrow of time Hawking (2009). It points in the direction of entropy increasing, hence why the scattered pieces on the ground come after the vase being on the shelf, and not the other way around.↩︎\nI invite the reader to consider the relationship between complexity and entropy, as outlined in Rosso et al. (2007).↩︎"
   },
   {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Blog",
+    "objectID": "posts/gemini-via-brave-leo-ai/index.html",
+    "href": "posts/gemini-via-brave-leo-ai/index.html",
+    "title": "Use Gemini through Brave Browser’s Leo AI",
     "section": "",
-    "text": "Use Gemini through Brave Browser’s Leo AI\n\n\n1 min\n\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\n\n\n\n\nLLM calls as pure functions\n\n\n5 min\n\n\n\n\n\n\nAug 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions\n\n\n1 min\n\n\n\n\n\n\nMay 20, 2025\n\n\n\n\n\n\n\n\n\n\n\nTranslating an unwieldy codebase\n\n\n2 min\n\n\n\n\n\n\nMar 16, 2024\n\n\n\n\n\n\n\n\n\n\n\nLearning scene representations for human-assistive displays using self-attention networks\n\n\n2 min\n\n\n\n\n\n\nMar 3, 2024\n\n\n\n\n\n\n\n\n\n\n\nGitHub Copilot AI for free (for students and academics)\n\n\n1 min\n\n\n\n\n\n\nFeb 23, 2024\n\n\n\n\n\n\n\n\n\n\n\nComplexity, Criticality, Computation Symposium (C3) 2023\n\n\n1 min\n\n\n\n\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n2 min\n\n\n\n\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\nFinding the vanishing point in images\n\n\n6 min\n\n\n\n\n\n\nOct 5, 2021\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\n12 min\n\n\n\n\n\n\nMay 31, 2020\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\n4 min\n\n\n\n\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "First generate an API key via https://aistudio.google.com/api-keys.\nNavigate to brave://settings/leo-ai/ &gt; Add new model. Set the following config:\n\nLabel: Gemini 3 Pro\nModel request name: gemini-3-pro-preview\nServer endpoint: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions\nContext size: 100000\nAPI key: [your API key]\nSystem Prompt: (…)"
+  },
+  {
+    "objectID": "posts/ai-tools-for-research/index.html",
+    "href": "posts/ai-tools-for-research/index.html",
+    "title": "Google Antigravity, reading papers",
+    "section": "",
+    "text": "Google Antigravity &gt; new project\n\ncreate a working directory e.g. /Users/username/Documents/antigravity/your-project-dir and add it to the agent/project\n\nFrom Zotero, gather a small selection of important papers\n\nyou can unfold the Zotero library item, select the PDF item therein, and drag-and-drop it to the working directory of the Antigravity project\n\nYou can tell the agent:\n\n\nCreate a skill/rule: ``` rule name: pdf-reading context: Always use the view_file tool to read academic pdfs. Don’t use any python lib. ``` Then, list the PDF in the workspace\n\n\nPrompt:\n\n\nYou have been provided a selection of research articles as PDFs in the working directory /Users/username/Documents/antigravity/your-project-dir. You must read each carefully and write a brief report (in markdown) for the article. The report will later be used for a literature review for a project with description: ``` [INSERT YOUR PROJECT DESCRIPTION HERE] ```\n\n\nThe agent might create a document e.g. /Users/username/Documents/antigravity/your-project-dir/literature_review.md, go and read it to get a feel for the papers (don’t assume the summary is correct nor comprehensive, etc)"
   },
   {
     "objectID": "posts/ACM-TOMM-selfattention/index.html",
@@ -140,11 +147,18 @@
     "text": "I got access to a model that I want to use as a baseline for my research, but (i) it is in MATLAB and I prefer to work in Python, and (ii) it consists of a single 1000-line function with no modularity or use of classes/objects.\nMy first attempt at converting the code to Python was to use matlab2python, which did an OK job at translating the script, but had issues with 0-indexing (in Python) vs 1-indexing (in Matlab) and I believe it didn’t quite get some of the matrix operations right as numpy operations. As a result, after a bit of debugging, I got the Python code to run without throwing errors (hoorray!), but numerically something was off, since the simulation reached a stop condition five iterations in, when the Matlab version was able to run indefintely (irrespective of random seeds). Debugging this would have been a nightmare, so I needed an alternative approach.\nMy supervisor suggested breaking down the code into small functional components that I could analyse and understand, including data type use, array sizes, etc., and test each component individually.\nTo do so, I first refactored the single Matlab function into a handful of smaller functions under a main function, and then translated each to Python. To be able to test them, I ran the program saving the state of the model at various points, with\n% model code ...\nsave('test-data/1.mat')\n% more model code ...\nsave('test-data/2.mat')\n% ...\nand then loaded the model state into a Jupyter notebook to test the functions, using\nimport numpy as np\nimport scipy.io\n\nmat = scipy.io.loadmat('test-data/1.mat')\n\nt = mat['t'].item() - 1 # int (-1 because zero-index in Python)\n\nstock = mat['stock'].squeeze()  # (1, F) -&gt; (F,)\nprice = mat['price'][t]         # (T, F) -&gt; (F,)\n\na, b = my_python_function(stock, price)\n\nassert np.all(a == mat['a'].squeeze())\nassert np.all(b == mat['b'].squeeze())\nThis allows me to work through the model, ensuring consistency at any arbitrary point in the flow of the function.\nFor larger functions that were harder to debug in one go, I applied the same technique within the function itself, checking the variables for consistency at various stages."
   },
   {
-    "objectID": "posts/gemini-via-brave-leo-ai/index.html",
-    "href": "posts/gemini-via-brave-leo-ai/index.html",
-    "title": "Use Gemini through Brave Browser’s Leo AI",
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "First generate an API key via https://aistudio.google.com/api-keys.\nNavigate to brave://settings/leo-ai/ &gt; Add new model. Set the following config:\n\nLabel: Gemini 3 Pro\nModel request name: gemini-3-pro-preview\nServer endpoint: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions\nContext size: 100000\nAPI key: [your API key]\nSystem Prompt: (…)"
+    "text": "Tools for publishing research\n\n\n1 min\n\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nGoogle Antigravity, reading papers\n\n\n1 min\n\n\n\n\n\n\nJun 9, 2026\n\n\n\n\n\n\n\n\n\n\n\nUse Gemini through Brave Browser’s Leo AI\n\n\n1 min\n\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\n\n\n\n\nLLM calls as pure functions\n\n\n5 min\n\n\n\n\n\n\nAug 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n(AAMAS 2025) Factorised Active Inference for Strategic Multi-Agent Interactions\n\n\n1 min\n\n\n\n\n\n\nMay 20, 2025\n\n\n\n\n\n\n\n\n\n\n\nTranslating an unwieldy codebase\n\n\n2 min\n\n\n\n\n\n\nMar 16, 2024\n\n\n\n\n\n\n\n\n\n\n\nLearning scene representations for human-assistive displays using self-attention networks\n\n\n2 min\n\n\n\n\n\n\nMar 3, 2024\n\n\n\n\n\n\n\n\n\n\n\nGitHub Copilot AI for free (for students and academics)\n\n\n1 min\n\n\n\n\n\n\nFeb 23, 2024\n\n\n\n\n\n\n\n\n\n\n\nComplexity, Criticality, Computation Symposium (C3) 2023\n\n\n1 min\n\n\n\n\n\n\nJan 23, 2023\n\n\n\n\n\n\n\n\n\n\n\nReview article: Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind\n\n\n2 min\n\n\n\n\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\nFinding the vanishing point in images\n\n\n6 min\n\n\n\n\n\n\nOct 5, 2021\n\n\n\n\n\n\n\n\n\n\n\nAn End to Exporting Entropy and Obscuring Accountability\n\n\n12 min\n\n\n\n\n\n\nMay 31, 2020\n\n\n\n\n\n\n\n\n\n\n\nTowards an Ecological Ethics\n\n\n4 min\n\n\n\n\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/publishing-tools-for-research/index.html",
+    "href": "posts/publishing-tools-for-research/index.html",
+    "title": "Tools for publishing research",
+    "section": "",
+    "text": "Math diagrams:\n\nAsymptote (online)\nTikZ\n\nPresentations:\n\nBeamer\nBeamerQT"
   },
   {
     "objectID": "posts/C3-2023-symposium/index.html",

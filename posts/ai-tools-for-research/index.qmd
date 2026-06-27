@@ -1,0 +1,30 @@
+---
+title: Google Antigravity, reading papers
+# subtitle: 
+date: 2026-06-09
+author: Jaime Ruiz Serra
+categories: [research, ai, llm]
+# bibliography: references.bib
+---
+
+1. Google Antigravity > new project
+    - create a working directory e.g. `/Users/username/Documents/antigravity/your-project-dir` and add it to the agent/project
+
+2. From Zotero, gather a small selection of important papers
+    - you can unfold the Zotero library item, select the PDF item therein, and drag-and-drop it to the working directory of the Antigravity project
+
+3. You can tell the agent: 
+
+> Create a skill/rule: \`\`\`
+> rule name: pdf-reading
+> context: Always use the view_file tool to read academic pdfs. Don’t use any python lib.
+> \`\`\` Then, list the PDF in the workspace
+
+4. Prompt:
+
+> You have been provided a selection of research articles as PDFs in the working directory `/Users/username/Documents/antigravity/your-project-dir`. You must read each carefully and write a brief report (in markdown) for the article. The report will later be used for a literature review for a project with description:
+> \`\`\`
+> [INSERT YOUR PROJECT DESCRIPTION HERE]
+> \`\`\`
+
+5. The agent might create a document e.g. `/Users/username/Documents/antigravity/your-project-dir/literature_review.md`, go and read it to get a feel for the papers (don't assume the summary is correct nor comprehensive, etc)
