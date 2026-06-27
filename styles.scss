@@ -36,17 +36,17 @@ a:hover {
   margin-right: auto !important;
 }
 
-// Force structural text container and document hooks to left-align
+// Force structural text container and document hooks to fully justify text
 #quarto-document-content,
 .content,
 .about-contents {
-  text-align: left !important;
+  text-align: justify !important;
 }
 
 // Keep the entity details block structural alignment consistent
 .about-entity {
   width: 100% !important;
-  text-align: left !important;
+  text-align: justify !important;
 }
 
 // Explicitly centre the profile image element within the wrapper
@@ -56,7 +56,7 @@ a:hover {
   display: block !important;
 }
 
-// Left-align the bottom navigation links block
+// Left-align the bottom navigation links block (links should not be justified)
 .about-links {
   width: 100% !important;
   display: flex !important;
