@@ -26,20 +26,20 @@ Active Inference agents will provide a model of bounded-rational agency grounded
 
 ### References
 
-[1] Woolley et al. (2010), Science
-[2] Sluyter-Beltrao (2017), Encyclopedia Britannica
-[3] Future of Life Institute (2024) "AI's Role in Reshaping Power Distribution"
-[4] Hardin (1968) "The Tragedy of the Commons"
-[5] Ostrom (1990) "Governing the Commons"
-[6] Wilson, Ostrom, Cox (2013), J. Econ. Behaviour & Organization
-[7] Harré (2025), ArXiv
-[8] Boehm (1993)
-[9] Caticha et al (2016) ArXiv
-[10] Perret et al. (2018)
-[11] Gottwald and Braun (2019) Neural Comput
-[12] Harré and Prokopenko (2016) J R Soc Interface
-[13] Ruiz-Serra et al. (2025) AAMAS
-[14] Beer and Williams (2015), Cognitive Science
-[15] Sato et al. (2005) Physica D Nonlin Phenom
-[16] Axelrod (1981)
-[17] Bak-Coleman et al. (2020) PNAS
+[1] Woolley et al. (2010), Science  
+[2] Sluyter-Beltrao (2017), Encyclopedia Britannica  
+[3] Future of Life Institute (2024) "AI's Role in Reshaping Power Distribution"  
+[4] Hardin (1968) "The Tragedy of the Commons"  
+[5] Ostrom (1990) "Governing the Commons"  
+[6] Wilson, Ostrom, Cox (2013), J. Econ. Behaviour & Organization  
+[7] Harré (2025), ArXiv  
+[8] Boehm (1993)  
+[9] Caticha et al (2016) ArXiv  
+[10] Perret et al. (2018)  
+[11] Gottwald and Braun (2019) Neural Comput  
+[12] Harré and Prokopenko (2016) J R Soc Interface  
+[13] Ruiz-Serra et al. (2025) AAMAS  
+[14] Beer and Williams (2015), Cognitive Science  
+[15] Sato et al. (2005) Physica D Nonlin Phenom  
+[16] Axelrod (1981)  
+[17] Bak-Coleman et al. (2020) PNAS  
