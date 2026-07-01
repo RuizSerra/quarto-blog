@@ -1,0 +1,45 @@
+---
+title: Stewarding Power in Human-AI Collectives
+subtitle: My PIBBSS fellowship application essay
+date: 2026-02-02
+author: Jaime Ruiz Serra
+categories: [research, ai, power, collectives]
+# bibliography: references.bib
+---
+
+> Drafted for my PIBBSS fellowship application under a 2-hour proctored time limit, using a restricted single text box interface without copy-paste functionality and no generative AI.
+
+Collectives leverage increasing returns to scale to achieve what no individual alone could. These benefits stem not only from resource aggregation but also from cognitive/information processing synergies. For example, Woolley et al. [1] provide evidence for a "collective intelligence factor" that is more dependent on the group constituents' social sensitivities than their average or maximum IQ.
+
+On the other hand, the distribution of power and resources (including attention) within a group can become highly concentrated, with the "Iron Law of Oligarchy" [2] positing that this is inevitable, regardless of a group's democratic inclinations. The presence of AI poses a large risk of accelerated disempowerment and concentration of control [3]. 
+
+Power within a collective could be framed as a Common-Pool Resource (CPR), susceptible to the Tragedy of the Commons. Contrary to Hardin's argument [4], human collectives have long managed CPRs through self-organisation and institutions, without resorting to violence or centralisation [5]. The key elements of this self-organised management have been distilled into core principles for group effectiveness [6], which can be applied to nested hierarchies of groups within groups [7]. These and other institution- or social-norms-based mechanisms to keep power in check (e.g., "reverse dominance theory" [8]) have helped groups leverage their advantages without succumbing to totalitarian despotism. In our modern age, the dynamics are far more complex, and we require new methods for understanding and successfully stewarding our techno-social systems [17].
+
+I propose a research project with the following theory of change: IF human-AI collectives have effective ways to keep power imbalances in check, THEN they will continue to reap the benefits of collective action/increased returns to scale and the robustness that comes from decentralisation and redundancy. This can be achieved through the MECHANISM of incentive structures and social norms that preemptively target power concentration and encourage participation to the best of each's abilities, thereby curbing alienation and disempowerment in the long run in favour of mutualism and community-orientation.
+
+The project will employ agent-based models (ABM) of collectives under different types of social norms (from sociology, anthropology, economics)---as has been done for e.g. Reverse Dominance Theory [9], the Iron Law of Oligarchy [10]---to study their effect on long-term group outcomes, particularly in groups of individuals with heterogenous capabilities (such as human-AI groups). The project will pay special attention to issues stemming from the "bounded rationality" of individuals in the group, which has repercussions for information processing [11] and even the interaction network structure itself [12].
+
+Active Inference agents will provide a model of bounded-rational agency grounded in theoretical neuroscience for the agents in the models. Their interactions under different conditions will be framed as game-theoretic [16, 13] and studied with tools from information theory [14] and dynamical systems theory [15]. I would invest the grant money provided to engage with leading figures in the social sciences on one hand, and complex systems sciences on the other, bridging a gap between deep sociological/anthropological knowledge and mathematical modelling expertise. The outcome would be a series of insights about the effectiveness of different ways of being in a collective and/or interventions (cf. mechanism design, information design), akin to randomised control trials in development economics but "in silico". These insights could then progress onto real-world trials with flesh-and-bone humans along with AI, increasingly expanding the scope to eventually provide a safe way to manage our global nested system of power as a common-pool resource.
+
+
+---
+
+### References
+
+[1] Woolley et al. (2010), Science
+[2] Sluyter-Beltrao (2017), Encyclopedia Britannica
+[3] Future of Life Institute (2024) "AI's Role in Reshaping Power Distribution"
+[4] Hardin (1968) "The Tragedy of the Commons"
+[5] Ostrom (1990) "Governing the Commons"
+[6] Wilson, Ostrom, Cox (2013), J. Econ. Behaviour & Organization
+[7] Harré (2025), ArXiv
+[8] Boehm (1993)
+[9] Caticha et al (2016) ArXiv
+[10] Perret et al. (2018)
+[11] Gottwald and Braun (2019) Neural Comput
+[12] Harré and Prokopenko (2016) J R Soc Interface
+[13] Ruiz-Serra et al. (2025) AAMAS
+[14] Beer and Williams (2015), Cognitive Science
+[15] Sato et al. (2005) Physica D Nonlin Phenom
+[16] Axelrod (1981)
+[17] Bak-Coleman et al. (2020) PNAS
