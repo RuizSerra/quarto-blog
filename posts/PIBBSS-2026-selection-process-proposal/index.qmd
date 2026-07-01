@@ -7,7 +7,7 @@ categories: [research, ai, power, collectives]
 # bibliography: references.bib
 ---
 
-> Drafted for my PIBBSS fellowship application under a 2-hour proctored time limit, using a restricted single text box interface without copy-paste functionality and no generative AI.
+> Drafted for my PIBBSS fellowship application under a 2-hour proctored time limit, using a restricted single text box interface without copy-paste functionality and no generative AI. One day I will clean up the references.
 
 Collectives leverage increasing returns to scale to achieve what no individual alone could. These benefits stem not only from resource aggregation but also from cognitive/information processing synergies. For example, Woolley et al. [1] provide evidence for a "collective intelligence factor" that is more dependent on the group constituents' social sensitivities than their average or maximum IQ.
 
