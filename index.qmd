@@ -24,19 +24,19 @@ about:
   #     href: /posts
 ---
 
-
-*PhD candidate*   
-Modelling and Simulation Research Group  
-[Centre for Complex Systems](https://www.sydney.edu.au/engineering/our-research/complex-systems.html)  
-The University of Sydney
-
 I am fascinated by the capacity of collectives to achieve outcomes beyond the reach of isolated individuals. My research investigates the interplay between individual agency and collective dynamics, focusing on how incentives shape this relationship. I draw upon models from cognitive science and computational economics, analysing them through a complex systems framework that incorporates information theory, dynamical systems theory, game theory, and Bayesian inference.
 
 Passionate about empowering individuals equitably and sustainably, I believe that democratizing information and technology, along with fostering local communities, will have the greatest impact toward this goal.
 
-With studies in robotics and mechatronics engineering, I have experience in deep reinforcement learning and computer vision research. I'm a certified AWS Solutions Architect Associate with three years of professional experience in cloud infrastructure for the financial sector and 10 years of Python expertise in automation, data engineering, and machine learning.
+I have studies in robotics and mechatronics engineering, statistics and data science, complex systems, AI. I have experience in deep reinforcement learning and computer vision research. I'm a certified AWS Solutions Architect Associate with several years of industry experience in cloud infrastructure and 10 years of Python expertise in automation, data engineering, and machine learning.
 
 
+## News
+
+* [Jul 13--16, 2026] I will be attending the [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/) in Prague, CZ
+* [Jun--Sep, 2026] I will be based in London, UK for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)
+* [Jan, 2026] I attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants
+* [May, 2025] I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf) in Detroid, US
 
 
 
@@ -59,20 +59,6 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
 
 
 
-
-
-## News
-
-* [Jul 13--16, 2026] I will be attending the [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/) in Prague, CZ
-* [Jun--Sep, 2026] I will be based in London, UK for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)
-* [Jan, 2026] I attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants
-* [May, 2025] I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf) in Detroid, US
-
-
-
-
-
-
 ## Education
 
 The University of Sydney (Sydney, AU)  
@@ -90,7 +76,6 @@ Feb 2016 -- Dec 2020
 CATC Design School (Melborune, AU)  
 **DipDes**, *Graphic Design*  
 Jun 2013 -- May 2014
-
 
 
 
