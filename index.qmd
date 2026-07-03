@@ -36,7 +36,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
 * [Jul 13--16, 2026] I will be attending the [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/) in Prague, CZ
 * [Jun--Sep, 2026] I will be based in London, UK for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)
 * [Jan, 2026] I attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants
-* [May, 2025] I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf) in Detroid, US
+* [May, 2025] I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf) in Detroit, US
 
 
 
