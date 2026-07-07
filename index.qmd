@@ -43,15 +43,15 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
 
 ## Selected Publications
 
-Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Formal Equivalences Under Active Inference. *Entropy*, 2025, *28(1)*, 1. [DOI:10.3390/e28010001](https://doi.org/10.3390/e28010001)
+Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Formal Equivalences Under Active Inference. *Entropy*, 2025. [DOI:10.3390/e28010001](https://doi.org/10.3390/e28010001)
 
-**Ruiz-Serra J**, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. In *AAMAS '25: Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems*. Detroit, USA, May 2025. [DOI:10.5555/3709347.3743815](https://dl.acm.org/doi/10.5555/3709347.3743815)
+**Ruiz-Serra J**, Sweeney P, and Harré MS. Factorised Active Inference for Strategic Multi-Agent Interactions. *AAMAS '25*, Detroit, US, May 2025. [DOI:10.5555/3709347.3743815](https://dl.acm.org/doi/10.5555/3709347.3743815)
 
 **Ruiz-Serra J**, White J, Petrie S, Kameneva T, and McCarthy C. Learning scene representations for human-assistive displays using self-attention networks. *ACM Trans. Multimedia Comput. Commun. Appl.*, 2024. [DOI:10.1145/3650111](https://doi.org/10.1145/3650111)
 
-**Ruiz-Serra J** and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023, *16*, 68 (Editor's Choice). [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
+**Ruiz-Serra J** and Harré MS. Inverse Reinforcement Learning as the Algorithmic Basis for Theory of Mind: Current Methods and Open Problems. *Algorithms*, 2023 (Awarded "Editor's Choice"). [DOI:10.3390/a16020068](https://doi.org/10.3390/a16020068)
 
-**Ruiz-Serra J**, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. In *ACRA '22: Proceedings of the 2022 Australasian Conference on Robotics and Automation*. Brisbane, Australia, December 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
+**Ruiz-Serra J**, White J, Petrie S, Kameneva T, and McCarthy C. Towards self-attention based visual navigation in the real world. *ACRA '22*, Brisbane, AU, Dec 2022. [arXiv:2209.07043](https://doi.org/10.48550/arXiv.2209.07043)
 
 *More on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ)*
 
