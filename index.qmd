@@ -38,22 +38,22 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
     <tbody>
       <tr>
         <td>Jul 13--16, 2026</td>
-        <td>I will be attending the [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
+        <td>Participating in the 2026 [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
         <td>Prague, CZ</td>
       </tr>
       <tr>
         <td>Jun--Sep, 2026</td>
-        <td>I will be based in London, UK for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)</td>
+        <td>[PIBBSS Fellowship](https://princint.ai/programs/fellowship/)</td>
         <td>London, UK</td>
       </tr>
       <tr>
         <td>Jan, 2026</td>
-        <td>I attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants</td>
-        <td>Online / symposium</td>
+        <td>Attended a symposium on the Great Filter Hypothesis, and collaborated on a ["Algorithmic bottlenecks in evolution" preprint](https://arxiv.org/abs/2605.04498) with some participants</td>
+        <td>Heron Island, AU</td>
       </tr>
       <tr>
         <td>May, 2025</td>
-        <td>I attended [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf)</td>
+        <td>Presented at [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf)</td>
         <td>Detroit, US</td>
       </tr>
     </tbody>
