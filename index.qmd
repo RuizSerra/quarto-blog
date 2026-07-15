@@ -53,7 +53,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
       </tr>
       <tr>
         <td>May 2025</td>
-        <td>Presented at [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf)</td>
+        <td>Presented Active Inference x Game Theory work at [AAMAS'25](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1793.pdf)</td>
         <td>Detroit, US</td>
       </tr>
     </tbody>
@@ -83,21 +83,32 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
 
 ## Education
 
-The University of Sydney (Sydney, AU)  
-**PhD**, *Complex Systems and Artificial Intelligence*  
-Oct 2022 -- *Present*
-
-MITx on edX (Online)  
-**MicroMasters**, *Statistics and Data Science*  
-Mar 2021 -- Nov 2022
-
-Swinburne University of Technology (Melbourne, AU)  
-**BEng (Hons)** (4.00 GPA), *Robotics and Mechatronics*  
-Feb 2016 -- Dec 2020 
-
-CATC Design School (Melborune, AU)  
-**DipDes**, *Graphic Design*  
-Jun 2013 -- May 2014
+<div class="education-table">
+  <table>
+    <tbody>
+      <tr>
+        <td>Oct 2022<br>Present</td>
+        <td>The University of Sydney<br><strong>PhD</strong>, <em>Complex Systems and Artificial Intelligence</em></td>
+        <td>Sydney, AU</td>
+      </tr>
+      <tr>
+        <td>Mar 2021<br>Nov 2022</td>
+        <td>MITx on edX<br><strong>MicroMasters</strong>, <em>Statistics and Data Science</em></td>
+        <td>Online</td>
+      </tr>
+      <tr>
+        <td>Feb 2016<br>Dec 2020</td>
+        <td>Swinburne University of Technology<br><strong>BEng (Hons)</strong> (4.00 GPA), <em>Robotics and Mechatronics</em></td>
+        <td>Melbourne, AU</td>
+      </tr>
+      <tr>
+        <td>Jun 2013<br>May 2014</td>
+        <td>CATC Design School<br><strong>DipDes</strong>, <em>Graphic Design</em></td>
+        <td>Melborune, AU</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 

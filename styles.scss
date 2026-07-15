@@ -78,14 +78,16 @@ a:hover {
   color: $link-hover-color !important;
 }
 
-.news-table table {
+.news-table table,
+.education-table table {
   border-collapse: collapse;
   border: 0;
   width: 100%;
   margin: 0;
 }
 
-.news-table td {
+.news-table td,
+.education-table td {
   border: 0;
   padding: 0 0 0.6em 0;
   vertical-align: top;
@@ -93,11 +95,13 @@ a:hover {
   padding-left: 0;
 }
 
-.news-table td:first-child {
+.news-table td:first-child,
+.education-table td:first-child {
   white-space: nowrap;
   padding-right: 1rem;
 }
 
-.news-table td:nth-child(2) {
+.news-table td:nth-child(2),
+.education-table td:nth-child(2) {
   padding-right: 1rem;
 }
