@@ -120,7 +120,7 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
     <tbody>
       <tr>
         <td>Jun 2026<br>Sep 2026</td>
-        <td><strong>Research Fellow</strong> ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), <em>AI Safety, Complex Systems</em><br>[PIBBSS](https://princint.ai/programs/fellowship/), [Principles of Intelligence](https://princint.ai)</td>
+        <td><strong>Research Fellow</strong>, <em>AI Safety, Complex Systems</em><br>[PIBBSS](https://princint.ai/programs/fellowship/), [Principles of Intelligence](https://princint.ai) ([Cooperative AI Foundation](https://www.cooperativeai.com/) track)</td>
         <td>London, UK</td>
       </tr>
       <tr>
@@ -130,7 +130,7 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
       </tr>
       <tr>
         <td>Feb 2023<br>Nov 2024</td>
-        <td><strong>Teaching Assistant</strong>, <em>Machine Learning, Complex Systems</em><br>The University of Sydney</td>
+        <td><strong>Teaching Assistant</strong>, <em>Machine Learning, Information Theory</em><br>The University of Sydney</td>
         <td>Sydney, AU</td>
       </tr>
       <tr>
