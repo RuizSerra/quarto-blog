@@ -123,6 +123,18 @@ a:hover {
 }
 
 @media (max-width: 700px) {
+  .quarto-about-jolla {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #quarto-document-content,
+  .content,
+  .about-contents {
+    text-align: left !important;
+    font-size: 0.95rem;
+  }
+
   .news-table table,
   .education-table table,
   .experience-table table {
