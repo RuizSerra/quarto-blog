@@ -115,28 +115,41 @@ Sweeney P, **Ruiz-Serra J**, Harré MS. Decision, Inference, and Information: Fo
 
 ## Experience
 
-[PIBBSS](https://princint.ai/programs/fellowship/), [Principles of Intelligence](https://princint.ai) (London, UK)  
-**Research Fellow** ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), *AI Safety, Complex Systems*  
-Jun 2026 -- Sep 2026
-
-Vistra (Sydney, AU)  
-**AI Engineer**, *Artificial Intelligence, LLMs, RAG, Azure*  
-Mar 2025 -- Sep 2025
-
-The University of Sydney (Sydney, AU)  
-**Teaching Assistant**, *Machine Learning, Complex Systems*  
-Feb 2023 -- Nov 2024
-
-Swinburne University of Technology (Remote/Melbourne, AU)  
-**Research Assistant**, *Deep Reinforcement Learning, Computer Vision*  
-Sep 2020 -- Jan 2024
-
-National Australia Bank (Remote/Melbourne, AU)  
-**Analyst, Engineer**, *Cloud Infrastructure (AWS)*  
-Jan 2018 -- Sep 2020
-
-Youth Without Borders (Melbourne, AU)  
-**State Staffing Manager**, *Spark Engineering Camp*  
-Nov 2016 -- Sep 2017
+<div class="experience-table">
+  <table>
+    <tbody>
+      <tr>
+        <td>Jun 2026<br>Sep 2026</td>
+        <td>[PIBBSS](https://princint.ai/programs/fellowship/), [Principles of Intelligence](https://princint.ai)<br><strong>Research Fellow</strong> ([Cooperative AI Foundation](https://www.cooperativeai.com/) track), <em>AI Safety, Complex Systems</em></td>
+        <td>London, UK</td>
+      </tr>
+      <tr>
+        <td>Mar 2025<br>Sep 2025</td>
+        <td>Vistra<br><strong>AI Engineer</strong>, <em>Artificial Intelligence, LLMs, RAG, Azure</em></td>
+        <td>Sydney, AU</td>
+      </tr>
+      <tr>
+        <td>Feb 2023<br>Nov 2024</td>
+        <td>The University of Sydney<br><strong>Teaching Assistant</strong>, <em>Machine Learning, Complex Systems</em></td>
+        <td>Sydney, AU</td>
+      </tr>
+      <tr>
+        <td>Sep 2020<br>Jan 2024</td>
+        <td>Swinburne University of Technology<br><strong>Research Assistant</strong>, <em>Deep Reinforcement Learning, Computer Vision</em></td>
+        <td>Remote / Melbourne, AU</td>
+      </tr>
+      <tr>
+        <td>Jan 2018<br>Sep 2020</td>
+        <td>National Australia Bank<br><strong>Analyst, Engineer</strong>, <em>Cloud Infrastructure (AWS)</em></td>
+        <td>Remote / Melbourne, AU</td>
+      </tr>
+      <tr>
+        <td>Nov 2016<br>Sep 2017</td>
+        <td>Youth Without Borders<br><strong>State Staffing Manager</strong>, <em>Spark Engineering Camp</em></td>
+        <td>Melbourne, AU</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 *More on [LinkedIn](https://linkedin.com/in/ruizserra)*
