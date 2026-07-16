@@ -110,5 +110,14 @@ a:hover {
 .news-table td:nth-child(2),
 .education-table td:nth-child(2),
 .experience-table td:nth-child(2) {
+  width: 70%;
   padding-right: 1rem;
+}
+
+.news-table td:nth-child(3),
+.education-table td:nth-child(3),
+.experience-table td:nth-child(3) {
+  width: 6.5rem;
+  min-width: 6.5rem;
+  white-space: nowrap;
 }
