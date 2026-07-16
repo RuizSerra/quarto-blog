@@ -79,15 +79,18 @@ a:hover {
 }
 
 .news-table table,
-.education-table table {
+.education-table table,
+.experience-table table {
   border-collapse: collapse;
   border: 0;
   width: 100%;
   margin: 0;
+  table-layout: fixed;
 }
 
 .news-table td,
-.education-table td {
+.education-table td,
+.experience-table td {
   border: 0;
   padding: 0 0 0.6em 0;
   vertical-align: top;
@@ -96,12 +99,16 @@ a:hover {
 }
 
 .news-table td:first-child,
-.education-table td:first-child {
+.education-table td:first-child,
+.experience-table td:first-child {
+  width: 6.5rem;
+  min-width: 6.5rem;
   white-space: nowrap;
   padding-right: 1rem;
 }
 
 .news-table td:nth-child(2),
-.education-table td:nth-child(2) {
+.education-table td:nth-child(2),
+.experience-table td:nth-child(2) {
   padding-right: 1rem;
 }
