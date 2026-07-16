@@ -43,7 +43,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
       </tr>
       <tr>
         <td>Jun 2026</td>
-        <td>I will be based in London from June to September for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)</td>
+        <td>I will be based in London until the end of August for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/)</td>
         <td>London, UK</td>
       </tr>
       <tr>
