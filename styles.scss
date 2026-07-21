@@ -188,10 +188,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2.5rem; /* extra spacing above sections */
 }
 
-/* If Goudy Bookletter 1911 doesn't expose a bold face, fall back to Georgia for bold text */
+/* Ensure bold text uses Goudy Bookletter 1911 when available */
 strong, b {
-  font-family: Georgia, 'Goudy Bookletter 1911', 'Times New Roman', serif;
+  font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', serif;
   font-weight: 700;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Reduce monospace size so code is slightly smaller than body text */
@@ -216,4 +217,25 @@ pre {
 .content,
 .about-contents {
   color: #000 !important;
+}
+
+/* Stronger override for the site title banner to ensure true black text */
+.quarto-title-banner,
+.quarto-title-banner * {
+  color: #000 !important;
+}
+
+/* Further reduce monospace sizing and scope to common code classes used by Quarto/highlighters */
+code, kbd, tt, samp {
+  font-size: 0.88em !important;
+}
+
+pre, pre code, .sourceCode, .chroma, .highlight, .hljs, .quarto-code {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Reduce margin/padding inside pre to keep layout compact */
+pre {
+  padding: 0.9rem !important;
 }
