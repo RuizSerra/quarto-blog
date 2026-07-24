@@ -19,7 +19,10 @@ I use a MacBook Pro:
 * [Quarto](https://quarto.org/): for Markdown presentation slides (and this website!)
 * [Brave](https://brave.com/): internet browser
 * [Toggl](https://toggl.com/): time tracker
+* [Purr](https://github.com/iamarunbrahma/purr): local audio transcription (MLX-accelerated), good for meetings
+* [Glance](https://github.com/chamburr/glance): syntax highlighting for macOS quicklook
+
 and an Android phone:
 * [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&hl=en&gl=US): epub and PDF reader
-* [Glance](https://github.com/chamburr/glance): syntax highlighting for macOS quicklook
+* [Readest](https://readest.com/): epub and PDF reader with built-in translator
 </details>
