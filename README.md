@@ -17,3 +17,7 @@ git commit -m 'Update site'
 git push
 # Netlify takes care of the site deployment
 ```
+
+## Notes
+
+* DNS is handled by AWS Route53 via the AWS Console (e.g. to add CNAME, TXT records for subdomains)
