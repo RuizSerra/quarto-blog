@@ -1,0 +1,31 @@
+---
+title: Tools for research
+# subtitle: 
+date: 2026-06-11
+author: Jaime Ruiz Serra
+categories: [research, tools, writing]
+# bibliography: references.bib
+---
+
+Here is a list of applications/tools I have found useful.
+
+I use macOS:
+
+* [Zotero](https://www.zotero.org/): reference manager
+* [Obsidian.md](https://obsidian.md/): note editor
+* [VS Code](https://code.visualstudio.com/): code editor
+* [Overleaf](https://overleaf.com/): text processor for research manuscripts
+* [Quarto](https://quarto.org/): for Markdown presentation slides (and this website!)
+* [Brave](https://brave.com/): internet browser
+* [Toggl](https://toggl.com/): time tracker
+* [Purr](https://github.com/iamarunbrahma/purr): local audio transcription (MLX-accelerated), good for meetings
+* [Glance](https://github.com/chamburr/glance): syntax highlighting for macOS quicklook
+
+and an Android phone:
+
+* [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&hl=en&gl=US): epub and PDF reader
+* [Readest](https://readest.com/): epub and PDF reader with built-in translator
+
+Some other useful things:
+* For serious diagrams with math, [Asymptote](https://asymptote.ualberta.ca/) (online) or TikZ (LLMs are quite good at generating TikZ code)
+* For presentations, Beamer (and [BeamerQT](https://github.com/acroper/BeamerQt)), though often it is easier to use a combination of e.g. Google Slides + [LaTeXiT](https://www.chachatelier.fr/latexit/latexit-downloads.php)
