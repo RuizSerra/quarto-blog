@@ -23,6 +23,7 @@ I use a MacBook Pro:
 * [Glance](https://github.com/chamburr/glance): syntax highlighting for macOS quicklook
 
 and an Android phone:
+
 * [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&hl=en&gl=US): epub and PDF reader
 * [Readest](https://readest.com/): epub and PDF reader with built-in translator
 </details>
