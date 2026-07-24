@@ -27,5 +27,6 @@ and an Android phone:
 * [Readest](https://readest.com/): epub and PDF reader with built-in translator
 
 Some other useful things:
+
 * For serious diagrams with math, [Asymptote](https://asymptote.ualberta.ca/) (online) or TikZ (LLMs are quite good at generating TikZ code)
 * For presentations, Beamer (and [BeamerQT](https://github.com/acroper/BeamerQt)), though often it is easier to use a combination of e.g. Google Slides + [LaTeXiT](https://www.chachatelier.fr/latexit/latexit-downloads.php)
