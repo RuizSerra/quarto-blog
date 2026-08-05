@@ -42,79 +42,121 @@ about:
   const W = 1000;            // viewBox width
   const H = 100;             // viewBox height
   const AMPLITUDE = H - 2;   // leave room for the stroke at the tallest peak
-  const SAMPLES = 240;
+  const BINS = 240;          // grid of BINS + 1 points; also what counts as a
+                             // distinct x-coordinate for the pointer
   const MAX_PAGE_FRACTION = 0.02;  // the curve never exceeds 2% of the page height
+  const PRIOR_HEIGHT = 0.25 * AMPLITUDE;  // where the flat prior sits before any evidence
+  const KERNEL_SIGMA = 0.05; // width of the bump added per unit, in normalised x
+  const UNIT = 0.002;        // mass one unit of evidence carries, as a fraction
+                             // of the whole distribution — also sets how long
+                             // the curve remembers (half-life ~6s of ticks)
+  const MIN_ENTROPY = 0.945; // floor on H(p), as a fraction of log(BINS + 1)
+  const EASE = 0.14;         // how quickly the drawn curve catches up to the posterior
+  const SETTLED = 1e-4 / (BINS + 1);  // residual below which the easing stops
 
-  const lerp = (a, b, t) => a + (b - a) * t;
+  const N = BINS + 1;
+  const UNIFORM = 1 / N;
+  const ENTROPY_FLOOR = MIN_ENTROPY * Math.log(N);
   const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
-  const rand = (lo, hi) => lo + Math.random() * (hi - lo);
 
-  // The mixture is drawn afresh on every page load: how many components there
-  // are, how wide each one is, and how tall it starts are all random.
-  // `w` = weight (height), `s` = std dev, both in normalised x units.
-  // Suffix 0 = high-entropy (top of page), suffix 1 = low-entropy (bottom).
-  function sampleMixture() {
-    const k = 1 + Math.floor(Math.random() * 5);   // components in [1, 5]
-    const spacing = 1 / k;
+  // The prior is flat: every x is equally likely until the reader gives us
+  // evidence. `posterior` is a proper distribution — it always sums to one —
+  // and `drawn` trails it so the curve grows smoothly rather than stepping.
+  const posterior = new Float64Array(N).fill(UNIFORM);
+  const drawn = Float64Array.from(posterior);
 
-    const components = [];
-    for (let i = 0; i < k; i += 1) {
-      components.push({
-        mu: (i + 0.5) * spacing,
-        w0: rand(0.45, 1),
-        s0: spacing * rand(0.22, 0.34),
-        s1: spacing * 0.12,
-        w1: 0.03
-      });
-    }
+  let pointerX = 0.5;        // normalised; centre until the pointer says otherwise
+  let lastBin = null;        // last x-coordinate the pointer occupied
+  let lastScrollY = window.scrollY;
+  let frame = 0;
 
-    // Entropy collapses onto one or two randomly chosen components; the rest
-    // fade out, and every component narrows.
-    const order = components.map((_, i) => i).sort(() => Math.random() - 0.5);
-    const survivors = Math.min(k, 1 + Math.floor(Math.random() * 2));
-    components[order[0]].w1 = 1;
-    if (survivors === 2) components[order[1]].w1 = rand(0.55, 0.85);
-
-    return components;
+  // Pre-computed kernel, indexed by bin offset, and scaled so that depositing
+  // it adds exactly UNIT of mass — reflection at the ends conserves that mass.
+  const KERNEL_REACH = Math.ceil(3.5 * KERNEL_SIGMA * BINS);
+  const KERNEL = new Float64Array(KERNEL_REACH + 1);
+  let kernelMass = 0;
+  for (let o = -KERNEL_REACH; o <= KERNEL_REACH; o += 1) {
+    const z = (o / BINS) / KERNEL_SIGMA;
+    kernelMass += Math.exp(-0.5 * z * z);
+  }
+  for (let i = 0; i <= KERNEL_REACH; i += 1) {
+    const z = (i / BINS) / KERNEL_SIGMA;
+    KERNEL[i] = UNIT * Math.exp(-0.5 * z * z) / kernelMass;
   }
 
-  const COMPONENTS = sampleMixture();
-
-  function density(x, t) {
-    let value = 0;
-    for (const c of COMPONENTS) {
-      const w = lerp(c.w0, c.w1, t);
-      const s = lerp(c.s0, c.s1, t);
-      const z = (x - c.mu) / s;
-      value += w * Math.exp(-0.5 * z * z);
+  // Deposit one unit of evidence at an x-coordinate. The kernel reflects off
+  // the two ends so a bump at the edge of the page is not clipped to half its
+  // height. Deposits are batched; `commit` turns them back into a distribution.
+  function deposit(centre) {
+    for (let o = -KERNEL_REACH; o <= KERNEL_REACH; o += 1) {
+      const amount = KERNEL[o < 0 ? -o : o];
+      let i = centre + o;
+      if (i < 0) i = -i;                       // reflect at x = 0
+      if (i > BINS) i = 2 * BINS - i;          // reflect at x = 1
+      if (i >= 0 && i <= BINS) posterior[i] += amount;
     }
-    return value;
   }
 
-  // The band is sized in pixels so the tallest peak is exactly at the cap;
+  function entropyOfMix(lambda) {
+    let h = 0;
+    for (let i = 0; i < N; i += 1) {
+      const p = (1 - lambda) * posterior[i] + lambda * UNIFORM;
+      if (p > 0) h -= p * Math.log(p);
+    }
+    return h;
+  }
+
+  // Rescale to unit mass, then hold the distribution above a minimum entropy by
+  // mixing it back towards uniform. Without this the pointer sitting still —
+  // which now deposits on every tick — would grind the curve into a spike.
+  function settle() {
+    let mass = 0;
+    for (let i = 0; i < N; i += 1) mass += posterior[i];
+    for (let i = 0; i < N; i += 1) posterior[i] /= mass;
+
+    if (entropyOfMix(0) >= ENTROPY_FLOOR) return;
+
+    let lo = 0;                // too concentrated
+    let hi = 1;                // uniform, so certainly above the floor
+    for (let step = 0; step < 14; step += 1) {
+      const mid = (lo + hi) / 2;
+      if (entropyOfMix(mid) < ENTROPY_FLOOR) lo = mid; else hi = mid;
+    }
+    for (let i = 0; i < N; i += 1) {
+      posterior[i] = (1 - hi) * posterior[i] + hi * UNIFORM;
+    }
+  }
+
+  function commit() {
+    settle();
+    animate();
+  }
+
+  // The band is sized in pixels so the tallest peak sits exactly at the cap;
   // the viewBox then maps the density onto it.
   function resize() {
     const cap = document.documentElement.scrollHeight * MAX_PAGE_FRACTION;
     box.style.height = cap.toFixed(2) + 'px';
   }
 
-  function render(t) {
-    const ys = new Array(SAMPLES + 1);
-    let peak = 0;
-    for (let i = 0; i <= SAMPLES; i += 1) {
-      const d = density(i / SAMPLES, t);
-      ys[i] = d;
-      if (d > peak) peak = d;
-    }
+  function render() {
+    // Scale by total mass, so the curve reads as a distribution: concentrating
+    // probability in one place lowers it everywhere else. Once the peak would
+    // breach the cap, the whole curve is scaled down to stay inside it.
+    let mass = 0;
+    for (let i = 0; i <= BINS; i += 1) mass += drawn[i];
+    let scale = mass > 0 ? (PRIOR_HEIGHT * (BINS + 1)) / mass : 0;
 
-    // Normalise to the tallest peak: the height stays at the cap and only the
-    // *shape* of the distribution changes as entropy drops.
-    const scale = peak > 0 ? AMPLITUDE / peak : 0;
+    let peak = 0;
+    for (let i = 0; i <= BINS; i += 1) {
+      if (drawn[i] > peak) peak = drawn[i];
+    }
+    if (peak * scale > AMPLITUDE) scale = AMPLITUDE / peak;
 
     let d = '';
-    for (let i = 0; i <= SAMPLES; i += 1) {
-      const x = (W / SAMPLES) * i;
-      const y = H - ys[i] * scale;
+    for (let i = 0; i <= BINS; i += 1) {
+      const x = (W / BINS) * i;
+      const y = H - drawn[i] * scale;
       d += (i === 0 ? 'M ' : ' L ') + x.toFixed(2) + ' ' + y.toFixed(2);
     }
 
@@ -122,30 +164,79 @@ about:
     fill.setAttribute('d', d + ' L ' + W + ' ' + H + ' L 0 ' + H + ' Z');
   }
 
-  function scrollProgress() {
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    if (scrollable <= 0) return 0;
-    return clamp01(window.scrollY / scrollable);
+  // Every tick counts: as long as we know where the pointer is, each one banks
+  // a unit of evidence there, whether or not anything is moving. The loop keeps
+  // running while the pointer is on the page, and afterwards just long enough
+  // for the drawn curve to catch up.
+  function tick() {
+    if (lastBin !== null) {
+      deposit(lastBin);
+      settle();
+    }
+
+    let moved = 0;
+    for (let i = 0; i <= BINS; i += 1) {
+      const delta = posterior[i] - drawn[i];
+      drawn[i] += delta * EASE;
+      const size = delta < 0 ? -delta : delta;
+      if (size > moved) moved = size;
+    }
+
+    render();
+
+    if (lastBin !== null || moved > SETTLED) {
+      frame = window.requestAnimationFrame(tick);
+    } else {
+      for (let i = 0; i <= BINS; i += 1) drawn[i] = posterior[i];
+      frame = 0;
+      render();
+    }
   }
 
-  let ticking = false;
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(function () {
-      render(scrollProgress());
-      ticking = false;
-    });
+  function animate() {
+    if (!frame) frame = window.requestAnimationFrame(tick);
   }
+
+  // Moving the pointer is itself evidence: one unit for every x-coordinate it
+  // enters. Standing still adds nothing more (the single unit was banked on
+  // arrival), and moving straight up or down adds nothing at all.
+  window.addEventListener('pointermove', function (event) {
+    pointerX = clamp01(event.clientX / window.innerWidth);
+    const bin = Math.round(pointerX * BINS);
+    if (bin === lastBin) return;
+
+    if (lastBin === null) {
+      deposit(bin);                       // first sighting: a single unit
+    } else {
+      const step = bin > lastBin ? 1 : -1;
+      for (let b = lastBin + step; b !== bin + step; b += step) deposit(b);
+    }
+
+    lastBin = bin;
+    commit();
+  }, { passive: true });
+
+  // A pointer that has left the page is no longer evidence for anything, and
+  // coordinates crossed off-screen were never entered — so it comes back as a
+  // first sighting rather than sweeping across everything in between.
+  document.addEventListener('pointerleave', function () {
+    lastBin = null;
+  });
+
+  // Every tick in which the page is scrolling — in either direction — adds
+  // one unit wherever the pointer happens to be.
+  window.addEventListener('scroll', function () {
+    if (window.scrollY === lastScrollY) return;
+    lastScrollY = window.scrollY;
+    deposit(Math.round(pointerX * BINS));
+    commit();
+  }, { passive: true });
+
+  window.addEventListener('resize', resize);
+  window.addEventListener('load', resize);
 
   resize();
-  render(scrollProgress());
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () {
-    resize();
-    onScroll();
-  });
-  window.addEventListener('load', resize);
+  render();
 })();
 </script>
 ```
