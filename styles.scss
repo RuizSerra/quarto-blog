@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 // Base document colors
-$body-bg:                             #fcfcfc;
+$body-bg:                             #f5f2e9;
 $primary:                             $body-bg;
 $body-color:                          rgb(0, 0, 0);
 $link-color:                          $body-color; 
@@ -16,6 +16,8 @@ $code-bg:                             darken($body-bg, 10%) !default;
 
 /*-- scss:rules --*/
 
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 // Global link structural styles
 a {
   color: $link-color;
@@ -28,7 +30,9 @@ a:hover {
 }
 
 .home-intro-quote {
+  font-family: 'EB Garamond', Georgia, serif;
   font-style: italic;
+  font-weight: 500;
   color: #6b6b6b;
   font-size: 1.18rem;
   line-height: 1.7;
