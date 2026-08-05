@@ -69,6 +69,10 @@ a:hover {
   display: block !important;
 }
 
+.about-image img[src*="jaime-blurry-small1.png"] {
+  mix-blend-mode: multiply;
+}
+
 // Left-align the bottom navigation links block (links should not be justified)
 .about-links {
   width: 100% !important;
