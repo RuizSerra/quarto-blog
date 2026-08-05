@@ -40,6 +40,50 @@ a:hover {
   padding: 0.2rem 0;
 }
 
+.home-ambient-stroke {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2vh; // fallback; JS resizes this to 2% of the page height
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.home-ambient-stroke svg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-ambient-stroke .ambient-line {
+  fill: none;
+  stroke: rgba(116, 151, 103, 0.42);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-ambient-stroke .ambient-fill {
+  fill: rgba(116, 151, 103, 0.09);
+  stroke: none;
+}
+
+body {
+  position: relative;
+}
+
+.quarto-about-jolla,
+#quarto-document-content,
+.content,
+.about-contents {
+  position: relative;
+  z-index: 1;
+}
+
 // Parent container layout parameters
 .quarto-about-jolla {
   max-width: 800px;                   

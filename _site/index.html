@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4ec83cce86c840ba1caad423b150bed6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5a09773106b27f9a8611ac20e810ba8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9c10d6377a04e749dc61ad6ac880056d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -161,6 +161,112 @@ html, body, #quarto-document-content, .content, .about-contents, h1, h2, h3, h4,
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
+<div class="home-ambient-stroke" aria-hidden="true">
+  <svg viewbox="0 0 1000 100" preserveaspectratio="none">
+    <path id="home-ambient-fill" class="ambient-fill" d=""></path>
+    <path id="home-ambient-path" class="ambient-line" d="" vector-effect="non-scaling-stroke"></path>
+  </svg>
+</div>
+<script>
+(function () {
+  const box = document.querySelector('.home-ambient-stroke');
+  const line = document.getElementById('home-ambient-path');
+  const fill = document.getElementById('home-ambient-fill');
+  if (!box || !line || !fill) return;
+  const W = 1000;            // viewBox width
+  const H = 100;             // viewBox height
+  const AMPLITUDE = H - 2;   // leave room for the stroke at the tallest peak
+  const SAMPLES = 240;
+  const MAX_PAGE_FRACTION = 0.02;  // the curve never exceeds 2% of the page height
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
+  const rand = (lo, hi) => lo + Math.random() * (hi - lo);
+  // The mixture is drawn afresh on every page load: how many components there
+  // are, how wide each one is, and how tall it starts are all random.
+  // `w` = weight (height), `s` = std dev, both in normalised x units.
+  // Suffix 0 = high-entropy (top of page), suffix 1 = low-entropy (bottom).
+  function sampleMixture() {
+    const k = 1 + Math.floor(Math.random() * 5);   // components in [1, 5]
+    const spacing = 1 / k;
+    const components = [];
+    for (let i = 0; i < k; i += 1) {
+      components.push({
+        mu: (i + 0.5) * spacing,
+        w0: rand(0.45, 1),
+        s0: spacing * rand(0.22, 0.34),
+        s1: spacing * 0.12,
+        w1: 0.03
+      });
+    }
+    // Entropy collapses onto one or two randomly chosen components; the rest
+    // fade out, and every component narrows.
+    const order = components.map((_, i) => i).sort(() => Math.random() - 0.5);
+    const survivors = Math.min(k, 1 + Math.floor(Math.random() * 2));
+    components[order[0]].w1 = 1;
+    if (survivors === 2) components[order[1]].w1 = rand(0.55, 0.85);
+    return components;
+  }
+  const COMPONENTS = sampleMixture();
+  function density(x, t) {
+    let value = 0;
+    for (const c of COMPONENTS) {
+      const w = lerp(c.w0, c.w1, t);
+      const s = lerp(c.s0, c.s1, t);
+      const z = (x - c.mu) / s;
+      value += w * Math.exp(-0.5 * z * z);
+    }
+    return value;
+  }
+  // The band is sized in pixels so the tallest peak is exactly at the cap;
+  // the viewBox then maps the density onto it.
+  function resize() {
+    const cap = document.documentElement.scrollHeight * MAX_PAGE_FRACTION;
+    box.style.height = cap.toFixed(2) + 'px';
+  }
+  function render(t) {
+    const ys = new Array(SAMPLES + 1);
+    let peak = 0;
+    for (let i = 0; i <= SAMPLES; i += 1) {
+      const d = density(i / SAMPLES, t);
+      ys[i] = d;
+      if (d > peak) peak = d;
+    }
+    // Normalise to the tallest peak: the height stays at the cap and only the
+    // *shape* of the distribution changes as entropy drops.
+    const scale = peak > 0 ? AMPLITUDE / peak : 0;
+    let d = '';
+    for (let i = 0; i <= SAMPLES; i += 1) {
+      const x = (W / SAMPLES) * i;
+      const y = H - ys[i] * scale;
+      d += (i === 0 ? 'M ' : ' L ') + x.toFixed(2) + ' ' + y.toFixed(2);
+    }
+    line.setAttribute('d', d);
+    fill.setAttribute('d', d + ' L ' + W + ' ' + H + ' L 0 ' + H + ' Z');
+  }
+  function scrollProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return 0;
+    return clamp01(window.scrollY / scrollable);
+  }
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      render(scrollProgress());
+      ticking = false;
+    });
+  }
+  resize();
+  render(scrollProgress());
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () {
+    resize();
+    onScroll();
+  });
+  window.addEventListener('load', resize);
+})();
+</script>
 <!-- <p class="home-intro-quote">How does an agent's model of other agents shape what the collective becomes? And how do we measure and govern that?</p> -->
 <p>I am fascinated by the capacity of collectives to achieve outcomes beyond the reach of isolated individuals. My research investigates the interplay between individual agency and collective dynamics, focusing on how incentives shape this relationship. I draw upon models from cognitive science and computational economics, analysing them through a complex systems framework that incorporates information theory, dynamical systems theory, game theory, and Bayesian inference.</p>
 <p>Passionate about empowering individuals equitably and sustainably, I believe that democratizing information and technology, along with fostering local communities, will have the greatest impact toward this goal.</p>
