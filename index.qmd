@@ -243,6 +243,10 @@ about:
 
 <!-- <p class="home-intro-quote">How does an agent's model of other agents shape what the collective becomes? And how do we measure and govern that?</p> -->
 
+<!-- I am interested in how agency compounds. Groups can do things that their individual members cannot, but collective capability brings coordination costs and difficult questions about who performs which role, who receives the resulting benefits, how power and resources are distributed, and how tragedies of the commons arise. I regard these as exceptionally important problems: solving them well would amount to resolving many of the obstacles to highly beneficial collective organization.
+
+My background includes robotics, control theory, reinforcement learning, game theory, information theory, and active inference. I am especially interested in understanding multi-agent systems through information-theoretic and game-theoretic lenses and in determining how individual agents can compose into something resembling a higher-level or “super” agent. -->
+
 I am fascinated by the capacity of collectives to achieve outcomes beyond the reach of isolated individuals. My research investigates the interplay between individual agency and collective dynamics, focusing on how incentives shape this relationship. I draw upon models from cognitive science and computational economics, analysing them through a complex systems framework that incorporates information theory, dynamical systems theory, game theory, and Bayesian inference.
 
 Passionate about empowering individuals equitably and sustainably, I believe that democratizing information and technology, along with fostering local communities, will have the greatest impact toward this goal.
@@ -256,14 +260,14 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
   <table>
     <tbody>
       <tr>
-        <td>Jul 2026</td>
-        <td>Participating in the 2026 [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
-        <td>Prague, CZ</td>
-      </tr>
-      <tr>
         <td>Jun–Aug 2026</td>
         <td>Based in London for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/), researching operationalisations of [power](https://arxiv.org/abs/2508.00159) in agents</td>
         <td>London, UK</td>
+      </tr>
+      <tr>
+        <td>Jul 2026</td>
+        <td>Participating in the 2026 [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
+        <td>Prague, CZ</td>
       </tr>
       <tr>
         <td>Jan 2026</td>
