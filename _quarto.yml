@@ -3,10 +3,10 @@ project:
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
-    - "!apps/**"
+    - "!projects/**"
   resources:
     - "index.html"
-    - "apps/**"
+    - "projects/**"
 
 website:
   favicon: img/jaime-blurry-small-300h.png
