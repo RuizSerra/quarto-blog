@@ -2,7 +2,7 @@
   "listingMap": {
     "posts/index.qmd": [
       "*/index.qmd",
-      "../apps/apps.yml"
+      "../apps.yml"
     ]
   }
 }
