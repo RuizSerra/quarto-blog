@@ -10,7 +10,18 @@
 <atom:link href="https://jaime.rs/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Jaime Ruiz Serra&#39;s personal website</description>
 <generator>quarto-1.6.33</generator>
-<lastBuildDate>Wed, 10 Jun 2026 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 08 Jul 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Beyond Individual Power</title>
+  <link>https://jaime.rs/</link>
+  <description>PIBBSS mid-program presentation. Information-theoretic empowerment, capability-based power, and towards coalitional notions of power.
+</description>
+  <category>talks</category>
+  <category>research</category>
+  <category>ai</category>
+  <guid>https://jaime.rs/</guid>
+  <pubDate>Wed, 08 Jul 2026 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Tools for research</title>
   <dc:creator>Jaime Ruiz Serra</dc:creator>

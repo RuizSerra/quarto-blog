@@ -1,7 +1,12 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "!apps/**"
   resources:
     - "index.html"
+    - "apps/**"
 
 website:
   favicon: img/jaime-blurry-small-300h.png

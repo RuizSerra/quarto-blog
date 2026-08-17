@@ -1,7 +1,9 @@
 ---
 title: "Blog"
 listing:
-  contents: .
+  contents:
+    - "*/index.qmd"
+    - ../apps/apps.yml
   sort: "date desc"
   type: grid #default
   # type: default
