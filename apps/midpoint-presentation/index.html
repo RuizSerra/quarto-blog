@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Individual Power — Information-Theoretic Bounds on Collective Power</title>
+  <meta name="description" content="PIBBSS mid-program presentation. Information-theoretic empowerment, capability-based power, and towards coalitional notions of power.">
+  <meta name="author" content="Jaime Ruiz Serra">
+  <link rel="canonical" href="https://jaime.rs/apps/midpoint-presentation/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jaime Ruiz Serra">
+  <meta property="og:title" content="Beyond Individual Power">
+  <meta property="og:description" content="Information-theoretic bounds on collective power. PIBBSS mid-program presentation, 9 July 2026.">
+  <meta property="og:url" content="https://jaime.rs/apps/midpoint-presentation/">
+  <meta property="og:image" content="https://jaime.rs/apps/midpoint-presentation/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Title card: Beyond Individual Power — Information-Theoretic Bounds on Collective Power">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beyond Individual Power">
+  <meta name="twitter:description" content="Information-theoretic bounds on collective power. PIBBSS mid-program presentation, 9 July 2026.">
+  <meta name="twitter:image" content="https://jaime.rs/apps/midpoint-presentation/og-card.png">
+
+  <!-- Reveal.js styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <!-- Code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    window.addEventListener('error', function(e) {
+      const errorDiv = document.createElement('div');
+      errorDiv.style.position = 'fixed';
+      errorDiv.style.top = '0';
+      errorDiv.style.left = '0';
+      errorDiv.style.width = '100%';
+      errorDiv.style.background = 'rgba(255, 0, 0, 0.9)';
+      errorDiv.style.color = 'white';
+      errorDiv.style.zIndex = '99999';
+      errorDiv.style.padding = '15px';
+      errorDiv.style.fontSize = '14px';
+      errorDiv.style.fontFamily = 'monospace';
+      errorDiv.style.whiteSpace = 'pre-wrap';
+      errorDiv.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+      errorDiv.innerText = 'JS Error: ' + e.message + '\nFile: ' + e.filename + ':' + e.lineno + '\nStack: ' + (e.error ? e.error.stack : 'N/A');
+      document.body.appendChild(errorDiv);
+    });
+  </script>
+  <div class="reveal">
+    <div class="slides">
+      <!-- The slides.md file is loaded dynamically -->
+      <section data-markdown="slides.md"
+               data-separator="^\r?\n---\r?\n"
+               data-separator-vertical="^\r?\n--\r?\n">
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+  <!-- Mermaid.js for diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+  <script>
+    // Update footer slide numbers from Reveal.js native counter
+    function updateFooterText() {
+      const nativeSlideNum = document.querySelector('.reveal .slide-number');
+      const activeSlide = Reveal.getCurrentSlide();
+      if (nativeSlideNum && activeSlide) {
+        const customNum = activeSlide.querySelector('.footer-right');
+        if (customNum) {
+          customNum.textContent = nativeSlideNum.textContent;
+        }
+      }
+    }
+
+    // Initialize Reveal.js
+    Reveal.initialize({
+      width: 1200,               // Widen layout area for more horizontal space
+      height: 750,               // Expand vertical layout space
+      margin: 0.04,              // Shrink empty margins on outer edges of screen
+      center: false,             // Top-left alignment like Beamer
+      transition: 'none',        // Instant transitions like Beamer
+      slideNumber: 'c/t',        // Page number fraction (e.g. 5/16)
+      hash: true,                // Update URL hash for sharing/bookmarks
+      history: true,             // Browser history navigation
+      controls: false,           // Show navigation arrows in corner (disabled)
+      progress: false,           // Show progress bar (disabled)
+      mathjax3: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      },
+      plugins: [ RevealMarkdown, RevealMath.MathJax3, RevealHighlight ]
+    }).then(() => {
+      // Inject custom footer into every slide except the title slide
+      const slides = document.querySelectorAll('.reveal .slides section');
+      slides.forEach((slide, index) => {
+        // Skip vertical slide containers (which contain nested sections)
+        if (slide.querySelector('section')) return;
+        
+        // Skip title slide (first slide) and separator slides
+        if (index === 0 || slide.classList.contains('separator-slide')) return;
+        
+        const footer = document.createElement('div');
+        footer.className = 'presentation-footer';
+        footer.innerHTML = `
+          <div class="footer-col footer-left">Jaime Ruiz Serra</div>
+          <div class="footer-col footer-center">PIBBSS '26</div>
+          <div class="footer-col footer-right"></div>
+        `;
+        slide.appendChild(footer);
+      });
+
+      // Update footer page numbers
+      updateFooterText();
+
+      // Initialize Mermaid diagrams once slides are loaded
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'neutral',
+        securityLevel: 'loose'
+      });
+      mermaid.run({
+        nodes: document.querySelectorAll('.mermaid')
+      });
+      
+      // Initialize Capacity Regions if we start on the slide
+      setTimeout(() => {
+        if (typeof initCapacityRegions === 'function') {
+          initCapacityRegions();
+        }
+      }, 500); // Give markdown parser a moment
+
+      // Watch for MathJax rendering to sync fragments
+      const observer = new MutationObserver((mutations) => {
+        let hasMathJax = false;
+        for (let mutation of mutations) {
+          if (mutation.addedNodes.length) {
+            for (let node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE && (node.matches('mjx-container') || node.querySelector('mjx-container'))) {
+                hasMathJax = true;
+                break;
+              }
+            }
+          }
+          if (hasMathJax) break;
+        }
+        if (hasMathJax) {
+          // MathJax rendered some math, sync fragments with Reveal.js
+          setTimeout(() => {
+            Reveal.sync();
+          }, 100);
+        }
+      });
+      observer.observe(document.querySelector('.slides'), { childList: true, subtree: true });
+
+      // Add custom bindings for arrow keys to navigate slide deck
+      Reveal.addKeyBinding({ keyCode: 37, key: 'LEFT', description: 'Previous Slide' }, () => {
+        Reveal.prev();
+      });
+      Reveal.addKeyBinding({ keyCode: 39, key: 'RIGHT', description: 'Next Slide' }, () => {
+        Reveal.next();
+      });
+      Reveal.addKeyBinding({ keyCode: 38, key: 'UP', description: 'Previous Slide' }, () => {
+        Reveal.prev();
+      });
+      Reveal.addKeyBinding({ keyCode: 40, key: 'DOWN', description: 'Next Slide' }, () => {
+        Reveal.next();
+      });
+
+      // Click handler for clickable equation elements
+      window.addEventListener('click', (e) => {
+        const target = e.target.closest('.clickable-z0');
+        if (target) {
+          target.classList.toggle('active');
+        }
+      });
+
+      // Fallback: Click left/right margins to navigate
+      window.addEventListener('click', (e) => {
+        if (e.target.tagName === 'VIDEO' || e.target.tagName === 'CANVAS' || e.target.closest('.metric-box') || e.target.closest('a') || e.target.closest('.clickable-z0')) return;
+        const width = window.innerWidth;
+        if (e.clientX < width * 0.15) {
+          Reveal.prev();
+        } else if (e.clientX > width * 0.85) {
+          Reveal.next();
+        }
+      });
+
+      // Manual Navigation Override: Intercept key presses in capturing phase to bypass Reveal.js key routing
+      window.addEventListener('keydown', (e) => {
+        // Bypassing Reveal.js key routing for Left (37) and Right (39) arrows
+        if (e.keyCode === 37) {
+          Reveal.prev();
+          e.preventDefault();
+          e.stopPropagation();
+        } else if (e.keyCode === 39) {
+          Reveal.next();
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+    });
+
+    Reveal.on('slidechanged', event => {
+      updateFooterText();
+      
+      // Re-run Mermaid in case a slide content was refreshed/rendered late
+      mermaid.run({
+        nodes: event.currentSlide.querySelectorAll('.mermaid')
+      });
+      
+      // Initialize Capacity Regions if we navigate to it and it hasn't been initialized
+      if (typeof initCapacityRegions === 'function') {
+        initCapacityRegions();
+      }
+    });
+  </script>
+  <!-- Load Capacity Regions Widget logic -->
+  <script src="capacity-regions.js"></script>
+</body>
+</html>
