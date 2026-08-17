@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!--
+    Source for og-card.png (the Open Graph / Twitter social card).
+    Colours and type mirror .title-slide in style.css.
+
+    Regenerate after editing:
+      rsvg-convert -w 1200 -h 630 og-card.svg -o og-card.png
+  -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <g transform="translate(0,-32)" font-family="Baskervville, Georgia, serif" text-anchor="middle">
+    <text x="600" y="272" font-size="66" fill="#000000">Beyond Individual Power</text>
+    <text x="600" y="330" font-size="33" fill="#7f8c8d">Information-Theoretic Bounds on Collective Power</text>
+    <line x1="450" y1="382" x2="750" y2="382" stroke="#000000" stroke-width="1"/>
+    <text x="600" y="436" font-size="26" fill="#000000">Jaime Ruiz Serra</text>
+    <text x="600" y="476" font-size="21" fill="#7f8c8d">PIBBSS Mid-Program Presentation &#183; 9 July 2026</text>
+  </g>
+</svg>
