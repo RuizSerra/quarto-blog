@@ -261,7 +261,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
     <tbody>
       <tr>
         <td>Feb 2027</td>
-        <td>I am due to finish my PhD by the end of February, 2027. Open to work</td>
+        <td>I am due to finish my PhD by the end of February, 2027. Open to work opportunities in Europe for 2027</td>
         <td>Europe</td>
       </tr>
       <tr>
