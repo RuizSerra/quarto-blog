@@ -1,0 +1,529 @@
+/* Import Baskervville and Fira Mono for code */
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+:root {
+  --metropolis-bg: #FFFFFF;
+  --metropolis-text: #000000;
+  --metropolis-title: #000000;
+  --metropolis-line: #000000;
+  /* Thin black line for textbook style */
+  --metropolis-muted: rgba(0, 0, 0, 0.5);
+
+  /* TikZ Color Palette */
+  --col-c: #3498DB;
+  /* Sky Blue */
+  --col-i: #1ABC9C;
+  /* Turquoise */
+  --col-p: #2ECC71;
+  /* Emerald Green */
+  --col-t: #E67E22;
+  /* Orange */
+  --col-l: #9B59B6;
+  /* Purple */
+}
+
+/* Base Reveal.js Styles Overrides */
+.reveal-viewport,
+.reveal {
+  font-family: "Baskervville", Georgia, serif;
+  font-weight: 400;
+  color: var(--metropolis-text);
+  background: var(--metropolis-bg) !important;
+  /* Flat paper background */
+  background-color: var(--metropolis-bg) !important;
+  background-image: none !important;
+  /* Removes default Reveal.js radial background gradient */
+  font-size: 32px;
+  /* Set base font size explicitly to increase size for small monitors */
+  text-shadow: none !important;
+  /* Ensure all text is flat with no shadows */
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 40px 20px 60px 20px;
+  /* Added bottom padding to make room for footer */
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Headings */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Baskervville", Georgia, serif;
+  font-weight: 400;
+  /* Regular weight for an old textbook style */
+  color: var(--metropolis-title);
+  text-transform: none;
+  text-shadow: none !important;
+  /* Ensure headings have no shadows */
+}
+
+.reveal h1 {
+  font-size: 2.0em;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+  /* Keep main title bold for hierarchy */
+}
+
+/* Slide Titles (frame titles) */
+.reveal h2 {
+  font-size: 1.15em;
+  border-bottom: 0.8px solid var(--metropolis-line);
+  /* Very thin textbook-style line */
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  margin-top: 0;
+  font-weight: 400;
+  /* Less bold for classic look */
+  letter-spacing: -0.01em;
+}
+
+.reveal h3 {
+  font-size: 1.05em;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+}
+
+/* Slide body text and lists */
+.reveal p,
+.reveal li {
+  font-size: 1em;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+.reveal ul,
+.reveal ol {
+  margin-left: 0.6em;
+  margin-bottom: 0.8em;
+}
+
+.reveal ul ul,
+.reveal ol ol,
+.reveal ul ol,
+.reveal ol ul {
+  margin-left: 0.6em;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+}
+
+.reveal li li {
+  font-size: 1em;
+  /* Prevent nested list items from shrinking compounding font sizes */
+}
+
+.reveal strong {
+  font-weight: 700;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+/* Persistent Textbook Footer (nested inside each slide section for correct scaling and width alignment) */
+.presentation-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  /* Align with slide content left boundary */
+  right: 20px;
+  /* Align with slide content right boundary */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  /* Slightly larger footer text */
+  color: var(--metropolis-muted);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* Hide Reveal.js native slide number container */
+.reveal .slide-number {
+  display: none !important;
+}
+
+/* Beamer Blocks - styled as flat colored boxes with no title bar */
+.block {
+  margin: 1.2em 0;
+  border-radius: 0;
+  /* Sharp corners like a classic textbook */
+  background-color: #ffffff;
+  /* Warm beige background */
+  border: 0.8px solid #000000;
+  /* Thin black border */
+  padding: 16px;
+}
+
+.block-title {
+  font-weight: 700;
+  font-size: 1em;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.block-content {
+  font-size: 1em;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.block-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Title Slide Styling */
+.title-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100% !important;
+}
+
+.title-slide h1 {
+  font-size: 2.2em;
+  font-weight: 400;
+  color: var(--metropolis-title);
+  margin-bottom: 8px;
+}
+
+.title-slide .subtitle {
+  font-size: 1.15em;
+  color: #7f8c8d;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.title-slide .author {
+  font-size: 0.85em;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--metropolis-text);
+}
+
+.title-slide .date {
+  font-size: 0.7em;
+  color: #7f8c8d;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-top: 1.5em;
+}
+
+/* Centered Slides (like The Core Question) */
+.center-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100% !important;
+}
+
+/* Videos */
+.reveal video {
+  max-width: 100%;
+  max-height: 65vh;
+  margin: 10px auto;
+  display: block;
+  outline: none !important;
+  /* Prevents focus highlight ring when clicked */
+}
+
+.reveal video:focus,
+.reveal video:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove default dark browser gradient background and shadow from native HTML5 video controls panel */
+.reveal video::-webkit-media-controls-panel {
+  background-image: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.reveal video::-webkit-media-controls-enclosure {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+/* Code block adjustments */
+.reveal pre {
+  box-shadow: none;
+  background: #272822;
+  border-radius: 4px;
+  width: 95%;
+  margin: 15px auto;
+}
+
+.reveal pre code {
+  font-family: 'Fira Mono', monospace;
+  font-size: 0.65em;
+  line-height: 1.4;
+  padding: 12px;
+}
+
+/* Capability-Based Power Table (TikZ replacement) */
+.reveal table.power-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.reveal table.power-table tr {
+  border: none !important;
+}
+
+.reveal table.power-table td {
+  border: none !important;
+  vertical-align: middle;
+  padding: 4px 15px;
+}
+
+/* Blocks column */
+.reveal table.power-table td:first-child {
+  width: 250px;
+  text-align: center;
+  padding-left: 0;
+}
+
+/* Equations column */
+.reveal table.power-table td:last-child {
+  text-align: left;
+  padding-right: 0;
+  font-size: 1.15em;
+  /* Make equations slightly larger */
+}
+
+.power-block {
+  padding: 8px 12px;
+  border-radius: 0;
+  /* Sharp corners */
+  text-align: center;
+  font-size: 0.72em;
+  line-height: 1.3;
+  border-width: 0.8px;
+  /* Thin textbook border */
+  border-style: solid;
+  font-weight: 400;
+  /* Serif text looks better with regular weight in blocks */
+  box-shadow: none;
+}
+
+.power-block strong {
+  font-weight: 500;
+}
+
+/* Match the exact TikZ hex colors and weights */
+.bg-c {
+  background-color: rgba(52, 152, 219, 0.06);
+  border-color: var(--col-c);
+  color: #000000;
+}
+
+.bg-i {
+  background-color: rgba(26, 188, 156, 0.06);
+  border-color: var(--col-i);
+  color: #000000;
+}
+
+.bg-p {
+  background-color: rgba(46, 204, 113, 0.06);
+  border-color: var(--col-p);
+  color: #000000;
+}
+
+.bg-t {
+  background-color: rgba(230, 126, 34, 0.06);
+  border-color: var(--col-t);
+  color: #000000;
+}
+
+.bg-l {
+  background-color: rgba(155, 89, 182, 0.06);
+  border-color: var(--col-l);
+  color: #000000;
+}
+
+.arrow-row td {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62em;
+  color: #555555;
+  width: 250px;
+}
+
+.arrow-symbol {
+  font-weight: bold;
+  margin-right: 6px;
+  font-size: 1.25em;
+}
+
+.arrow-text {
+  font-weight: 400;
+}
+
+.eq-cell {
+  font-size: 0.55em;
+  text-align: left;
+  color: #000000;
+}
+
+/* Utility to center text */
+.text-center {
+  text-align: center;
+}
+
+/* Two-column layout for slides (e.g. video slide) */
+.video-slide-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+  gap: 30px;
+}
+
+.video-slide-container .video-col {
+  flex: 0 0 66%;
+  max-width: 66%;
+}
+
+.video-slide-container .video-col video {
+  width: 100% !important;
+  max-height: 55vh;
+  margin: 0;
+  /* Align with column */
+}
+
+.video-slide-container .text-col {
+  flex: 0 0 30%;
+  max-width: 30%;
+  text-align: left;
+}
+
+.video-slide-container .text-col p,
+.video-slide-container .text-col li {
+  font-size: 0.85em;
+  /* Slightly larger text in side column if desired */
+  line-height: 1.5;
+}
+
+/* 50/50 columns for first-col and second-col video layouts */
+.video-slide-container .first-col,
+.video-slide-container .second-col {
+  flex: 0 0 48%;
+  max-width: 48%;
+}
+
+.video-slide-container .first-col video,
+.video-slide-container .second-col video {
+  width: 100% !important;
+  height: 55vh !important;
+  /* Set larger fixed height for punchier video presence */
+  object-fit: cover;
+  /* Center and crop to fill container */
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* Section Separator / Title Slide */
+.reveal .slides section.separator-slide {
+  background-color: #0d0d0d !important;
+  /* Flat dark background */
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertically center content */
+  align-items: flex-start;
+  /* Horizontally left-aligned */
+  text-align: left;
+  padding: 80px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.reveal .slides section.separator-slide h2 {
+  color: #ffffff !important;
+  font-size: 2.2em !important;
+  font-weight: 400;
+  border-bottom: none !important;
+  /* Remove Metropolis bottom border */
+  margin: 0 !important;
+  padding: 0 !important;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-family: "Baskervville", Georgia, serif;
+}
+
+/* Vertical Centering for Standard Content Slides (keeping h2 locked at the top) */
+.reveal .slides section:not(.separator-slide):not(.title-slide) {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Push the content area to the vertical center of the remaining slide space */
+.reveal .slides section:not(.separator-slide):not(.title-slide)>h2+* {
+  margin-top: auto;
+}
+
+/* Fallback: if no h2 slide title exists, center from the first child */
+.reveal .slides section:not(.separator-slide):not(.title-slide):not(:has(h2))>*:first-child {
+  margin-top: auto;
+}
+
+.reveal .slides section:not(.separator-slide):not(.title-slide)>*:last-child,
+.reveal .slides section:not(.separator-slide):not(.title-slide)>*:nth-last-child(2) {
+  margin-bottom: auto;
+}
+
+/* Interactive Math Elements */
+.clickable-z0 {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.clickable-z0.active {
+  color: #ff3333 !important;
+}
