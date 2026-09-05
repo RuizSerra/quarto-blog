@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 // Base document colors
-$body-bg:                             #f5f2e9;
+$body-bg:                             #ffffff;
 $primary:                             $body-bg;
 $body-color:                          rgb(0, 0, 0);
 $link-color:                          $body-color; 
@@ -238,6 +238,7 @@ html, body {
   font-size: 1.05rem; /* slightly larger to compensate for smaller metrics */
   line-height: 1.55;
   color: #000; /* force true black for body text */
+  background-color: $body-bg;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -297,3 +298,4 @@ pre, pre code, .sourceCode, .chroma, .highlight, .hljs, .quarto-code {
 pre {
   padding: 0.9rem !important;
 }
+
