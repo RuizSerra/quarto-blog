@@ -20,6 +20,8 @@ website:
         href: /
       - text: Blog
         href: /posts
+      - text: Feedback
+        href: https://www.admonymous.co/jaime-ruiz-serra
   page-footer:
     border: false
     left: "Find me on [Scholar](https://scholar.google.com/citations?user=qkmyBJYAAAAJ), [LinkedIn](https://linkedin.com/in/RuizSerra), [GitHub](https://github.com/RuizSerra), [Goodreads](https://www.goodreads.com/ruizserra)"
