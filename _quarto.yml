@@ -7,6 +7,7 @@ project:
   resources:
     - "index.html"
     - "projects/**"
+    - "fonts/**"
 
 website:
   favicon: img/jaime-blurry-small-300h.png

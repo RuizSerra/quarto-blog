@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 // Base document colors
-$body-bg:                             #ffffff;
+$body-bg:                             rgb(255, 255, 248);
 $primary:                             $body-bg;
 $body-color:                          rgb(0, 0, 0);
 $link-color:                          $body-color; 
@@ -16,7 +16,92 @@ $code-bg:                             darken($body-bg, 10%) !default;
 
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+// ---------------------------------------------------------------------------
+// Computer Modern web fonts (CM Unicode, SIL OFL) — served from ./fonts/
+// Quarto copies any font referenced by a relative url() into site_libs/.
+//
+//   'Computer Modern Serif'                  body, h1, h3–h6 (upright + bold)
+//   'Computer Modern Serif Slanted'          h2
+//   'Computer Modern Classical Serif Italic' every italic (em, i, cite, …)
+//
+// The italic slots of 'Computer Modern Serif' point at the Classical Serif
+// Italic face, so anything that simply inherits the body font and turns
+// italic (markdown *emphasis*, <cite>, Quarto UI text, …) gets it automatically.
+// ---------------------------------------------------------------------------
+
+// Serif — upright
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('fonts/Serif/cmunrm.woff') format('woff'),
+       url('fonts/Serif/cmunrm.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Serif — bold
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('fonts/Serif/cmunbx.woff') format('woff'),
+       url('fonts/Serif/cmunbx.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Serif — italic slot → Classical Serif Italic (cmunci)
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('fonts/Classical Serif Italic/cmunci.woff') format('woff'),
+       url('fonts/Classical Serif Italic/cmunci.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Serif — bold italic (no bold Classical Italic exists; use CM Serif Bold Italic)
+@font-face {
+  font-family: 'Computer Modern Serif';
+  src: url('fonts/Serif/cmunbi.woff') format('woff'),
+       url('fonts/Serif/cmunbi.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Serif Slanted — regular
+@font-face {
+  font-family: 'Computer Modern Serif Slanted';
+  src: url('fonts/Serif Slanted/cmunsl.woff') format('woff'),
+       url('fonts/Serif Slanted/cmunsl.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Serif Slanted — bold
+@font-face {
+  font-family: 'Computer Modern Serif Slanted';
+  src: url('fonts/Serif Slanted/cmunbl.woff') format('woff'),
+       url('fonts/Serif Slanted/cmunbl.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Classical Serif Italic — also exposed under its own name for explicit use
+@font-face {
+  font-family: 'Computer Modern Classical Serif Italic';
+  src: url('fonts/Classical Serif Italic/cmunci.woff') format('woff'),
+       url('fonts/Classical Serif Italic/cmunci.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+$font-serif:    'Computer Modern Serif', Georgia, 'Times New Roman', serif;
+$font-slanted:  'Computer Modern Serif Slanted', $font-serif;
+$font-italic:   'Computer Modern Classical Serif Italic', $font-serif;
 
 // Global link structural styles
 a {
@@ -30,9 +115,9 @@ a:hover {
 }
 
 .home-intro-quote {
-  font-family: 'EB Garamond', Georgia, serif;
+  font-family: $font-italic;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: #6b6b6b;
   font-size: 1.18rem;
   line-height: 1.7;
@@ -74,6 +159,7 @@ a:hover {
 
 body {
   position: relative;
+  background-color: rgb(255, 255, 248);
 }
 
 .quarto-about-jolla,
@@ -231,9 +317,9 @@ body {
   }
 }
 
-/* Site typography: use Goudy Bookletter 1911 for body and headings */
+/* Site typography: use Computer Modern Serif for body and headings */
 html, body {
-  font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', serif;
+  font-family: $font-serif;
   font-weight: 400;
   font-size: 1.05rem; /* slightly larger to compensate for smaller metrics */
   line-height: 1.55;
@@ -241,17 +327,39 @@ html, body {
   background-color: $body-bg;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', serif;
+h1 {
+  font-family: $font-serif;
   font-weight: 700;
   margin-top: 2.5rem; /* extra spacing above sections */
 }
 
-/* Ensure bold text uses Goudy Bookletter 1911 when available */
+h2 {
+  font-family: $font-slanted;
+  font-weight: 700;
+  font-style: normal; /* the slant is baked into the face; don't oblique it further */
+  margin-top: 2.5rem; /* extra spacing above sections */
+}
+
+h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: 700;
+  margin-top: 2.5rem; /* extra spacing above sections */
+}
+
+/* Ensure bold text uses Computer Modern when available */
 strong, b {
-  font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', serif;
+  font-family: $font-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
+}
+
+/* All italics use Classical Serif Italic. Going through $font-serif (whose
+   italic slot is cmunci) rather than $font-italic keeps real bold-italic
+   (cmunbi) available for <strong><em>… instead of a synthesised faux-bold. */
+em, i, q, cite, dfn,
+h2 em, h2 i {
+  font-family: $font-serif;
+  font-style: italic;
 }
 
 /* Reduce monospace size so code is slightly smaller than body text */
