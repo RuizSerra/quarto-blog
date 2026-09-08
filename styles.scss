@@ -77,6 +77,9 @@ $code-bg:                             darken($body-bg, 10%) !default;
 // Fallback stack borrowed from the ET Book demo page
 $font-body: 'et-book', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 
+// Vertical space above every section heading (h2)
+$section-gap: 3.5rem;
+
 // Global link structural styles
 a {
   color: $link-color;
@@ -219,8 +222,8 @@ body {
 .news-table td:first-child,
 .education-table td:first-child,
 .experience-table td:first-child {
-  width: 6.5rem;
-  min-width: 6.5rem;
+  width: 8.5rem;   /* fits "Jun–Aug 2026" in ET Book at 20px, plus the 1rem gutter */
+  min-width: 8.5rem;
   white-space: nowrap;
   padding-right: 1rem;
 }
@@ -247,7 +250,7 @@ body {
   }
 
   html, body {
-    font-size: 1.0625rem; /* 17px — the demo drops to 16.8px on narrow screens */
+    font-size: 1rem; /* 16px on narrow screens */
   }
 
   #quarto-document-content,
@@ -298,7 +301,7 @@ body {
 html, body {
   font-family: $font-body;
   font-weight: 400;
-  font-size: 1.3125rem; /* 21px at the browser default — same body size as the ET Book demo page */
+  font-size: 1.25rem; /* 20px at the browser default — a touch under the ET Book demo's 21px */
   line-height: 1.4;
   color: #000; /* force true black for body text */
   background-color: $body-bg;
@@ -324,7 +327,7 @@ h2 {
   font-style: italic;
   font-size: 1.65rem;  /* ≈34.5px, as the demo's h2 */
   line-height: 1.2;
-  margin-top: 2.5rem; /* extra spacing above sections */
+  margin-top: $section-gap;
 }
 
 h3, h4, h5, h6 {
@@ -360,11 +363,19 @@ pre {
   font-size: 0.92rem;
 }
 
-/* Target headings inside main document/content for additional spacing on homepage */
+/* Section spacing. Quarto zeroes the top margin of a page's *first* h2 so a
+   heading that opens a page sits snug under the title block. That also hits
+   "News" on the home page, which follows body text — so restore the gap for a
+   first section that is preceded by paragraphs. */
 #quarto-document-content > h2,
 .content > h2,
 .about-contents > h2 {
-  margin-top: 2.5rem;
+  margin-top: $section-gap;
+}
+
+#quarto-content main.content > p ~ section:first-of-type > h2:first-child,
+main.content > p ~ section:first-of-type > h2:first-child {
+  margin-top: $section-gap !important;
 }
 
 /* Ensure the main content text is true black even if templates set a different color */
