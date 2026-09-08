@@ -175,6 +175,12 @@ body {
   margin-right: auto !important;
   display: block !important;
   mix-blend-mode: multiply;
+  /* Quarto sets an inline `width: 15em` on this image, so it scales with the
+     body font size. Uncapped, that width becomes the flex container's
+     min-content width and pushes the whole block rightwards — and off-screen
+     below ~400px. Capping it lets the image shrink so the block stays centred. */
+  max-width: 100%;
+  height: auto;
 }
 
 // Left-align the bottom navigation links block (links should not be justified)
@@ -257,6 +263,17 @@ body {
   .content,
   .about-contents {
     text-align: left !important;
+  }
+
+  /* Long unbreakable tokens (the DOI links under Selected Publications) set a
+     min-content floor on the whole column. That floor stops the about block
+     from shrinking on narrow phones, so it can no longer centre and the photo
+     drifts right. `anywhere` — unlike `break-word` — reduces intrinsic
+     min-content width, letting the column shrink to the viewport. */
+  #quarto-document-content a,
+  .content a,
+  .about-contents a {
+    overflow-wrap: anywhere;
   }
 
   .news-table table,
