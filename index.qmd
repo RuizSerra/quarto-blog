@@ -1,6 +1,6 @@
 ---
 title: "Jaime Ruiz Serra"
-image: img/jaime-blurry-small1.png
+image: img/jaime-blurry-small3.png
 toc: false
 about:
   template: jolla
