@@ -42,6 +42,54 @@ Caveats:
 * GitHub warns above 50MB per file and rejects above 100MB. Host anything larger
   elsewhere (arXiv, Zenodo) and link to it.
 * Avoid spaces in filenames — they need percent-encoding in the URL.
+* **Anyone with the URL can read them.** See below.
+
+### Keeping documents out of search engines
+
+`netlify.toml` sets `X-Robots-Tag: noindex, nofollow, noarchive` on `/documents/*`.
+Google, Bing et al. honour this for PDFs, which is what matters here — a PDF has no
+`<head>`, so a `noindex` meta tag is not an option.
+
+Deliberately *not* done: a `Disallow: /documents/` line in `robots.txt`. Two reasons:
+
+1. `robots.txt` blocks *crawling*, not *indexing*. A disallowed URL that is linked from
+   anywhere else can still show up in results as a bare URL — and because the crawler is
+   forbidden from fetching it, it never sees the `noindex` header. The two mechanisms
+   work against each other; the header alone is stronger.
+2. `robots.txt` is public. Listing a path there advertises that the path exists.
+
+Quarto's `sitemap.xml` only contains rendered pages, so documents are never listed there.
+
+Verify after a deploy:
+
+```bash
+curl -sI https://jaime.rs/documents/some_document.pdf | grep -i x-robots-tag
+```
+
+Note that noindex is a request that well-behaved crawlers honour. It is not access
+control, and it does nothing about scrapers or anyone who has the link.
+
+### Password protection
+
+Netlify supports Basic Auth scoped to a path, via `netlify.toml`:
+
+```toml
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Basic-Auth = "username:password"
+```
+
+Two caveats before relying on this:
+
+* As of the current docs this is a **Pro plan** feature (~$19/user/month). Accounts
+  created before 2025-09-04 were grandfathered into having it for free, and this site
+  predates that — so it may well work as-is. Test on a deploy preview before assuming.
+* The credentials sit in plaintext in this repo, which is public. At minimum this means
+  a throwaway password, never a reused one.
+
+For anything genuinely confidential, do not put it on a public static host. Use a
+service with real access control (Drive, Dropbox, S3 pre-signed URLs).
 
 ## Notes
 

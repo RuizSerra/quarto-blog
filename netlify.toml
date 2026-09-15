@@ -1,0 +1,9 @@
+# Headers only — build/publish settings stay as configured in the Netlify UI.
+
+# Keep documents/ out of search engine indexes.
+# Note: deliberately NOT disallowed in robots.txt — crawlers must be able to
+# fetch the file to see this header and honour it.
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
