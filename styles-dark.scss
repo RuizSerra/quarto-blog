@@ -1,0 +1,154 @@
+/*-- scss:rules --*/
+
+// ---------------------------------------------------------------------------
+// Dark mode, matching notes.jaime.rs — the cream inverted rather than a
+// blue-grey, so both sites read as the same publication in either scheme.
+//
+// Rules only, no scss:defaults: styles.scss assigns $body-bg and friends
+// without !default, and Quarto emits later theme files' defaults *before*
+// earlier ones, so variable overrides here would be undone. Rules are emitted
+// in file order, so these simply win.
+// ---------------------------------------------------------------------------
+
+$dark-bg: #14140f; // garden --light
+$dark-surface: #1d1d17; // code blocks, sitting just above the page
+$dark-text: #f2f1e6; // garden --darkgray (body text)
+$dark-heading: #fffff8; // garden --dark; the cream, now as ink
+$dark-muted: #9a978a;
+$dark-border: #2f2f28; // garden --lightgray
+$dark-hover: #9cbb8c; // garden --tertiary
+
+html,
+body {
+  background-color: $dark-bg;
+  color: $dark-text;
+}
+
+// styles.scss forces true black on these, so match its !important
+#quarto-document-content,
+.content,
+.about-contents {
+  color: $dark-text !important;
+}
+
+.quarto-title-banner,
+.quarto-title-banner * {
+  color: $dark-heading !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $dark-heading;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: $dark-hover;
+  }
+}
+
+.quarto-about-jolla a,
+.about-links a,
+.about-link-text {
+  color: inherit;
+
+  &:hover {
+    color: $dark-hover !important;
+  }
+}
+
+// Navigation and footer
+.navbar,
+.nav-footer {
+  background-color: $dark-bg !important;
+  border-color: $dark-border;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar-title,
+.nav-footer,
+.nav-footer a {
+  color: $dark-text !important;
+}
+
+// Code
+code,
+kbd,
+tt,
+samp {
+  color: #d8d5c2;
+}
+
+pre,
+pre code,
+div.sourceCode,
+.sourceCode pre {
+  background-color: $dark-surface !important;
+  color: $dark-text;
+}
+
+// Structure
+table,
+td,
+th,
+hr,
+.table > :not(caption) > * > * {
+  border-color: $dark-border;
+}
+
+blockquote {
+  border-left-color: $dark-border;
+  color: #cfcdbe;
+}
+
+// Table of contents
+#TOC,
+.sidebar nav[role="doc-toc"] ul > li > a {
+  color: $dark-muted;
+
+  &.active,
+  &:hover {
+    color: $dark-heading;
+  }
+}
+
+// Home page specifics
+.home-intro-quote {
+  color: $dark-muted;
+}
+
+// This stylesheet is loaded only in dark mode, so it doubles as the "is dark"
+// selector: Quarto swaps stylesheets rather than setting a class on <body>.
+.quarto-color-scheme-toggle {
+  color: $dark-text;
+
+  .bi::before {
+    content: "\f5a2"; /* bi-sun — "switch back to light" */
+  }
+}
+
+// multiply over a dark page turns the portrait into a black rectangle, and
+// leaving it normal puts a bright white square in the middle of the page. The
+// portrait is a dark blur on white, so inverting reads as a light blur on dark.
+.about-image {
+  mix-blend-mode: normal;
+  filter: invert(1);
+}
+
+img {
+  mix-blend-mode: normal;
+}
+
+.home-ambient-stroke .ambient-line {
+  stroke: rgba(156, 187, 140, 0.5);
+}
+
+.home-ambient-stroke .ambient-fill {
+  fill: rgba(156, 187, 140, 0.1);
+}

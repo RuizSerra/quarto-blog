@@ -27,6 +27,31 @@
   status = 301
   force = true
 
+# The barista and cooking pages moved to the garden too.
+[[redirects]]
+  from = "/coffee.html"
+  to = "https://notes.jaime.rs/coffee"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/coffee"
+  to = "https://notes.jaime.rs/coffee"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/food.html"
+  to = "https://notes.jaime.rs/food"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/food"
+  to = "https://notes.jaime.rs/food"
+  status = 301
+  force = true
+
 # Keep documents/ out of search engine indexes.
 # Note: deliberately NOT disallowed in robots.txt — crawlers must be able to
 # fetch the file to see this header and honour it.

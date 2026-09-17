@@ -39,11 +39,9 @@ website:
 
 format:
   html:
-    theme: 
-      - default
-      - styles.scss
-      # light: [default, styles.scss]
-      # dark: darkly
+    theme:
+      light: [default, styles.scss]
+      dark: [default, styles.scss, styles-dark.scss]
     # css: styles.css
     toc: true
     toc-location: left

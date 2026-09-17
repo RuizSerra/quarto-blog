@@ -439,3 +439,27 @@ pre {
   padding: 0.9rem !important;
 }
 
+/* Dark-mode toggle, sitting to the left of the search icon in the navbar.
+   Quarto's default is a toggle-switch glyph at the navbar's font size; a small
+   moon, quiet until hovered, sits better beside the magnifying glass.
+   Note the body keeps the class `quarto-light` in either scheme — Quarto swaps
+   stylesheets rather than classes — so the dark variant of this rule lives in
+   styles-dark.scss, which is only loaded in dark mode. */
+.quarto-color-scheme-toggle {
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  .bi {
+    font-size: 0.95rem;
+    vertical-align: middle;
+
+    &::before {
+      content: "\f497"; /* bi-moon — "switch to dark" */
+    }
+  }
+}
+
