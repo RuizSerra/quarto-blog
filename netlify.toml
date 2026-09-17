@@ -1,4 +1,31 @@
-# Headers only — build/publish settings stay as configured in the Netlify UI.
+# Build/publish settings stay as configured in the Netlify UI.
+
+# The blog moved to the digital garden at notes.jaime.rs. Rules are evaluated in
+# order, first match wins, and force = true means they apply even if a stale file
+# is still sitting in _site.
+#
+# The feed rule must come first: the old subscriber URL was /posts/index.xml, and
+# the garden serves its feed from the site root, not from /posts/.
+[[redirects]]
+  from = "/posts/index.xml"
+  to = "https://notes.jaime.rs/index.xml"
+  status = 301
+  force = true
+
+# /posts/AAMAS-2025/ -> notes.jaime.rs/posts/AAMAS-2025/, which Netlify then
+# normalises to the lowercase, slashless /posts/aamas-2025.
+[[redirects]]
+  from = "/posts/*"
+  to = "https://notes.jaime.rs/posts/:splat"
+  status = 301
+  force = true
+
+# The splat does not match the bare path.
+[[redirects]]
+  from = "/posts"
+  to = "https://notes.jaime.rs/posts"
+  status = 301
+  force = true
 
 # Keep documents/ out of search engine indexes.
 # Note: deliberately NOT disallowed in robots.txt — crawlers must be able to

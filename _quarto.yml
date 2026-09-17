@@ -2,7 +2,6 @@ project:
   type: website
   render:
     - "*.qmd"
-    - "posts/**/*.qmd"
     - "!projects/**"
   resources:
     - "index.html"
