@@ -276,7 +276,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
       </tr>
       <tr>
         <td>Jul 2026</td>
-        <td>Participating in the 2026 [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
+        <td>Participated in the 2026 [Human-aligned AI Summer School (HAAISS)](https://humanaligned.ai/2026/)</td>
         <td>Prague, CZ</td>
       </tr>
       <tr>
