@@ -21,7 +21,7 @@ website:
       - text: Home
         href: /
       - text: Blog
-        href: /posts
+        href: https://notes.jaime.rs/posts
       - text: Feedback
         href: https://www.admonymous.co/jaime
   page-footer:
