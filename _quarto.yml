@@ -19,8 +19,8 @@ website:
     left:
       - text: Home
         href: /
-      - text: Blog
-        href: https://notes.jaime.rs/posts
+      - text: Notes
+        href: https://notes.jaime.rs
       - text: Feedback
         href: https://www.admonymous.co/jaime
   page-footer:
