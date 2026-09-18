@@ -442,10 +442,22 @@ pre {
 /* Dark-mode toggle, sitting to the left of the search icon in the navbar.
    Quarto's default is a toggle-switch glyph at the navbar's font size; a small
    moon, quiet until hovered, sits better beside the magnifying glass.
+
+   The glyph is drawn as a mask from Bootstrap Icons' own SVG rather than set
+   through the icon font: Quarto bundles its own build of bootstrap-icons, and
+   the codepoint for bi-moon there renders as a toggle switch. This is the same
+   technique, and the same two paths, as notes.jaime.rs, so both sites show an
+   identical icon.
+
    Note the body keeps the class `quarto-light` in either scheme — Quarto swaps
-   stylesheets rather than classes — so the dark variant of this rule lives in
+   stylesheets rather than classes — so the sun variant lives in
    styles-dark.scss, which is only loaded in dark mode. */
+$bi-moon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg>');
+
 .quarto-color-scheme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.45;
   transition: opacity 0.2s ease;
 
@@ -453,13 +465,21 @@ pre {
     opacity: 0.9;
   }
 
+  /* the icon font's glyph */
   .bi {
-    font-size: 0.95rem;
-    vertical-align: middle;
+    display: none;
+  }
 
-    &::before {
-      content: "\f497"; /* bi-moon — "switch to dark" */
-    }
+  &::after {
+    content: "";
+    display: block;
+    width: 0.95rem;
+    height: 0.95rem;
+    background-color: currentColor;
+    mask-image: $bi-moon;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
   }
 }
 
