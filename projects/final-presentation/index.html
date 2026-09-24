@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Robust Measure of Collective Power</title>
+  <meta name="description" content="Measuring what agents can achieve, alone and together, and failure modes from using it as an objective. PIBBSS fellowship final presentation.">
+  <meta name="author" content="Jaime Ruiz Serra">
+  <link rel="canonical" href="https://jaime.rs/projects/final-presentation/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jaime Ruiz Serra">
+  <meta property="og:title" content="A Robust Measure of Collective Power">
+  <meta property="og:description" content="Measuring what agents can achieve, alone and together, and the failure modes of using it as an objective. PIBBSS fellowship final presentation, September 2026.">
+  <meta property="og:url" content="https://jaime.rs/projects/final-presentation/">
+  <meta property="og:image" content="https://jaime.rs/projects/final-presentation/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Title card: A Robust Measure of Collective Power">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Robust Measure of Collective Power">
+  <meta name="twitter:description" content="Measuring what agents can achieve, alone and together, and the failure modes of using it as an objective. PIBBSS fellowship final presentation, September 2026.">
+  <meta name="twitter:image" content="https://jaime.rs/projects/final-presentation/og-card.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Reveal.js styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <!-- Code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    window.addEventListener('error', function(e) {
+      const errorDiv = document.createElement('div');
+      errorDiv.style.position = 'fixed';
+      errorDiv.style.top = '0';
+      errorDiv.style.left = '0';
+      errorDiv.style.width = '100%';
+      errorDiv.style.background = 'rgba(255, 0, 0, 0.9)';
+      errorDiv.style.color = 'white';
+      errorDiv.style.zIndex = '99999';
+      errorDiv.style.padding = '15px';
+      errorDiv.style.fontSize = '14px';
+      errorDiv.style.fontFamily = 'monospace';
+      errorDiv.style.whiteSpace = 'pre-wrap';
+      errorDiv.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+      errorDiv.innerText = 'JS Error: ' + e.message + '\nFile: ' + e.filename + ':' + e.lineno + '\nStack: ' + (e.error ? e.error.stack : 'N/A');
+      document.body.appendChild(errorDiv);
+    });
+  </script>
+  <div class="reveal">
+    <div class="slides">
+      <!-- The slides.md file is loaded dynamically -->
+      <section data-markdown="slides.md"
+               data-separator="^\r?\n---\r?\n"
+               data-separator-vertical="^\r?\n--\r?\n">
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+  <!-- Speaker notes (press S for the speaker view) -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+  <script>
+    // Update footer slide numbers. Compute directly from Reveal's index rather
+    // than scraping the native counter's DOM, which lags one step behind on
+    // 'slidechanged' and would show the previous slide's number in the footer.
+    // The denominator is the position of the closing slide (class closing-slide,
+    // or failing that a slide titled "Questions"), so bonus slides
+    // after it do not inflate the count the audience sees. Falls back to the
+    // real total if no such slide exists.
+    let mainSlideTotal = null;
+    function computeMainSlideTotal() {
+      const sections = [...document.querySelectorAll('.reveal .slides > section')];
+      const q = sections.find(sec => sec.classList.contains('closing-slide'))
+        || sections.find(sec => /^\s*questions\s*$/i.test((sec.querySelector('h1, h2') || {}).textContent || ''));
+      mainSlideTotal = q ? Reveal.getIndices(q).h + 1 : Reveal.getTotalSlides();
+    }
+
+    function updateFooterText() {
+      const activeSlide = Reveal.getCurrentSlide();
+      if (!activeSlide) return;
+      const customNum = activeSlide.querySelector('.footer-right');
+      if (customNum) {
+        if (mainSlideTotal === null) computeMainSlideTotal();
+        customNum.textContent = (Reveal.getState().indexh + 1) + ' / ' + mainSlideTotal;
+      }
+    }
+
+    // Initialize Reveal.js
+    Reveal.initialize({
+      width: 1200,               // Widen layout area for more horizontal space
+      height: 750,               // Expand vertical layout space
+      margin: 0.04,              // Shrink empty margins on outer edges of screen
+      center: false,             // Top-left alignment like Beamer
+      transition: 'none',        // Instant transitions like Beamer
+      slideNumber: 'c/t',        // Page number fraction (e.g. 5/16)
+      hash: true,                // Update URL hash for sharing/bookmarks
+      history: true,             // Browser history navigation
+      controls: false,           // Show navigation arrows in corner (disabled)
+      progress: false,           // Show progress bar (disabled)
+      mathjax3: {
+        // TeX-only build. The tex-mml build also reads MathML, so each re-typeset
+        // found the hidden accessibility MathML inside every rendered formula and
+        // typeset it again, nesting copies without limit (10,000+ after a few
+        // minutes of navigation, several seconds per slide change).
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js',
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            // reveal's math plugin calls MathJax.typeset() on every slide change,
+            // which rescans the whole document. All maths is typeset at load, so
+            // limit that call to the slide being shown.
+            const typesetDocument = MathJax.typeset;
+            MathJax.typeset = (elements) =>
+              typesetDocument(elements || [Reveal.getCurrentSlide()].filter(Boolean));
+            MathJax.startup.promise.then(() => { Reveal.layout(); });
+          }
+        }
+      },
+      // The footnotes plugin must sit between markdown and math: it rewrites text
+      // nodes, and doing that while MathJax is typesetting makes MathJax throw.
+      // Here it always runs after the slides exist and before MathJax is loaded.
+      plugins: [ RevealMarkdown, { id: 'footnotes', init: function () { buildFootnotes(); } }, RevealMath.MathJax3, RevealHighlight, RevealNotes ]
+    }).then(() => {
+      // Inject custom footer into every slide except the title slide
+      const slides = document.querySelectorAll('.reveal .slides section');
+      slides.forEach((slide, index) => {
+        // Skip vertical slide containers (which contain nested sections)
+        if (slide.querySelector('section')) return;
+        
+        // Skip title slide (first slide) and separator slides
+        if (index === 0 || slide.classList.contains('separator-slide') || slide.classList.contains('closing-slide')) return;
+        
+        const footer = document.createElement('div');
+        footer.className = 'presentation-footer';
+        footer.innerHTML = `
+          <div class="footer-col footer-left">Jaime Ruiz Serra</div>
+          <div class="footer-col footer-center">PIBBSS '26</div>
+          <div class="footer-col footer-right"></div>
+        `;
+        slide.appendChild(footer);
+      });
+
+      // Footnotes were built by the 'footnotes' plugin above. Now that fragments
+      // carry their indices, make each note appear with the fragment it sits in.
+      linkFootnoteFragments();
+
+      // Update footer page numbers (denominator = position of the Questions slide)
+      computeMainSlideTotal();
+      updateFooterText();
+
+      // Paint the starting slide's inline SVGs (covers a deep-link to the diagram slide)
+      scheduleSlideSVGRepaint(Reveal.getCurrentSlide());
+
+      
+      // Initialize Capacity Regions if we start on the slide
+      setTimeout(() => {
+        if (typeof initCapacityRegions === 'function') {
+          initCapacityRegions();
+        }
+      }, 500); // Give markdown parser a moment
+
+      // Watch for MathJax rendering to sync fragments
+      const observer = new MutationObserver((mutations) => {
+        let hasMathJax = false;
+        for (let mutation of mutations) {
+          if (mutation.addedNodes.length) {
+            for (let node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE && (node.matches('mjx-container') || node.querySelector('mjx-container'))) {
+                hasMathJax = true;
+                break;
+              }
+            }
+          }
+          if (hasMathJax) break;
+        }
+        if (hasMathJax) {
+          // MathJax rendered some math, sync fragments with Reveal.js
+          setTimeout(() => {
+            Reveal.sync();
+            // The same reflow can blank inline SVG text, so repaint after it
+            repaintSlideSVGs(Reveal.getCurrentSlide());
+          }, 100);
+        }
+      });
+      observer.observe(document.querySelector('.slides'), { childList: true, subtree: true });
+
+      // Add custom bindings for arrow keys to navigate slide deck
+      Reveal.addKeyBinding({ keyCode: 37, key: 'LEFT', description: 'Previous Slide' }, () => {
+        Reveal.prev();
+      });
+      Reveal.addKeyBinding({ keyCode: 39, key: 'RIGHT', description: 'Next Slide' }, () => {
+        Reveal.next();
+      });
+      Reveal.addKeyBinding({ keyCode: 38, key: 'UP', description: 'Previous Slide' }, () => {
+        Reveal.prev();
+      });
+      Reveal.addKeyBinding({ keyCode: 40, key: 'DOWN', description: 'Next Slide' }, () => {
+        Reveal.next();
+      });
+
+      // Click handler for clickable equation elements
+      window.addEventListener('click', (e) => {
+        const target = e.target.closest('.clickable-z0');
+        if (target) {
+          target.classList.toggle('active');
+        }
+      });
+
+      // Fallback: Click left/right margins to navigate
+      window.addEventListener('click', (e) => {
+        if (e.target.tagName === 'VIDEO' || e.target.tagName === 'CANVAS' || e.target.closest('.metric-box') || e.target.closest('a') || e.target.closest('.clickable-z0')) return;
+        const width = window.innerWidth;
+        if (e.clientX < width * 0.15) {
+          Reveal.prev();
+        } else if (e.clientX > width * 0.85) {
+          Reveal.next();
+        }
+      });
+
+      // Manual Navigation Override: Intercept key presses in capturing phase to bypass Reveal.js key routing
+      window.addEventListener('keydown', (e) => {
+        // Bypassing Reveal.js key routing for Left (37) and Right (39) arrows
+        if (e.keyCode === 37) {
+          Reveal.prev();
+          e.preventDefault();
+          e.stopPropagation();
+        } else if (e.keyCode === 39) {
+          Reveal.next();
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+    });
+
+    // ---- Slide footnotes -------------------------------------------------
+    // marked (reveal's markdown parser) has no footnote syntax, and nothing is
+    // parsed inside raw HTML blocks anyway. So footnotes are written inline in
+    // slides.md, either Pandoc-style,   some text^[the footnote, $math$ allowed]
+    // or explicitly,                    some text<span class="fn">the footnote</span>
+    // and converted here once the slides exist. Each becomes a superscript
+    // number, and the notes are collected in a block above the footer. A
+    // footnote written inside a fragment appears together with that fragment.
+    // Limitation: square brackets inside a ^[...] footnote must be balanced.
+    // Asides (:::aside … ::: or <div class="aside">…</div>) go in the same block,
+    // unnumbered and above the footnotes, as in Quarto's reveal format.
+    function convertCaretFootnotes(slide) {
+      const skip = 'aside.notes, svg, script, style, pre, code, mjx-container, .slide-footnotes';
+      for (let guard = 0; guard < 200; guard++) {
+        const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT, {
+          acceptNode: n => (n.parentElement && n.parentElement.closest(skip))
+            ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+        });
+        const nodes = []; let n;
+        while ((n = walker.nextNode())) nodes.push(n);
+        let start = null;
+        for (let i = 0; i < nodes.length && !start; i++) {
+          const k = nodes[i].textContent.indexOf('^[');
+          if (k !== -1) start = { i, k };
+        }
+        if (!start) return;
+        // find the matching close bracket, counting nested brackets
+        let depth = 0, end = null;
+        for (let i = start.i; i < nodes.length && !end; i++) {
+          const t = nodes[i].textContent;
+          for (let c = (i === start.i ? start.k + 1 : 0); c < t.length; c++) {
+            if (t[c] === '[') depth++;
+            else if (t[c] === ']') { depth--; if (depth === 0) { end = { i, c }; break; } }
+          }
+        }
+        if (!end) return;   // unbalanced: leave the text as written
+        const range = document.createRange();
+        range.setStart(nodes[start.i], start.k);
+        range.setEnd(nodes[end.i], end.c + 1);
+        const content = range.extractContents();
+        const span = document.createElement('span');
+        span.className = 'fn';
+        span.appendChild(content);
+        // strip the leading "^[" and the trailing "]"
+        const tw = document.createTreeWalker(span, NodeFilter.SHOW_TEXT);
+        const inner = []; let m;
+        while ((m = tw.nextNode())) inner.push(m);
+        if (inner.length) {
+          inner[0].textContent = inner[0].textContent.replace(/^\^\[/, '');
+          const last = inner[inner.length - 1];
+          last.textContent = last.textContent.replace(/\]$/, '');
+        }
+        range.insertNode(span);
+      }
+    }
+
+    const footnoteHosts = [];   // [note element, the fragment its marker sits in]
+
+    // Pandoc/Quarto fenced divs, which marked does not know:
+    //     :::aside                 (also  ::: aside   and   ::: {.aside})
+    //     some text, $math$ allowed
+    //     :::
+    // marked turns those lines into paragraphs. This rebuilds the <div class="…">
+    // they stand for. Any class name works, e.g. :::block or :::aside fragment.
+    function convertFencedDivs(slide) {
+      const open = /^:::\s*\{?\s*((?:\.?[A-Za-z][\w-]*\s*)+)\}?\s*$/;
+      [...slide.querySelectorAll('p')].forEach(p => {
+        if (!p.isConnected || p.closest('aside.notes')) return;
+        const lines = p.innerHTML.split('\n');
+        const m = lines[0].trim().match(open);
+        if (!m) return;
+        const div = document.createElement('div');
+        div.className = m[1].replace(/\./g, ' ').replace(/\s+/g, ' ').trim();
+        // Case 1: the whole block sits in one paragraph (no blank lines inside).
+        if (lines.length > 1 && lines[lines.length - 1].trim() === ':::') {
+          div.innerHTML = lines.slice(1, -1).join('\n');
+          p.replaceWith(div);
+          return;
+        }
+        // Case 2: blank lines inside, so the fence spans several sibling elements.
+        const moved = [];
+        let closing = null;
+        for (let node = p.nextSibling; node; node = node.nextSibling) {
+          if (node.nodeType === 1 && node.tagName === 'P') {
+            const t = node.innerHTML.split('\n');
+            if (t[t.length - 1].trim() === ':::') { closing = node; break; }
+          }
+          moved.push(node);
+        }
+        if (!closing) return;   // no closing fence: leave the text as written
+        if (lines.length > 1) {
+          const lead = document.createElement('p');
+          lead.innerHTML = lines.slice(1).join('\n');
+          div.appendChild(lead);
+        }
+        moved.forEach(node => div.appendChild(node));
+        const tail = closing.innerHTML.split('\n').slice(0, -1).join('\n');
+        if (tail.trim()) { closing.innerHTML = tail; div.appendChild(closing); } else closing.remove();
+        p.replaceWith(div);
+      });
+    }
+
+    function buildFootnotes() {
+      document.querySelectorAll('.reveal .slides section').forEach(slide => {
+        if (slide.querySelector(':scope > section')) return;   // vertical stack container
+        convertFencedDivs(slide);
+        convertCaretFootnotes(slide);
+        const outside = x => !x.closest('aside.notes') && !x.closest('.slide-footnotes');
+        const asides = [...slide.querySelectorAll('div.aside')].filter(outside);
+        const spans = [...slide.querySelectorAll('span.fn')].filter(outside);
+        if (!asides.length && !spans.length) return;
+        const box = document.createElement('div');
+        box.className = 'slide-footnotes';
+        // Asides first, unnumbered. Numbered footnotes follow, under a short rule.
+        asides.forEach(a => { a.classList.add('slide-aside'); box.appendChild(a); });
+        spans.forEach((span, i) => {
+          const num = i + 1;
+          const item = document.createElement('div');
+          item.className = 'slide-footnote' + (i === 0 ? ' slide-footnote-first' : '');
+          const label = document.createElement('sup');
+          label.textContent = num;
+          item.appendChild(label);
+          while (span.firstChild) item.appendChild(span.firstChild);
+          const frag = span.closest('.fragment');
+          if (frag) footnoteHosts.push([item, frag]);
+          const ref = document.createElement('sup');
+          ref.className = 'fn-ref';
+          ref.textContent = num;
+          span.replaceWith(ref);
+          box.appendChild(item);
+        });
+        slide.appendChild(box);
+      });
+    }
+
+    // Only classes and attributes change here, never text, so it is safe to run
+    // while MathJax is typesetting.
+    function linkFootnoteFragments() {
+      if (!footnoteHosts.length) return;
+      Reveal.sync();   // make sure every fragment carries its index
+      footnoteHosts.forEach(([item, frag]) => {
+        item.classList.add('fragment');
+        if (frag.dataset.fragmentIndex !== undefined) item.dataset.fragmentIndex = frag.dataset.fragmentIndex;
+      });
+      Reveal.sync();   // group each note with its fragment
+    }
+
+    // Force a repaint of inline SVGs on the given slide. Chrome intermittently
+    // fails to paint SVG <text> inside reveal's transform-scaled slides until a
+    // reflow is triggered, which can blank the safe-room diagram's labels when
+    // the slide is shown cold. Toggling display forces the paint.
+    function repaintSlideSVGs(slide) {
+      if (!slide) return;
+      // Detaching and re-inserting forces a full re-render; a mere style toggle
+      // does not reliably repaint the text glyphs in this environment.
+      slide.querySelectorAll('svg').forEach(svg => {
+        const parent = svg.parentNode;
+        if (!parent) return;
+        const next = svg.nextSibling;
+        parent.removeChild(svg);
+        void parent.offsetWidth;
+        parent.insertBefore(svg, next);
+      });
+    }
+
+    // MathJax typesetting reflows the slide after the initial paint, which can
+    // re-blank the SVG text, so nudge several times to land one after it settles.
+    let svgRepaintTimers = [];
+    function scheduleSlideSVGRepaint(slide) {
+      svgRepaintTimers.forEach(clearTimeout);
+      svgRepaintTimers = [0, 200, 500, 1200].map(d => setTimeout(() => repaintSlideSVGs(slide), d));
+    }
+
+    // A jump that lands on a slide with a fragment index applies the fragment
+    // after 'slidechanged', which can re-blank SVG text; repaint on fragments too.
+    Reveal.on('fragmentshown', () => scheduleSlideSVGRepaint(Reveal.getCurrentSlide()));
+    Reveal.on('fragmenthidden', () => scheduleSlideSVGRepaint(Reveal.getCurrentSlide()));
+
+    Reveal.on('slidechanged', event => {
+      updateFooterText();
+
+
+      // Nudge inline SVGs (e.g. the safe-room diagram) to paint their labels
+      scheduleSlideSVGRepaint(event.currentSlide);
+
+      // Initialize Capacity Regions if we navigate to it and it hasn't been initialized
+      if (typeof initCapacityRegions === 'function') {
+        initCapacityRegions();
+      }
+    });
+  </script>
+  <!-- Load Capacity Regions Widget logic -->
+  <script src="capacity-regions.js"></script>
+</body>
+</html>
