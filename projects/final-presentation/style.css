@@ -1,14 +1,18 @@
-/* Import Baskervville and Fira Mono for code */
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+/* Import Libertinus Serif and Fira Mono for code */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 :root {
-  --metropolis-bg: #FFFFFF;
+  --metropolis-bg: rgb(255, 255, 248);
   --metropolis-text: #000000;
   --metropolis-title: #000000;
   --metropolis-line: #000000;
   /* Thin black line for textbook style */
   --metropolis-muted: rgba(0, 0, 0, 0.5);
+  /* Horizontal layout: title rule and footer sit at --slide-edge from the slide
+     edge; the body is inset a further --body-inset on each side (2026-09-09). */
+  --slide-edge: 20px;
+  --body-inset: 30px;
 
   /* TikZ Color Palette */
   --col-c: #3498DB;
@@ -23,10 +27,46 @@
   /* Purple */
 }
 
+.libertinus-serif-regular {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libertinus-serif-semibold {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.libertinus-serif-bold {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libertinus-serif-regular-italic {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.libertinus-serif-semibold-italic {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.libertinus-serif-bold-italic {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 /* Base Reveal.js Styles Overrides */
 .reveal-viewport,
 .reveal {
-  font-family: "Baskervville", Georgia, serif;
+  font-family: "Libertinus Serif", Georgia, serif;
   font-weight: 400;
   color: var(--metropolis-text);
   background: var(--metropolis-bg) !important;
@@ -34,8 +74,8 @@
   background-color: var(--metropolis-bg) !important;
   background-image: none !important;
   /* Removes default Reveal.js radial background gradient */
-  font-size: 32px;
-  /* Set base font size explicitly to increase size for small monitors */
+  font-size: 30px;
+  /* Base body size; slightly reduced 2026-09-09 (titles compensated on h2) */
   text-shadow: none !important;
   /* Ensure all text is flat with no shadows */
   font-variant-numeric: lining-nums;
@@ -47,8 +87,8 @@
 }
 
 .reveal .slides section {
-  padding: 40px 20px 60px 20px;
-  /* Added bottom padding to make room for footer */
+  padding: 40px calc(var(--slide-edge) + var(--body-inset)) 60px calc(var(--slide-edge) + var(--body-inset));
+  /* Added bottom padding to make room for footer; horizontal padding = edge + body inset */
   box-sizing: border-box;
   height: 100%;
 }
@@ -60,7 +100,7 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  font-family: "Baskervville", Georgia, serif;
+  font-family: "Libertinus Serif", Georgia, serif;
   font-weight: 400;
   /* Regular weight for an old textbook style */
   color: var(--metropolis-title);
@@ -78,7 +118,7 @@
 
 /* Slide Titles (frame titles) */
 .reveal h2 {
-  font-size: 1.15em;
+  font-size: 1.23em;
   border-bottom: 0.8px solid var(--metropolis-line);
   /* Very thin textbook-style line */
   padding-bottom: 8px;
@@ -86,6 +126,7 @@
   margin-top: 0;
   font-weight: 400;
   /* Less bold for classic look */
+  font-style: italic;
   letter-spacing: -0.01em;
 }
 
@@ -138,15 +179,16 @@
 .presentation-footer {
   position: absolute;
   bottom: 20px;
-  left: 20px;
-  /* Align with slide content left boundary */
-  right: 20px;
-  /* Align with slide content right boundary */
+  left: var(--slide-edge);
+  /* Align with the slide title's left boundary */
+  right: var(--slide-edge);
+  /* Align with the slide title's right boundary */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 15px;
   /* Slightly larger footer text */
+  font-family: "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--metropolis-muted);
   z-index: 10;
   pointer-events: none;
@@ -178,8 +220,8 @@
   margin: 1.2em 0;
   border-radius: 0;
   /* Sharp corners like a classic textbook */
-  background-color: #ffffff;
-  /* Warm beige background */
+  background-color: var(--metropolis-bg);
+  /* Same as the page, so blocks stay flat */
   border: 0.8px solid #000000;
   /* Thin black border */
   padding: 16px;
@@ -212,33 +254,46 @@
   height: 100% !important;
 }
 
+/* Title slide: one colour (black); hierarchy from size and spacing only. */
 .title-slide h1 {
-  font-size: 2.2em;
-  font-weight: 400;
+  font-size: 1.8em;
+  font-weight: 700;
   color: var(--metropolis-title);
-  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.35em;
 }
 
 .title-slide .subtitle {
-  font-size: 1.15em;
-  color: #7f8c8d;
-  margin-bottom: 48px;
-  font-weight: 300;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--metropolis-text);
+  max-width: 24em;
+  line-height: 1.4;
+  margin: 0 auto 2.6em auto;
 }
 
 .title-slide .author {
-  font-size: 0.85em;
-  font-weight: 400;
-  margin-bottom: 8px;
+  font-size: 0.92em;
+  font-weight: 600;
   color: var(--metropolis-text);
+  margin-bottom: 0.3em;
+}
+
+.title-slide .mentors {
+  font-size: 0.73em;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--metropolis-text);
+  margin-bottom: 1.6em;
 }
 
 .title-slide .date {
-  font-size: 0.7em;
-  color: #7f8c8d;
-  font-weight: 300;
+  font-size: 0.66em;
+  font-weight: 400;
+  color: var(--metropolis-text);
   line-height: 1.4;
-  margin-top: 1.5em;
+  margin-top: 0;
 }
 
 /* Centered Slides (like The Core Question) */
@@ -486,6 +541,7 @@
   color: #ffffff !important;
   font-size: 2.2em !important;
   font-weight: 400;
+  font-style: normal;
   border-bottom: none !important;
   /* Remove Metropolis bottom border */
   margin: 0 !important;
@@ -503,6 +559,13 @@
   height: 100%;
 }
 
+/* Pull the slide title (and its rule) back out to --slide-edge so only the body
+   carries the extra horizontal inset; the footer sits at the same edge. */
+.reveal .slides section:not(.separator-slide):not(.title-slide)>h2 {
+  margin-left: calc(-1 * var(--body-inset));
+  margin-right: calc(-1 * var(--body-inset));
+}
+
 /* Push the content area to the vertical center of the remaining slide space */
 .reveal .slides section:not(.separator-slide):not(.title-slide)>h2+* {
   margin-top: auto;
@@ -513,9 +576,15 @@
   margin-top: auto;
 }
 
-.reveal .slides section:not(.separator-slide):not(.title-slide)>*:last-child,
-.reveal .slides section:not(.separator-slide):not(.title-slide)>*:nth-last-child(2) {
-  margin-bottom: auto;
+/* Balance the auto margin above the body with a zero-height spacer that is always
+   the final flex item. Selecting the last child cannot work here: the trailing
+   children are the absolutely positioned footer and the display:none speaker
+   notes, neither of which is a flex item, so their auto margins never apply and
+   all the free space collects above the body. */
+.reveal .slides section:not(.separator-slide):not(.title-slide)::after {
+  content: "";
+  display: block;
+  margin-top: auto;
 }
 
 /* Interactive Math Elements */
@@ -526,4 +595,158 @@
 
 .clickable-z0.active {
   color: #ff3333 !important;
+}
+/* Small comparison tables on the goal-revelation slides (Section III) */
+.reveal table.sep-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 8px 0;
+  font-size: 0.7em;
+}
+
+.reveal table.sep-table th,
+.reveal table.sep-table td {
+  padding: 4px 10px;
+  text-align: center;
+  border-bottom: 0.8px solid #000000;
+}
+
+/* The reveal theme drops the last row's border (tbody tr:last-child); keep a closing rule */
+.reveal table.sep-table tbody tr:last-child th,
+.reveal table.sep-table tbody tr:last-child td {
+  border-bottom: 0.8px solid #000000;
+}
+
+.reveal table.sep-table th {
+  font-weight: 600;
+}
+
+.reveal table.sep-table th:first-child,
+.reveal table.sep-table td:first-child {
+  text-align: left;
+}
+
+/* Object table on the coalitional-power slide: prose columns read better left-aligned */
+.reveal table.obj-table th,
+.reveal table.obj-table td {
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ---- Slide footnotes ------------------------------------------------------
+   Written inline in slides.md as  text^[footnote]  or  <span class="fn">…</span>
+   and collected into this block by buildFootnotes() in index.html. The block
+   sits just above the footer and does not take part in the vertical centring. */
+.reveal .slides section .slide-footnotes {
+  position: absolute;
+  left: calc(var(--slide-edge));
+  right: calc(var(--slide-edge));
+  bottom: 54px;
+  font-size: 0.6em;
+  line-height: 1.3;
+  text-align: left;
+  color: var(--metropolis-muted);
+}
+
+/* The short rule belongs to the first note, so it appears with it when that
+   note is a fragment, rather than sitting alone on the slide beforehand. */
+/* .reveal .slides section .slide-footnotes .slide-footnote-first::before {
+  content: "";
+  display: block;
+  width: 140px;
+  border-top: 1px solid var(--metropolis-line);
+  margin-bottom: 5px;
+} */
+
+.reveal .slides section .slide-footnote sup {
+  margin-right: 4px;
+}
+
+.reveal sup.fn-ref {
+  font-size: 0.6em;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+/* Asides: written as  :::aside … :::  (or <div class="aside">…</div>) in slides.md.
+   Unnumbered, slightly muted, in the same block as the footnotes and above them. */
+.reveal .slides section .slide-footnotes .slide-aside {
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 3px;
+}
+
+.reveal .slides section .slide-footnotes .slide-aside p {
+  margin: 0;
+}
+
+/* ---- Closing slide: the title slide mirrored on the dark separator ground ---
+   Written in slides.md as  <!-- .slide: class="closing-slide" -->  with an h1,
+   .closing-name, .closing-mentors, .closing-links and .closing-date. It gets
+   no footer (index.html skips it) and is the denominator of the page count. */
+.reveal .slides section.closing-slide {
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100% !important;
+}
+
+.reveal .slides section.closing-slide h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #ffffff !important;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 1.1em;
+  border-bottom: none !important;
+}
+
+.reveal .slides section.closing-slide .closing-name {
+  font-size: 0.92em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.reveal .slides section.closing-slide .closing-mentors {
+  font-size: 0.73em;
+  font-style: italic;
+  margin-bottom: 1.6em;
+}
+
+.reveal .slides section.closing-slide .closing-links {
+  font-size: 0.66em;
+  line-height: 1.7;
+  margin-bottom: 1.6em;
+}
+
+.reveal .slides section.closing-slide .closing-label {
+  display: inline-block;
+  width: 5em;
+  text-align: right;
+  margin-right: 0.8em;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reveal .slides section.closing-slide .closing-links a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.reveal .slides section.closing-slide .closing-links a:hover {
+  border-bottom-color: #ffffff;
+}
+
+.reveal .slides section.closing-slide .closing-date {
+  font-size: 0.66em;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
 }
