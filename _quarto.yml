@@ -31,7 +31,6 @@ website:
   #   site: "@JRuizSerra"
   #   creator: "@JRuizSerra"
   open-graph: true
-  google-analytics: "G-K8NCEFDJY2"
   # comments:
   #   hypothesis: 
   #     theme: clean
@@ -55,4 +54,5 @@ format:
     highlight-style: gruvbox
     include-in-header:
       - _custom-head.html
+      - _analytics.html
 
