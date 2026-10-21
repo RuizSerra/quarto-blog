@@ -271,7 +271,7 @@ I have studies in robotics and mechatronics engineering, statistics and data sci
       </tr>
       <tr>
         <td>Jun–Aug 2026</td>
-        <td>Based in London for the [PIBBSS Fellowship](https://princint.ai/programs/fellowship/), researching the extension of formalisations of agent [power](https://arxiv.org/abs/2608.08240) to collective action</td>
+        <td>Based in London for the PIBBSS Fellowship, [extending formalisations of agent power to collective action](https://notes.jaime.rs/a-robust-measure-of-collective-power)</td>
         <td>London, UK</td>
       </tr>
       <tr>

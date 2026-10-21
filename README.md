@@ -4,7 +4,7 @@ Hosted on [Netlify](https://app.netlify.com/sites/ruiz-serra/deploys). Deployed 
 
 Simply commit and push to the main branch.
 
-View Analytics on [Google Analytics](https://analytics.google.com/analytics/web/#/p431077283/reports/intelligenthome).
+View analytics on the [GoatCounter dashboard](https://jaimers.goatcounter.com/). See [Analytics](#analytics).
 
 ## Deployment instructions
 
@@ -17,6 +17,24 @@ git commit -m 'Update site'
 git push
 # Netlify takes care of the site deployment
 ```
+
+## Analytics
+
+Page views are counted by [GoatCounter](https://www.goatcounter.com/), which sets no
+cookies, so no consent banner is needed. The dashboard is at
+<https://jaimers.goatcounter.com/>. notes.jaime.rs reports to the same GoatCounter site,
+so both show up there together.
+
+* The snippet lives in `_analytics.html`, which `include-in-header` in `_quarto.yml` pulls
+  into every rendered page.
+* Pages under `projects/` (the slide decks) are copied verbatim, not rendered, so they do
+  not get it. Each one carries the snippet in its own `<head>`; paste it into any new one.
+* PDFs in `documents/` cannot run JavaScript, so downloads are not counted.
+* Visits from localhost are ignored, so local previews do not show up.
+* notes.jaime.rs sets it in its own repo, under `analytics` in `quartz.config.yaml`.
+
+Before September 2026 the site used Google Analytics (GA4); that history stays in the
+Google account.
 
 ## Serving documents (PDFs, etc.)
 
